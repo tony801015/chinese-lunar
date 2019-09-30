@@ -190,3 +190,30 @@ it('20190602', () => {
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('廿九');
 });
+
+it('20190605', () => {
+    const Lunar = new BasicLunar('2019', '06', '05');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
+    // 西元年轉 年柱格式
+    expect(Lunar.getChineseYear()).to.be.deep.equal('己亥');
+    // 星期
+    expect(Lunar.getWeek()).to.be.deep.equal('3');
+    // {title,solarTermsSplit}
+    expect(Lunar.parserFileAndSplitSolarTerm())
+        .to.be.deep.equal(
+            { solarTermsSplit: false, title: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七' }
+        );
+    // 節氣
+    expect(Lunar.getSolarTerms()).to.be.deep.equal('小滿');
+    // 年柱
+    expect(Lunar.chineseYear).to.be.deep.equal('己亥');
+    // 月柱
+    expect(Lunar.chineseMonth).to.be.deep.equal('己巳');
+    // 日柱
+    expect(Lunar.chineseDay).to.be.deep.equal('癸酉');
+    // 農曆月
+    expect(Lunar.lunarMonth).to.be.deep.equal('五月');
+    // 農曆日
+    expect(Lunar.lunarDay).to.be.deep.equal('初三');
+});

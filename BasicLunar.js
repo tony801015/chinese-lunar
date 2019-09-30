@@ -4,6 +4,7 @@ const {
   sixty,
   lunarMonthGeneral,
   lunarLeap,
+  luarnMonths,
 } = require('./config');
 const {
   solarTermToLunarMonth,
@@ -66,7 +67,7 @@ class BasicLunar {
    */
   getChineseMonth() {
     return lunarMonthByYear(this.chineseYear)[
-      lunarMonthGeneral.indexOf(this.lunarMonth)
+      lunarMonthGeneral.indexOf(this.getLunarMonthBysolarTerms())
     ];
   } 
 
@@ -144,29 +145,56 @@ class BasicLunar {
    * @param {integer} [solarTerms="雨水"] - solarTerms
    * @returns {string} 正月
    */
-  getLunarMonth(solarTerms = this.solarTerms) {
+  getLunarMonthBysolarTerms(solarTerms = this.solarTerms) {
     return solarTermToLunarMonth(solarTerms);
   }
 
+  // FIXME:
+  /**
+   * 
+   * 取得農曆月
+   * @param {integer} [solarTerms="雨水"] - solarTerms
+   * @returns {string} 正月
+   */
+  getLunarMonth() {
+    const { month } = this.getLunarMonthAndDayNumber();
+    return luarnMonths[month];
+  }
+
+  /**
+   * 
+   */
+  getLunarMonthAndDayNumber() {
+    let min = 100000000;
+    let saveMonth = '';
+    const start = moment('20170128');
+    const end = moment(`${this.year}${this.month}${this.day}`);
+    let daydistance = end.diff(start, 'day');
+    lunarLeap.forEach((val) => {
+      val[1].split('').forEach((monthVal, monthIndex) => {
+        const result = monthVal === '0' ? (daydistance -= 29) : (daydistance -= 30);
+        if (result >= 0) {
+          // console.log(result, min);
+          min = Math.min(result + 1, min);
+        } else if (result < 0) {
+          if (saveMonth === '') {
+            saveMonth = monthIndex;
+          }
+        }
+      });
+    });
+    return {
+      month: saveMonth,
+      day: min
+    };
+  }
   /**
    * 取得農曆日
    * @returns {string} 十九 初十
    */
   getLunarDay() {
-    let min = 100000000;
-    const start = moment('20170128');
-    const end = moment(`${this.year}${this.month}${this.day}`);
-    let daydistance = end.diff(start, 'day');
-    lunarLeap.forEach(val => {
-      val[1].split('').forEach(monthVal => {
-        const result =
-          monthVal === '0' ? (daydistance -= 29) : (daydistance -= 30);
-        if (result >= 0) {
-          min = Math.min(result + 1, min);
-        }
-      });
-    });
-    switch (min) {
+    const { day } = this.getLunarMonthAndDayNumber();
+    switch (day) {
       case 10:
         return '初十';
       case 20:
@@ -175,8 +203,8 @@ class BasicLunar {
         return '三十';
       default:
         return (
-          '初十廿卅'.split('')[Math.floor(min / 10)] +
-            '一二三四五六七八九十'.split('')[(min - 1) % 10] || min
+          '初十廿卅'.split('')[Math.floor(day / 10)] +
+            '一二三四五六七八九十'.split('')[(day - 1) % 10] || day
         );
     }
   }
