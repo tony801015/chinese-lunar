@@ -1,0 +1,105 @@
+'use strict';
+const {
+  duodecimalCycleMonth,
+  monthToken,
+  decimalCycle,
+  solarTerms,
+} = require('./config');
+
+const tools = {
+  /**
+   * 此年度所有的月令(柱)
+   * @param {string} 丁卯
+   * @returns {array} [壬寅, 癸卯, 甲辰, 乙巳, 丙午...]
+   */
+  lunarMonthByYear: year => {
+    const yearFirstCh = year.toString().split('')[0];
+    const baseYear = decimalCycle.indexOf(yearFirstCh);
+    if (baseYear === 0 || baseYear === 5) {
+      return monthToken[0].map((val, index) => {
+        return decimalCycle[val] + duodecimalCycleMonth[index];
+      });
+    } else if (baseYear === 1 || baseYear === 6) {
+      return monthToken[1].map((val, index) => {
+        return decimalCycle[val] + duodecimalCycleMonth[index];
+      });
+    } else if (baseYear === 2 || baseYear === 7) {
+      return monthToken[2].map((val, index) => {
+        return decimalCycle[val] + duodecimalCycleMonth[index];
+      });
+    } else if (baseYear === 3 || baseYear === 8) {
+      return monthToken[3].map((val, index) => {
+        return decimalCycle[val] + duodecimalCycleMonth[index];
+      });
+    }
+    return monthToken[4].map((val, index) => {
+      return decimalCycle[val] + duodecimalCycleMonth[index];
+    });
+  },
+  /**
+   * 節氣(月令) --> 月份
+   * @param {string} 節氣
+   * @returns {string} 二月 正月
+   */
+  solarTermToLunarMonth: solarTerm => {
+    const num = solarTerms.indexOf(solarTerm);
+    if (num === 0 || num === 23) {
+      return '正月';
+    } else if (num === 1 || num === 2) {
+      return '二月';
+    } else if (num === 3 || num === 4) {
+      return '三月';
+    } else if (num === 5 || num === 6) {
+      return '四月';
+    } else if (num === 7 || num === 8) {
+      return '五月';
+    } else if (num === 9 || num === 10) {
+      return '六月';
+    } else if (num === 11 || num === 12) {
+      return '七月';
+    } else if (num === 13 || num === 14) {
+      return '八月';
+    } else if (num === 15 || num === 16) {
+      return '九月';
+    } else if (num === 17 || num === 18) {
+      return '十月';
+    } else if (num === 19 || num === 20) {
+      return '十一月';
+    } else if (num === 21 || num === 22) {
+      return '十二月';
+    }
+  },
+  /**
+   * 節前節後
+   * @param {string} hour
+   * @returns {string} 地支
+   */
+  hourToDuodecimalCycle: time => {
+    if (time === '01' || time === '02') {
+      return '子';
+    } else if (time === '03' || time === '04') {
+      return '丑';
+    } else if (time === '05' || time === '06') {
+      return '寅';
+    } else if (time === '07' || time === '08') {
+      return '卯';
+    } else if (time === '09' || time === '10') {
+      return '辰';
+    } else if (time === '11' || time === '12') {
+      return '巳';
+    } else if (time === '13' || time === '14') {
+      return '午';
+    } else if (time === '15' || time === '16') {
+      return '未';
+    } else if (time === '17' || time === '18') {
+      return '申';
+    } else if (time === '19' || time === '20') {
+      return '酉';
+    } else if (time === '21' || time === '22') {
+      return '戌';
+    } else if (time === '23' || time === '00') {
+      return '亥';
+    }
+  },
+};
+module.exports = tools;

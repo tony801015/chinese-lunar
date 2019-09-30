@@ -1,0 +1,25 @@
+{
+  "name": "chinese-lunar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --coverage --watchAll"
+  },
+  "keywords": [
+    "lunar"
+  ],
+  "author": "Tony",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chinese-lunar": "^0.1.4",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-rallycoding": "^3.2.0",
+    "jest": "^24.9.0"
+  }
+}
