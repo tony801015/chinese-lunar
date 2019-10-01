@@ -83,6 +83,33 @@ it('[3]20190306', () => {
     expect(Lunar.lunarDay).to.be.deep.equal('三十');
 });
 
+it('[3]20190406', () => {
+    const Lunar = new BasicLunar('2019', '04', '06');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
+    // 西元年轉 年柱格式
+    expect(Lunar.getChineseYear()).to.be.deep.equal('己亥');
+    // 星期
+    expect(Lunar.getWeek()).to.be.deep.equal('6');
+    // {title,solarTermsSplit}
+    expect(Lunar.parserFileAndSplitSolarTerm())
+        .to.be.deep.equal(
+            { solarTermsSplit: false, title: '2019年清明时间是 2019年04月05日 09:51:21 农历： 三月(大)初一' }
+        );
+    // 節氣
+    expect(Lunar.getSolarTerms()).to.be.deep.equal('清明');
+    // 年柱
+    expect(Lunar.chineseYear).to.be.deep.equal('己亥');
+    // 月柱
+    expect(Lunar.chineseMonth).to.be.deep.equal('戊辰');
+    // 日柱
+    expect(Lunar.chineseDay).to.be.deep.equal('癸酉');
+    // 農曆月
+    expect(Lunar.lunarMonth).to.be.deep.equal('三月');
+    // 農曆日
+    expect(Lunar.lunarDay).to.be.deep.equal('初二');
+});
+
 it('[4]20190509', () => {
     const Lunar = new BasicLunar('2019', '05', '09');
     // [ '局管丁卯  令月二月', '寅' ]

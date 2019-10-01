@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --watchAll"
+    "test": "jest --coverage --watchAll"
   },
   "keywords": [
     "lunar"

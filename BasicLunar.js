@@ -167,7 +167,7 @@ class BasicLunar {
   getLunarMonthAndDayNumber() {
     let min = 100000000;
     let saveMonth = '';
-    const start = moment('20170128');
+    const start = moment('20080207');
     const end = moment(`${this.year}${this.month}${this.day}`);
     let daydistance = end.diff(start, 'day');
     lunarLeap.forEach((val) => {
