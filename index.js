@@ -6,3 +6,4 @@ console.log(`${Lunar.chineseYear}/${Lunar.chineseMonth}/${Lunar.chineseDay}`);
 console.log(`${Lunar.lunarMonth}/${Lunar.lunarDay}`);
 console.log(`${Lunar.solarTerms}`);
 console.log(`${Lunar.week}`);
+console.log(`${Lunar.chineseTime}`);

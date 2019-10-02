@@ -4,6 +4,7 @@ const {
   monthToken,
   decimalCycle,
   solarTerms,
+  sixty,
 } = require('./config');
 
 const tools = {
@@ -100,6 +101,28 @@ const tools = {
     } else if (time === '23' || time === '00') {
       return '亥';
     }
+  },
+  findtime: (lunarDayFirstWord) => {
+    let result = [];
+    if (lunarDayFirstWord === '甲' || lunarDayFirstWord === '己') {
+      result = tools.findTimeCompute(0, 11);
+    } else if (lunarDayFirstWord === '乙' || lunarDayFirstWord === '庚') {
+      result = tools.findTimeCompute(12, 23);
+    } else if (lunarDayFirstWord === '丙' || lunarDayFirstWord === '辛') {
+      result = tools.findTimeCompute(24, 35);
+    } else if (lunarDayFirstWord === '丁' || lunarDayFirstWord === '壬') {
+      result = tools.findTimeCompute(36, 47);
+    } else if (lunarDayFirstWord === '戊' || lunarDayFirstWord === '癸') {
+      result = tools.findTimeCompute(48, 59);
+    }
+    return result;
+  },
+  findTimeCompute: (start, end) => {
+    const timeArray = [];
+    for (let i = start; i <= end; i++) {
+      timeArray.push(sixty[i]);
+    }
+    return timeArray;
   },
 };
 module.exports = tools;
