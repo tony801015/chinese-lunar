@@ -1,4 +1,6 @@
 const moment = require('moment');
+const path = require('path');
+const fs = require('fs');
 const {
   week,
   sixty,
@@ -12,8 +14,6 @@ const {
   hourToDuodecimalCycle,
   findtime,
 } = require('./lunar');
-const path = require('path');
-const fs = require('fs');
 
 class BasicLunar {
   constructor(year, month, day) {
