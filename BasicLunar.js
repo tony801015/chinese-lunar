@@ -24,6 +24,7 @@ class BasicLunar {
     const start = moment('19120101');
     const end = moment(year + month + day);
     this.distanceDay = end.diff(start, 'day');
+    this.getLunarMonthAndDayNumber = this.getLunarMonthAndDayNumber();
     this.parserFile = this.parserFileAndSplitSolarTerm();
     this.solarTerms = this.getSolarTerms();
     this.lunarMonth = this.getLunarMonth();
@@ -156,7 +157,7 @@ class BasicLunar {
    * @returns {string} 正月
    */
   getLunarMonth() {
-    const { month } = this.getLunarMonthAndDayNumber();
+    const { month } = this.getLunarMonthAndDayNumber;
     return luarnMonths[month];
   }
 
@@ -194,7 +195,7 @@ class BasicLunar {
    * @returns {string} 十九 初十
    */
   getLunarDay() {
-    const { day } = this.getLunarMonthAndDayNumber();
+    const { day } = this.getLunarMonthAndDayNumber;
     switch (day) {
       case 10:
         return '初十';
