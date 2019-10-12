@@ -1,4 +1,6 @@
 const moment = require('moment');
+const path = require('path');
+const fs = require('fs');
 const {
   week,
   sixty,
@@ -10,9 +12,8 @@ const {
   solarTermToLunarMonth,
   lunarMonthByYear,
   hourToDuodecimalCycle,
+  findtime,
 } = require('./lunar');
-const path = require('path');
-const fs = require('fs');
 
 class BasicLunar {
   constructor(year, month, day) {
@@ -23,6 +24,7 @@ class BasicLunar {
     const start = moment('19120101');
     const end = moment(year + month + day);
     this.distanceDay = end.diff(start, 'day');
+    this.getLunarMonthAndDayNumber = this.getLunarMonthAndDayNumber();
     this.parserFile = this.parserFileAndSplitSolarTerm();
     this.solarTerms = this.getSolarTerms();
     this.lunarMonth = this.getLunarMonth();
@@ -30,6 +32,7 @@ class BasicLunar {
     this.chineseYear = this.getChineseYearControllerYear();
     this.chineseMonth = this.getChineseMonth();
     this.chineseDay = this.getChineseDay();
+    this.chineseTime = this.getChineseTime();
     this.week = this.getWeek();
   }
 
@@ -149,20 +152,18 @@ class BasicLunar {
     return solarTermToLunarMonth(solarTerms);
   }
 
-  // FIXME:
   /**
-   * 
    * 取得農曆月
-   * @param {integer} [solarTerms="雨水"] - solarTerms
    * @returns {string} 正月
    */
   getLunarMonth() {
-    const { month } = this.getLunarMonthAndDayNumber();
+    const { month } = this.getLunarMonthAndDayNumber;
     return luarnMonths[month];
   }
 
   /**
-   * 
+   * 取得農曆月日的值
+   * @returns {Object} { month, day }
    */
   getLunarMonthAndDayNumber() {
     let min = 100000000;
@@ -188,12 +189,13 @@ class BasicLunar {
       day: min
     };
   }
+
   /**
    * 取得農曆日
    * @returns {string} 十九 初十
    */
   getLunarDay() {
-    const { day } = this.getLunarMonthAndDayNumber();
+    const { day } = this.getLunarMonthAndDayNumber;
     switch (day) {
       case 10:
         return '初十';
@@ -210,22 +212,30 @@ class BasicLunar {
   }
 
   /**
+   * 取得時柱
+   * @returns {array} 甲子,乙丑,丙寅,丁卯,戊辰,己巳,庚午,辛未,壬申,癸酉,甲戌,乙亥
+   */
+  getChineseTime() {
+    return findtime(this.chineseDay.split('')[0]);
+  }
+
+  /**
    * 取得節前文字
    * @returns {array} 
    */
   getSolarTermsSplitWord() {
-    const { title: result, solarTermsSplit: solarSplit } = this.parserFile;
+    const { title, solarTermsSplit: solarSplit } = this.parserFile;
     let beforeLunarResult = '';
-    let solarTermsSplit = '';
-    const resultArray = result.split(' ');
-    const getChineseTime = resultArray[2].substring(0, 2);
+    let splitWord = '';
+    const solarTermsWord = title.split(' ');
+    const getTime = solarTermsWord[2].substring(0, 2);
     const lunarMonthCh = this.lunarMonth;
     if (solarSplit === true) {
-      beforeLunarResult = hourToDuodecimalCycle(getChineseTime);
-      solarTermsSplit = `局管${this.chineseMonth}  令月${lunarMonthCh}`;
+      beforeLunarResult = hourToDuodecimalCycle(getTime);
+      splitWord = `局管${this.chineseMonth}  令月${lunarMonthCh}`;
     }
     return [
-      solarTermsSplit,
+      splitWord,
       beforeLunarResult,
     ];
   }

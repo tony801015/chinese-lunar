@@ -23,6 +23,10 @@ it('[1]20190223', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('丙寅');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛卯');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('正月');
     // 農曆日
@@ -50,6 +54,10 @@ it('[2]20190226', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('丙寅');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('甲午');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['甲子', '乙丑', '丙寅', '丁卯', '戊辰', '己巳', '庚午', '辛未', '壬申', '癸酉', '甲戌', '乙亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('正月');
     // 農曆日
@@ -77,13 +85,17 @@ it('[3]20190306', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('丁卯');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('壬寅');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('正月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('三十');
 });
 
-it('[3]20190406', () => {
+it('[4]20190406', () => {
     const Lunar = new BasicLunar('2019', '04', '06');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -104,13 +116,17 @@ it('[3]20190406', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('戊辰');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸酉');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('三月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初二');
 });
 
-it('[4]20190509', () => {
+it('[5]20190509', () => {
     const Lunar = new BasicLunar('2019', '05', '09');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -131,13 +147,17 @@ it('[4]20190509', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('己巳');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丙午');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('四月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初五');
 });
 
-it('[5]20190518', () => {
+it('[6]20190518', () => {
     const Lunar = new BasicLunar('2019', '05', '18');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -158,13 +178,17 @@ it('[5]20190518', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('己巳');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('乙卯');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('四月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('十四');
 });
 
-it('[6]20190524', () => {
+it('[7]20190524', () => {
     const Lunar = new BasicLunar('2019', '05', '24');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -185,13 +209,17 @@ it('[6]20190524', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('己巳');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛酉');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('四月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('二十');
 });
 
-it('[7]20190530', () => {
+it('[8]20190530', () => {
     const Lunar = new BasicLunar('2019', '05', '30');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -212,13 +240,17 @@ it('[7]20190530', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('己巳');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丁卯');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('四月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('廿六');
 });
 
-it('[8]20190602', () => {
+it('[9]20190602', () => {
     const Lunar = new BasicLunar('2019', '06', '02');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -239,13 +271,17 @@ it('[8]20190602', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('己巳');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('庚午');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('四月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('廿九');
 });
 
-it('[9]20190605', () => {
+it('[10]20190605', () => {
     const Lunar = new BasicLunar('2019', '06', '05');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -266,13 +302,17 @@ it('[9]20190605', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('己巳');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸酉');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('五月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初三');
 });
 
-it('[10]20190613', () => {
+it('[11]20190613', () => {
     const Lunar = new BasicLunar('2019', '06', '13');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -293,13 +333,17 @@ it('[10]20190613', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('庚午');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛巳');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('五月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('十一');
 });
 
-it('[11]20190629', () => {
+it('[12]20190629', () => {
     const Lunar = new BasicLunar('2019', '06', '29');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -320,13 +364,17 @@ it('[11]20190629', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('庚午');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丁酉');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('五月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('廿七');
 });
 
-it('[12]20190707', () => {
+it('[13]20190707', () => {
     const Lunar = new BasicLunar('2019', '07', '07');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛未  令月六月', '申']);
@@ -347,13 +395,17 @@ it('[12]20190707', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('辛未');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('乙巳');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('六月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初五');
 });
 
-it('[13]20190810', () => {
+it('[14]20190810', () => {
     const Lunar = new BasicLunar('2019', '08', '10');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -374,13 +426,17 @@ it('[13]20190810', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('壬申');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('己卯');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['甲子', '乙丑', '丙寅', '丁卯', '戊辰', '己巳', '庚午', '辛未', '壬申', '癸酉', '甲戌', '乙亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('七月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初十');
 });
 
-it('[14]20190812', () => {
+it('[15]20190812', () => {
     const Lunar = new BasicLunar('2019', '08', '12');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -399,6 +455,10 @@ it('[14]20190812', () => {
     expect(Lunar.chineseYear).to.be.deep.equal('己亥');
     // 月柱
     expect(Lunar.chineseMonth).to.be.deep.equal('壬申');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛巳');
     // 農曆月
@@ -407,7 +467,7 @@ it('[14]20190812', () => {
     expect(Lunar.lunarDay).to.be.deep.equal('十二');
 });
 
-it('[15]20190822', () => {
+it('[16]20190822', () => {
     const Lunar = new BasicLunar('2019', '08', '22');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -428,13 +488,17 @@ it('[15]20190822', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('壬申');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛卯');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('七月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('廿二');
 });
 
-it('[16]20190903', () => {
+it('[17]20190903', () => {
     const Lunar = new BasicLunar('2019', '09', '03');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -455,13 +519,17 @@ it('[16]20190903', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('壬申');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸卯');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('八月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初五');
 });
 
-it('[17]20190906', () => {
+it('[18]20190906', () => {
     const Lunar = new BasicLunar('2019', '09', '06');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -482,13 +550,17 @@ it('[17]20190906', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('壬申');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丙午');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('八月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初八');
 });
 
-it('[18]20191015', () => {
+it('[19]20191015', () => {
     const Lunar = new BasicLunar('2019', '10', '15');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -509,13 +581,17 @@ it('[18]20191015', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('甲戌');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('乙酉');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('九月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('十七');
 });
 
-it('[19]20191120', () => {
+it('[20]20191120', () => {
     const Lunar = new BasicLunar('2019', '11', '20');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -536,13 +612,17 @@ it('[19]20191120', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('乙亥');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛酉');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('十月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('廿四');
 });
 
-it('[20]20191125', () => {
+it('[21]20191125', () => {
     const Lunar = new BasicLunar('2019', '11', '25');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -563,13 +643,17 @@ it('[20]20191125', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('乙亥');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丙寅');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('十月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('廿九');
 });
 
-it('[21]20191129', () => {
+it('[22]20191129', () => {
     const Lunar = new BasicLunar('2019', '11', '29');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -590,13 +674,17 @@ it('[21]20191129', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('乙亥');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('庚午');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('十一月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初四');
 });
 
-it('[22]20191207', () => {
+it('[23]20191207', () => {
     const Lunar = new BasicLunar('2019', '12', '07');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丙子  令月十一月', '申']);
@@ -617,13 +705,17 @@ it('[22]20191207', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('丙子');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('戊寅');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('十一月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('十二');
 });
 
-it('[23]20190112', () => {
+it('[24]20190112', () => {
     const Lunar = new BasicLunar('2019', '01', '12');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
@@ -644,6 +736,10 @@ it('[23]20190112', () => {
     expect(Lunar.chineseMonth).to.be.deep.equal('乙丑');
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('己酉');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['甲子', '乙丑', '丙寅', '丁卯', '戊辰', '己巳', '庚午', '辛未', '壬申', '癸酉', '甲戌', '乙亥']
+    );
     // 農曆月
     expect(Lunar.lunarMonth).to.be.deep.equal('腊月');
     // 農曆日
