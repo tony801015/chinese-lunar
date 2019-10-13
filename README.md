@@ -3,8 +3,12 @@
 只要輸入年月日，就可以轉換成`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`的資訊
 
 使用範例如下:
+```
+npm i @tony801015/chinese-lunar -S
+```
+
 ```js
-const BasicLunar = require('./BasicLunar');
+const BasicLunar = require('@tony801015/chinese-lunar');
 
 const Lunar = new BasicLunar('2020', '03', '05');
 console.log(Lunar.year, Lunar.month, Lunar.day); // 2020 03 05

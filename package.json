@@ -1,8 +1,8 @@
 {
-  "name": "chinese-lunar",
-  "version": "1.0.0",
+  "name": "@tony801015/chinese-lunar",
+  "version": "0.2.1",
   "description": "",
-  "main": "index.js",
+  "main": "BasicLunar.js",
   "scripts": {
     "start": "node index.js",
     "test": "jest --coverage --watchAll"
