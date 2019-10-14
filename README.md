@@ -2,6 +2,7 @@
 # 命理基本的查詢
 ![npm](https://img.shields.io/npm/v/@tony801015/chinese-lunar)
 ![npm](https://img.shields.io/npm/dm/@tony801015/chinese-lunar)
+![build](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)
 
 近期會頻繁的更新，但整體的架構未來會劃分為三個 `BasicLunar`、`AdvancedLunar`、 `ApplicationLunar` 可以依照你的需求去使用唷。 小提醒：Application包含前面兩者的功能，如果使用Advance就無法使用Application的功能。
 
