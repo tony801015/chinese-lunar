@@ -5,9 +5,29 @@ const {
   decimalCycle,
   solarTerms,
   sixty,
+  dengGui,
+  tengod,
 } = require('./config');
 
 const tools = {
+  /**
+   * @param {string} chinese first word 配
+   * @param {string} chinese first word 命
+   * @returns {string} 十神
+   */
+  findTenGod: (_with, _life) => {
+    return tengod[decimalCycle.indexOf(_with)][decimalCycle.indexOf(_life)];
+  },
+  /**
+   * @param {string} chineseDay first word
+   * @param {string} twentyFourWeather
+   * @returns {string} 登貴
+   */
+  findDengGui: (countryDay, twentyFourWeather) => {
+    const decimalNumber = decimalCycle.indexOf(countryDay);
+    const solarTermsNumber = tools.dengGuiSolarTerms(twentyFourWeather);
+    return dengGui[decimalNumber][solarTermsNumber];
+  },
   /**
    * 此年度所有的月令(柱)
    * @param {string} 丁卯
@@ -123,6 +143,38 @@ const tools = {
       timeArray.push(sixty[i]);
     }
     return timeArray;
+  },
+  /**
+   * 登貴節氣 deng_gui[X][Y]
+   * return Y
+   */
+  dengGuiSolarTerms: weather => {
+    const num = solarTerms.indexOf(weather);
+    if (num === 0 || num === 1) {
+      return 0;
+    } else if (num === 2 || num === 3) {
+      return 1;
+    } else if (num === 4 || num === 5) {
+      return 2;
+    } else if (num === 6 || num === 7) {
+      return 3;
+    } else if (num === 8 || num === 9) {
+      return 4;
+    } else if (num === 10 || num === 11) {
+      return 5;
+    } else if (num === 12 || num === 13) {
+      return 6;
+    } else if (num === 14 || num === 15) {
+      return 7;
+    } else if (num === 16 || num === 17) {
+      return 8;
+    } else if (num === 18 || num === 19) {
+      return 9;
+    } else if (num === 20 || num === 21) {
+      return 10;
+    } else if (num === 22 || num === 23) {
+      return 11;
+    }
   },
 };
 module.exports = tools;
