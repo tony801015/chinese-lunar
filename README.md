@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/%40tony801015%2Fchinese-lunar.svg)](https://badge.fury.io/js/%40tony801015%2Fchinese-lunar)
+![npm](https://img.shields.io/npm/dm/@tony801015/chinese-lunar)
 # 命理基本的查詢
 
 只要輸入年月日，就可以轉換成`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`的資訊
