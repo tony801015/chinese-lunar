@@ -1,12 +1,11 @@
 const GeneralLunar = require('./GeneralLunar');
+const BasicLunar = require('./BasicLunar');
+const AdvancedLunar = require('./AdvancedLunar');
+const ApplicationLunar = require('./ApplicationLunar');
 
-const Lunar = new GeneralLunar('2021', '02', '13');
-
-console.log(Lunar.year, Lunar.month, Lunar.day);
-console.log(`${Lunar.chineseYear}/${Lunar.chineseMonth}/${Lunar.chineseDay}`);
-console.log(`${Lunar.lunarMonth}/${Lunar.lunarDay}`);
-console.log(`${Lunar.solarTerms}`);
-console.log(`${Lunar.week}`);
-console.log(`${Lunar.chineseTime}`);
-console.log(Lunar.chineseTimeTenGod);
-console.log(Lunar.dengGui);
+module.exports = {
+    GeneralLunar,
+    BasicLunar,
+    AdvancedLunar,
+    ApplicationLunar,
+};

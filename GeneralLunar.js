@@ -28,15 +28,16 @@ class GeneralLunar {
         let daydistance = end.diff(start, 'day');
         lunarLeap.forEach((val) => {
             val[1].split('').forEach((monthVal, monthIndex) => {
-            const result = monthVal === '0' ? (daydistance -= 29) : (daydistance -= 30);
-            if (result >= 0) {
-                // console.log(result, min);
-                min = Math.min(result + 1, min);
-            } else if (result < 0) {
-                if (saveMonth === '') {
-                saveMonth = monthIndex;
-                }
-            }
+              const result = monthVal === '0' ? (daydistance -= 29) : (daydistance -= 30);
+              if (result >= 0) {
+                  // console.log(result, min);
+                  min = Math.min(result + 1, min);
+              } 
+              if (result < 0) {
+                  if (saveMonth === '') {
+                    saveMonth = monthIndex;
+                  }
+              }
             });
         });
         return {

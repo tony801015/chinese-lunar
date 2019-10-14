@@ -2,6 +2,37 @@
 const BasicLunar = require('../BasicLunar');
 const expect = require('chai').expect;
 
+it('[0]20190205', () => {
+    const Lunar = new BasicLunar('2019', '02', '05');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
+    // 西元年轉 年柱格式
+    expect(Lunar.getChineseYear()).to.be.deep.equal('己亥');
+    // 星期
+    expect(Lunar.getWeek()).to.be.deep.equal('2');
+    // {title,solarTermsSplit}
+    expect(Lunar.parserFileAndSplitSolarTerm())
+        .to.be.deep.equal(
+            { solarTermsSplit: false, title: '2019年立春时间是 2019年02月04日 11:14:14 农历： 十二月(大)三十' }
+        );
+    // 節氣
+    expect(Lunar.getSolarTerms()).to.be.deep.equal('立春');
+    // 年柱
+    expect(Lunar.chineseYear).to.be.deep.equal('己亥');
+    // 月柱
+    expect(Lunar.chineseMonth).to.be.deep.equal('丙寅');
+    // 日柱
+    expect(Lunar.chineseDay).to.be.deep.equal('癸酉');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
+    );
+    // 農曆月
+    expect(Lunar.lunarMonth).to.be.deep.equal('正月');
+    // 農曆日
+    expect(Lunar.lunarDay).to.be.deep.equal('初一');
+});
+
 it('[1]20190223', () => {
     const Lunar = new BasicLunar('2019', '02', '23');
     // [ '局管丁卯  令月二月', '寅' ]
@@ -744,4 +775,150 @@ it('[24]20190112', () => {
     expect(Lunar.lunarMonth).to.be.deep.equal('腊月');
     // 農曆日
     expect(Lunar.lunarDay).to.be.deep.equal('初七');
+});
+
+it('[25]20200112', () => {
+    const Lunar = new BasicLunar('2020', '01', '20');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁丑  令月腊月', '戌']);
+    // 西元年轉 年柱格式
+    expect(Lunar.getChineseYear()).to.be.deep.equal('庚子');
+    // 星期
+    expect(Lunar.getWeek()).to.be.deep.equal('1');
+    // {title,solarTermsSplit}
+    expect(Lunar.parserFileAndSplitSolarTerm())
+        .to.be.deep.equal(
+            { solarTermsSplit: true, title: '2020年大寒时间是 2020年01月20日 22:54:33 农历： 十二月(大)廿七' }
+        );
+    // 節氣
+    expect(Lunar.getSolarTerms()).to.be.deep.equal('大寒');
+    // 年柱
+    expect(Lunar.chineseYear).to.be.deep.equal('己亥');
+    // 月柱
+    expect(Lunar.chineseMonth).to.be.deep.equal('丁丑');
+    // 日柱
+    expect(Lunar.chineseDay).to.be.deep.equal('壬戌');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥']
+    );
+    // 農曆月
+    expect(Lunar.lunarMonth).to.be.deep.equal('腊月');
+    // 農曆日
+    expect(Lunar.lunarDay).to.be.deep.equal('廿六');
+});
+
+it('[26]20180908', () => {
+    const Lunar = new BasicLunar('2018', '09', '08');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛酉  令月七月', '亥']);
+    // 西元年轉 年柱格式
+    expect(Lunar.getChineseYear()).to.be.deep.equal('戊戌');
+    // 星期
+    expect(Lunar.getWeek()).to.be.deep.equal('6');
+    // {title,solarTermsSplit}
+    expect(Lunar.parserFileAndSplitSolarTerm())
+        .to.be.deep.equal(
+            { solarTermsSplit: true, title: '2018年白露时间是 2018年09月08日 00:29:37 农历： 七月(大)廿九' }
+        );
+    // 節氣
+    expect(Lunar.getSolarTerms()).to.be.deep.equal('白露');
+    // 年柱
+    expect(Lunar.chineseYear).to.be.deep.equal('戊戌');
+    // 月柱
+    expect(Lunar.chineseMonth).to.be.deep.equal('辛酉');
+    // 日柱
+    expect(Lunar.chineseDay).to.be.deep.equal('癸卯');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
+    );
+    // 農曆月
+    expect(Lunar.lunarMonth).to.be.deep.equal('七月');
+    // 農曆日
+    expect(Lunar.lunarDay).to.be.deep.equal('廿九');
+});
+
+it('[27]20181107', () => {
+    const Lunar = new BasicLunar('2018', '11', '07');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸亥  令月九月', '酉']);
+    // 西元年轉 年柱格式
+    expect(Lunar.getChineseYear()).to.be.deep.equal('戊戌');
+    // 星期
+    expect(Lunar.getWeek()).to.be.deep.equal('3');
+    // {title,solarTermsSplit}
+    expect(Lunar.parserFileAndSplitSolarTerm())
+        .to.be.deep.equal(
+            { solarTermsSplit: true, title: '2018年立冬时间是 2018年11月07日 19:31:39 农历： 九月(大)三十' }
+        );
+    // 節氣
+    expect(Lunar.getSolarTerms()).to.be.deep.equal('立冬');
+    // 年柱
+    expect(Lunar.chineseYear).to.be.deep.equal('戊戌');
+    // 月柱
+    expect(Lunar.chineseMonth).to.be.deep.equal('癸亥');
+    // 日柱
+    expect(Lunar.chineseDay).to.be.deep.equal('癸卯');
+    // 時柱
+    expect(Lunar.chineseTime).to.be.deep.equal(
+        ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
+    );
+    // 農曆月
+    expect(Lunar.lunarMonth).to.be.deep.equal('九月');
+    // 農曆日
+    expect(Lunar.lunarDay).to.be.deep.equal('三十');
+});
+
+it('[28]20190120', () => {
+    const Lunar = new BasicLunar('2019', '01', '20');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管乙丑  令月腊月', '未']);
+});
+
+it('[29]20171107', () => {
+    const Lunar = new BasicLunar('2017', '11', '07');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛亥  令月十月', '午']);
+});
+
+it('[30]20180120', () => {
+    const Lunar = new BasicLunar('2018', '01', '20');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸丑  令月undefined', '巳']);
+});
+
+it('[31]20161107', () => {
+    const Lunar = new BasicLunar('2016', '11', '07');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管己亥  令月十月', '卯']);
+});
+
+it('[32]20170521', () => {
+    const Lunar = new BasicLunar('2017', '05', '21');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管乙巳  令月四月', '丑']);
+});
+
+it('[33]20171008', () => {
+    const Lunar = new BasicLunar('2017', '10', '08');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚戌  令月九月', '辰']);
+});
+
+it('[34]20180606', () => {
+    const Lunar = new BasicLunar('2018', '06', '06');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管戊午  令月四月', '子']);
+});
+
+it('[35]20150216', () => {
+    const Lunar = new BasicLunar('2015', '02', '16');
+    expect(Lunar.getChineseMonth()).to.be.deep.equal('戊寅');
+});
+
+it('[36]20151122', () => {
+    const Lunar = new BasicLunar('2015', '11', '22');
+    // [ '局管丁卯  令月二月', '寅' ]
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁亥  令月十月', '亥']);
 });

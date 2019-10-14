@@ -129,8 +129,8 @@ class BasicLunar extends GeneralLunar {
         return '三十';
       default:
         return (
-          '初十廿卅'.split('')[Math.floor(day / 10)] +
-            '一二三四五六七八九十'.split('')[(day - 1) % 10] || day
+          '初十廿'.split('')[Math.floor(day / 10)] +
+            '一二三四五六七八九十'.split('')[(day - 1) % 10]
         );
     }
   }

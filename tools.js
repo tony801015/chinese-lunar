@@ -86,9 +86,8 @@ const tools = {
       return '十月';
     } else if (num === 19 || num === 20) {
       return '十一月';
-    } else if (num === 21 || num === 22) {
-      return '十二月';
-    }
+    } 
+    return '十二月';
   },
   /**
    * 節前節後
@@ -118,9 +117,8 @@ const tools = {
       return '酉';
     } else if (time === '21' || time === '22') {
       return '戌';
-    } else if (time === '23' || time === '00') {
-      return '亥';
-    }
+    } 
+    return '亥';
   },
   findtime: (lunarDayFirstWord) => {
     let result = [];
@@ -132,7 +130,7 @@ const tools = {
       result = tools.findTimeCompute(24, 35);
     } else if (lunarDayFirstWord === '丁' || lunarDayFirstWord === '壬') {
       result = tools.findTimeCompute(36, 47);
-    } else if (lunarDayFirstWord === '戊' || lunarDayFirstWord === '癸') {
+    } else {
       result = tools.findTimeCompute(48, 59);
     }
     return result;
