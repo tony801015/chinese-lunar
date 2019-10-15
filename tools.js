@@ -170,9 +170,8 @@ const tools = {
       return 9;
     } else if (num === 20 || num === 21) {
       return 10;
-    } else if (num === 22 || num === 23) {
-      return 11;
-    }
+    } 
+    return 11;
   },
 };
 module.exports = tools;

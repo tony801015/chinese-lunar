@@ -29,6 +29,7 @@ console.log(`${Lunar.chineseTimeTenGod}`); // ㄗ,印,比,劫,食,傷,才,財,�
 console.log(`${Lunar.dengGui}`); // 申午
 
 // ApplicationLunar
+// To be continued.
 ```
 
 設定檔 `config.js` 裡面有一些整理過的資訊，希望可以幫助到大家對於命理上的研究。歡迎大家找我討論～
