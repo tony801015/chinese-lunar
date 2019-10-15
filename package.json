@@ -8,7 +8,7 @@
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [
-    "lunar"
+    "chinese-lunar","八字四柱","農曆月","農曆日","節氣","星期"
   ],
   "author": "Tony",
   "license": "ISC",
