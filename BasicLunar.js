@@ -3,6 +3,7 @@ const {
   sixty,
   lunarMonthGeneral,
   lunarMonths,
+  animal,
 } = require('./config');
 const {
   solarTermToLunarMonth,
@@ -24,6 +25,7 @@ class BasicLunar extends GeneralLunar {
     this.chineseDay = this.getChineseDay();
     this.chineseTime = this.getChineseTime();
     this.week = this.getWeek();
+    this.animal = this.getAnimal();
   }
 
   /**
@@ -165,6 +167,13 @@ class BasicLunar extends GeneralLunar {
   }
 
   /**
+   * 取得生肖
+   */
+  getAnimal() {
+    return animal[this.year % 12];
+  }
+
+  /**
    * 取得Json格式
    */
   getJson() {
@@ -180,6 +189,7 @@ class BasicLunar extends GeneralLunar {
       chineseDay: this.getChineseDay(),
       chineseTime: this.getChineseTime(),
       week: this.getWeek(),
+      animal: this.getAnimal(),
     };
   }
 }

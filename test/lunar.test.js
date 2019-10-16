@@ -902,6 +902,7 @@ it('[31]20161107', () => {
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管己亥  令月十月', '卯']);
     expect(Lunar.getJson()).to.be.deep.equal(
         {
+            animal: '猴',
             chineseDay: '癸巳',
             chineseMonth: '己亥',
             chineseTime: ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥'],

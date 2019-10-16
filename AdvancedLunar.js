@@ -43,7 +43,8 @@ class AdvancedLunar extends BasicLunar {
             chineseTime: this.getChineseTime(),
             week: this.getWeek(),
             chineseTimeTenGod: this.getChineseTimeTenGod(),
-            dengGui: this.getDengGui()
+            dengGui: this.getDengGui(),
+            animal: this.getAnimal()
         };
     }
 }

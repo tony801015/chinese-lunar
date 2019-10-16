@@ -1,6 +1,6 @@
 {
   "name": "@tony801015/chinese-lunar",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "只要輸入年月日，就可以轉換成年柱,月柱,日柱,時柱,農曆月,農曆日,節氣,星期等資訊",
   "main": "index.js",
   "scripts": {

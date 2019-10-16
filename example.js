@@ -1,6 +1,6 @@
 const { AdvancedLunar } = require('./index');
 
-const Lunar = new AdvancedLunar('2021', '02', '13');
+const Lunar = new AdvancedLunar('2020', '03', '05');
 
 // Json format
 console.log(Lunar.getJson());
@@ -12,6 +12,7 @@ console.log(`${Lunar.lunarMonth}/${Lunar.lunarDay}`);
 console.log(`${Lunar.solarTerms}`);
 console.log(`${Lunar.week}`);
 console.log(`${Lunar.chineseTime}`);
+console.log(`${Lunar.animal}`);
 
 // AdvancedLunar
 console.log(`${Lunar.chineseTimeTenGod}`);
