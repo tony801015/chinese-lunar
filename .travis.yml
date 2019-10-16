@@ -4,9 +4,7 @@ os:
   - windows
 node_js:
   - 12
-  - 11
   - 10
-  - 9
   - 8
 install:
   - npm install

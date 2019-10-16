@@ -955,10 +955,10 @@ it('[36]20151122', () => {
     );
     expect(Lunar.getJson()).to.be.deep.equal(
         {
+            animal: '羊',
             chineseDay: '壬寅',
             chineseMonth: '丁亥',
-            chineseTime: ['庚子', '辛丑', '壬寅',
-                '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
+            chineseTime: ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
             chineseTimeTenGod: ['ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印'],
             chineseYear: '乙未',
             day: '22',
