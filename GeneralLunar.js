@@ -25,10 +25,10 @@ class GeneralLunar {
     let saveMonth = '';
     const start = moment('19560212');
     const end = moment(`${this.year}${this.month}${this.day}`);
-    let daydistance = end.diff(start, 'day');
+    let dayDistance = end.diff(start, 'day');
     lunarLeap.forEach((val) => {
       val[1].split('').forEach((monthVal, monthIndex) => {
-        const result = monthVal === '0' ? (daydistance -= 29) : (daydistance -= 30);
+        const result = monthVal === '0' ? (dayDistance -= 29) : (dayDistance -= 30);
         if (result >= 0) {
           // console.log(result, min);
           min = Math.min(result + 1, min);
@@ -60,8 +60,8 @@ class GeneralLunar {
       solarTermsSplit: false
     };
     let min = 1000;
-    const myobj = JSON.parse(txt);
-    myobj.forEach(val => {
+    const solarTerms = JSON.parse(txt);
+    solarTerms.forEach(val => {
       const dateCh = val.title.split(' ')[1]; // ex:2017年01月24日
       const date = dateCh
         .replace('年', '')

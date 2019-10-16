@@ -2,13 +2,13 @@ const {
   week,
   sixty,
   lunarMonthGeneral,
-  luarnMonths,
+  lunarMonths,
 } = require('./config');
 const {
   solarTermToLunarMonth,
   lunarMonthByYear,
   hourToDuodecimalCycle,
-  findtime,
+  findTime,
 } = require('./tools');
 
 const GeneralLunar = require('./GeneralLunar');
@@ -44,7 +44,7 @@ class BasicLunar extends GeneralLunar {
    * @returns {string} 庚子
    */
   getChineseYearControllerYear() {
-    // getLunarYeaer 年的前後問題 目前修改 -1 是向前找 2020 -> 2019 +1 是向後找 2020 -> 2021
+    // getLunarYear 年的前後問題 目前修改 -1 是向前找 2020 -> 2019 +1 是向後找 2020 -> 2021
     let year;
     if (parseInt(this.month, 10) === 1) {
       year = parseInt(this.year, 10) - 1;
@@ -60,7 +60,7 @@ class BasicLunar extends GeneralLunar {
    */
   getChineseMonth() {
     return lunarMonthByYear(this.chineseYear)[
-      lunarMonthGeneral.indexOf(this.getLunarMonthBysolarTerms())
+      lunarMonthGeneral.indexOf(this.getLunarMonthBySolarTerms())
     ];
   }
 
@@ -101,7 +101,7 @@ class BasicLunar extends GeneralLunar {
    * @param {integer} [solarTerms="雨水"] - solarTerms
    * @returns {string} 正月
    */
-  getLunarMonthBysolarTerms(solarTerms = this.solarTerms) {
+  getLunarMonthBySolarTerms(solarTerms = this.solarTerms) {
     return solarTermToLunarMonth(solarTerms);
   }
 
@@ -111,7 +111,7 @@ class BasicLunar extends GeneralLunar {
    */
   getLunarMonth() {
     const { month } = this.getLunarMonthAndDayNumber;
-    return luarnMonths[month];
+    return lunarMonths[month];
   }
 
   /**
@@ -140,7 +140,7 @@ class BasicLunar extends GeneralLunar {
    * @returns {array} 甲子,乙丑,丙寅,丁卯,戊辰,己巳,庚午,辛未,壬申,癸酉,甲戌,乙亥
    */
   getChineseTime() {
-    return findtime(this.chineseDay.split('')[0]);
+    return findTime(this.chineseDay.split('')[0]);
   }
 
   /**

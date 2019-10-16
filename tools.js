@@ -6,7 +6,7 @@ const {
   solarTerms,
   sixty,
   dengGui,
-  tengod,
+  tenGod,
 } = require('./config');
 
 const tools = {
@@ -16,7 +16,7 @@ const tools = {
    * @returns {string} 十神
    */
   findTenGod: (_with, _life) => {
-    return tengod[decimalCycle.indexOf(_with)][decimalCycle.indexOf(_life)];
+    return tenGod[decimalCycle.indexOf(_with)][decimalCycle.indexOf(_life)];
   },
   /**
    * @param {string} chineseDay first word
@@ -86,7 +86,7 @@ const tools = {
       return '十月';
     } else if (num === 19 || num === 20) {
       return '十一月';
-    } 
+    }
     return '十二月';
   },
   /**
@@ -117,10 +117,10 @@ const tools = {
       return '酉';
     } else if (time === '21' || time === '22') {
       return '戌';
-    } 
+    }
     return '亥';
   },
-  findtime: (lunarDayFirstWord) => {
+  findTime: (lunarDayFirstWord) => {
     let result = [];
     if (lunarDayFirstWord === '甲' || lunarDayFirstWord === '己') {
       result = tools.findTimeCompute(0, 11);
@@ -170,7 +170,7 @@ const tools = {
       return 9;
     } else if (num === 20 || num === 21) {
       return 10;
-    } 
+    }
     return 11;
   },
 };
