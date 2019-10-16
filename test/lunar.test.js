@@ -934,5 +934,7 @@ it('[36]20151122', () => {
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁亥  令月十月', '亥']);
     expect(Lunar.dengGui).to.be.deep.equal('戌申');
-    expect(Lunar.chineseTimeTenGod).to.be.deep.equal(['ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印']);
+    expect(Lunar.chineseTimeTenGod).to.be.deep.equal(
+        ['ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印']
+    );
 });

@@ -9,7 +9,12 @@
     "test-dev": "jest --coverage --watchAll"
   },
   "keywords": [
-    "chinese-lunar","八字四柱","農曆月","農曆日","節氣","星期"
+    "chinese-lunar",
+    "八字四柱",
+    "農曆月",
+    "農曆日",
+    "節氣",
+    "星期"
   ],
   "author": "Tony",
   "license": "ISC",
