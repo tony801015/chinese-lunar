@@ -7,7 +7,7 @@
 
 近期會頻繁的更新，但整體的架構未來會劃分為三個 `BasicLunar`、`AdvancedLunar`、 `ApplicationLunar` 可以依照你的需求去使用唷。 小提醒：Application包含前面兩者的功能，如果使用Advance就無法使用Application的功能。
 
-2019/10/16 提供了`.getJson()`的方法讓大家可以方便取得所以有資訊。
+2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所以有資訊。
 
 使用範例如下:
 ```
