@@ -13,9 +13,12 @@ npm i @tony801015/chinese-lunar -S
 ```
 
 ```js
-const { BasicLunar, AdvancedLunar, ApplicationLunar } = require('@tony801015/chinese-lunar');
+const { AdvancedLunar, AdvancedLunar, ApplicationLunar } = require('@tony801015/chinese-lunar');
 
-const Lunar = new BasicLunar('2021', '02', '13');
+const Lunar = new AdvancedLunar('2021', '02', '13');
+
+// Json format
+console.log(Lunar.getJson());
 
 // BasicLunar
 console.log(Lunar.year, Lunar.month, Lunar.day); // 2020 03 05

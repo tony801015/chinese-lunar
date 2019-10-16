@@ -163,6 +163,25 @@ class BasicLunar extends GeneralLunar {
       beforeLunarResult,
     ];
   }
+
+  /**
+   * 取得Json格式
+   */
+  getJson() {
+    return {
+      year: this.year,
+      month: this.month,
+      day: this.day,
+      solarTerms: this.getSolarTerms(),
+      lunarMonth: this.getLunarMonth(),
+      lunarDay: this.getLunarDay(),
+      chineseYear: this.getChineseYearControllerYear(),
+      chineseMonth: this.getChineseMonth(),
+      chineseDay: this.getChineseDay(),
+      chineseTime: this.getChineseTime(),
+      week: this.getWeek(),
+    };
+  }
 }
 
 module.exports = BasicLunar;
