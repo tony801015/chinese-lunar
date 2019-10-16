@@ -33,10 +33,10 @@ class BasicLunar extends GeneralLunar {
    */
   getChineseYear(year = this.year) {
     const duodecimalCycle = '甲乙丙丁戊己庚辛壬癸'.split('');
-		const decimalCycle = '子丑寅卯辰巳午未申酉戌亥'.split('');
-		const computeYear = year - 4;
-		return (`${duodecimalCycle[computeYear % 10] + decimalCycle[computeYear % 12]}`);
-  } 
+    const decimalCycle = '子丑寅卯辰巳午未申酉戌亥'.split('');
+    const computeYear = year - 4;
+    return (`${duodecimalCycle[computeYear % 10] + decimalCycle[computeYear % 12]}`);
+  }
 
   /**
    * 取得年柱
@@ -51,8 +51,8 @@ class BasicLunar extends GeneralLunar {
     } else {
       year = this.year;
     }
-		return this.getChineseYear(year);
-  } 
+    return this.getChineseYear(year);
+  }
 
   /**
    * 取得月柱
@@ -62,7 +62,7 @@ class BasicLunar extends GeneralLunar {
     return lunarMonthByYear(this.chineseYear)[
       lunarMonthGeneral.indexOf(this.getLunarMonthBysolarTerms())
     ];
-  } 
+  }
 
   /**
    * 取得日柱
@@ -75,8 +75,8 @@ class BasicLunar extends GeneralLunar {
       sixtyNumber %= 60;
     }
     return sixty[sixtyNumber];
-  } 
-  
+  }
+
   /**
    * 取得星期
    * @param {integer} [distanceDay=123456] - distanceDay
@@ -130,7 +130,7 @@ class BasicLunar extends GeneralLunar {
       default:
         return (
           '初十廿'.split('')[Math.floor(day / 10)] +
-            '一二三四五六七八九十'.split('')[(day - 1) % 10]
+          '一二三四五六七八九十'.split('')[(day - 1) % 10]
         );
     }
   }
@@ -162,6 +162,25 @@ class BasicLunar extends GeneralLunar {
       splitWord,
       beforeLunarResult,
     ];
+  }
+
+  /**
+   * 取得Json格式
+   */
+  getJson() {
+    return {
+      year: this.year,
+      month: this.month,
+      day: this.day,
+      solarTerms: this.getSolarTerms(),
+      lunarMonth: this.getLunarMonth(),
+      lunarDay: this.getLunarDay(),
+      chineseYear: this.getChineseYearControllerYear(),
+      chineseMonth: this.getChineseMonth(),
+      chineseDay: this.getChineseDay(),
+      chineseTime: this.getChineseTime(),
+      week: this.getWeek(),
+    };
   }
 }
 

@@ -900,6 +900,21 @@ it('[31]20161107', () => {
     const Lunar = new BasicLunar('2016', '11', '07');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管己亥  令月十月', '卯']);
+    expect(Lunar.getJson()).to.be.deep.equal(
+        {
+            chineseDay: '癸巳',
+            chineseMonth: '己亥',
+            chineseTime: ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥'],
+            chineseYear: '丙申',
+            day: '07',
+            lunarDay: '初八',
+            lunarMonth: '十月',
+            month: '11',
+            solarTerms: '立冬',
+            week: '1',
+            year: '2016'
+        }
+    );
 });
 
 it('[32]20170521', () => {
@@ -934,5 +949,25 @@ it('[36]20151122', () => {
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁亥  令月十月', '亥']);
     expect(Lunar.dengGui).to.be.deep.equal('戌申');
-    expect(Lunar.chineseTimeTenGod).to.be.deep.equal(['ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印']);
+    expect(Lunar.chineseTimeTenGod).to.be.deep.equal(
+        ['ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印']
+    );
+    expect(Lunar.getJson()).to.be.deep.equal(
+        {
+            chineseDay: '壬寅',
+            chineseMonth: '丁亥',
+            chineseTime: ['庚子', '辛丑', '壬寅',
+                '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
+            chineseTimeTenGod: ['ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印'],
+            chineseYear: '乙未',
+            day: '22',
+            dengGui: '戌申',
+            lunarDay: '十一',
+            lunarMonth: '十月',
+            month: '11',
+            solarTerms: '小雪',
+            week: '密',
+            year: '2015'
+        }
+    );
 });

@@ -2,6 +2,9 @@ const { AdvancedLunar } = require('./index');
 
 const Lunar = new AdvancedLunar('2021', '02', '13');
 
+// Json format
+console.log(Lunar.getJson());
+
 // BasicLunar
 console.log(Lunar.year, Lunar.month, Lunar.day);
 console.log(`${Lunar.chineseYear}/${Lunar.chineseMonth}/${Lunar.chineseDay}`);
