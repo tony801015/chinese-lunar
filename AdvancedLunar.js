@@ -10,7 +10,7 @@ class AdvancedLunar extends BasicLunar {
 
     /**
      * 取得時間的十神
-     * @returns {string} [ 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印' ]
+     * @returns {array}} [ 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印' ]
      */
     getChineseTimeTenGod() {
         return this.chineseTime.map(ele => {
@@ -31,20 +31,9 @@ class AdvancedLunar extends BasicLunar {
    */
     getJson() {
         return {
-            year: this.year,
-            month: this.month,
-            day: this.day,
-            solarTerms: this.getSolarTerms(),
-            lunarMonth: this.getLunarMonth(),
-            lunarDay: this.getLunarDay(),
-            chineseYear: this.getChineseYearControllerYear(),
-            chineseMonth: this.getChineseMonth(),
-            chineseDay: this.getChineseDay(),
-            chineseTime: this.getChineseTime(),
-            week: this.getWeek(),
+            ...super.getJson(),
             chineseTimeTenGod: this.getChineseTimeTenGod(),
             dengGui: this.getDengGui(),
-            animal: this.getAnimal()
         };
     }
 }

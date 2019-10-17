@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { BasicLunar, AdvancedLunar } = require('../index');
+const { BasicLunar, AdvancedLunar, ApplicationLunar } = require('../index');
 const expect = require('chai').expect;
 
 it('[0]20190205', () => {
@@ -946,7 +946,7 @@ it('[35]20150216', () => {
 });
 
 it('[36]20151122', () => {
-    const Lunar = new AdvancedLunar('2015', '11', '22');
+    const Lunar = new ApplicationLunar('2015', '11', '22');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁亥  令月十月', '亥']);
     expect(Lunar.dengGui).to.be.deep.equal('戌申');
@@ -971,4 +971,5 @@ it('[36]20151122', () => {
             year: '2015'
         }
     );
+    expect(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])).to.be.deep.equal('比');
 });
