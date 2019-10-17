@@ -11,7 +11,7 @@
 # ChangeLog
 - 2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所有資訊。  
 - 2019/10/17 `0.6.0`版本提供了`生肖`的查詢。
-- 2019/10/17 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需new ApplicationLunar()
+- 2019/10/18 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需new ApplicationLunar()
 
 # 使用範例
 ```
