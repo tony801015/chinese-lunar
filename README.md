@@ -1,7 +1,7 @@
 # 命理基本的查詢
 ![npm](https://img.shields.io/npm/v/@tony801015/chinese-lunar)
 ![npm](https://img.shields.io/npm/dm/@tony801015/chinese-lunar)
-![build](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)
+[![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
 
 只要輸入年月日，就可以轉換成`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`的資訊  
