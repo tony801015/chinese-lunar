@@ -1,6 +1,6 @@
-const { AdvancedLunar } = require('./index');
+const { ApplicationLunar } = require('./index');
 
-const Lunar = new AdvancedLunar('2020', '03', '05');
+const Lunar = new ApplicationLunar('2020', '03', '05');
 
 // Json format
 console.log(Lunar.getJson());
@@ -19,3 +19,4 @@ console.log(`${Lunar.chineseTimeTenGod}`);
 console.log(`${Lunar.dengGui}`);
 
 // ApplicationLunar
+console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0]));

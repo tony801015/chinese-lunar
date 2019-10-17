@@ -11,6 +11,7 @@
 # ChangeLog
 - 2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所有資訊。  
 - 2019/10/17 `0.6.0`版本提供了`生肖`的查詢。
+- 2019/10/17 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需new ApplicationLunar()
 
 # 使用範例
 ```
@@ -20,7 +21,7 @@ npm i @tony801015/chinese-lunar -S
 ```js
 const { AdvancedLunar, AdvancedLunar, ApplicationLunar } = require('@tony801015/chinese-lunar');
 
-const Lunar = new AdvancedLunar('2020', '03', '05');
+const Lunar = new ApplicationLunar('2020', '03', '05');
 
 // Json format
 console.log(Lunar.getJson());
@@ -55,7 +56,7 @@ console.log(`${Lunar.chineseTimeTenGod}`); // 財,才,官,殺,印,ㄗ,劫,比,�
 console.log(`${Lunar.dengGui}`); // 亥丑
 
 // ApplicationLunar
-// To be continued.
+console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])); // 財
 ```
 
 # 分享
