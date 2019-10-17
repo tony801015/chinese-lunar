@@ -1,13 +1,7 @@
-/* eslint-disable no-useless-constructor */
 const AdvancedLunar = require('./AdvancedLunar');
 const lunarTools = require('./tools');
 
 class ApplicationLunar extends AdvancedLunar {
-  constructor(year, month, day) {
-    super(year, month, day);
-  }
-
-
   /**
    * 取得十神
    * @param {string} person first word 
