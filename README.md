@@ -72,5 +72,5 @@ console.log(`${Lunar.dengGui}`); // 亥丑
 - 此年的閏月是幾月 `AdvancedLunar`
 - 此年的農曆中每個月有多少天 `AdvancedLunar`
 - 農曆日期的差距有幾天 `AdvancedLunar`
-- 十神的查詢 `ApplicationLunar`
+- 十神的查詢 `ApplicationLunar` 2019/10/17 完成 `0.6.2`
 - 
