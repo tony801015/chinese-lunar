@@ -963,6 +963,7 @@ it('[36]20151122', () => {
             chineseYear: '乙未',
             day: '22',
             dengGui: '戌申',
+            leapMonth: 0,
             lunarDay: '十一',
             lunarMonth: '十月',
             month: '11',
@@ -972,4 +973,5 @@ it('[36]20151122', () => {
         }
     );
     expect(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])).to.be.deep.equal('比');
+    expect(Lunar.getLeapMonth()).to.be.deep.equal(0);
 });

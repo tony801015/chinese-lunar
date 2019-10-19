@@ -11,7 +11,8 @@
 # ChangeLog
 - 2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所有資訊。  
 - 2019/10/17 `0.6.0`版本提供了`生肖`的查詢。
-- 2019/10/18 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需new ApplicationLunar()
+- 2019/10/18 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需new ApplicationLunar()。
+- 2019/10/19 `0.6.4`版本提供了此年的閏月是哪一個月份的查詢，新增在`AdvancedLunar`。
 
 # 使用範例
 ```
@@ -54,6 +55,7 @@ console.log(`${Lunar.animal}`); // 鼠
 // AdvancedLunar 時間的十神, 登貴
 console.log(`${Lunar.chineseTimeTenGod}`); // 財,才,官,殺,印,ㄗ,劫,比,傷,食,財,才
 console.log(`${Lunar.dengGui}`); // 亥丑
+console.log(Lunar.leapMonth); // 4
 
 // ApplicationLunar
 console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])); // 財
@@ -70,7 +72,7 @@ console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])); // 財
 
 未來會再增加 
 - 星座 `BasicLunar`
-- 此年的閏月是幾月 `AdvancedLunar`
+- 此年的閏月是幾月 `AdvancedLunar` 2019/10/19 完成 `0.6.4`
 - 此年的農曆中每個月有多少天 `AdvancedLunar`
 - 農曆日期的差距有幾天 `AdvancedLunar`
 - 十神的查詢 `ApplicationLunar` 2019/10/17 完成 `0.6.2`

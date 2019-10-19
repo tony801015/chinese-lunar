@@ -1,11 +1,13 @@
 const BasicLunar = require('./BasicLunar');
 const lunarTools = require('./tools');
+const { lunarLeap } = require('./config');
 
 class AdvancedLunar extends BasicLunar {
     constructor(year, month, day) {
         super(year, month, day);
         this.chineseTimeTenGod = this.getChineseTimeTenGod();
         this.dengGui = this.getDengGui();
+        this.leapMonth = this.getLeapMonth();
     }
 
     /**
@@ -27,13 +29,22 @@ class AdvancedLunar extends BasicLunar {
     }
 
     /**
-   * 取得Json格式
-   */
+     * 取得當年潤幾月
+     * @returns {number} LeapMonth, If return 0 is no LeapMonth 
+     */
+    getLeapMonth() {
+        return lunarLeap[this.year - 1956][0];
+    }
+
+    /**
+     * 取得Json格式
+     */
     getJson() {
         return {
             ...super.getJson(),
             chineseTimeTenGod: this.getChineseTimeTenGod(),
             dengGui: this.getDengGui(),
+            leapMonth: this.leapMonth,
         };
     }
 }
