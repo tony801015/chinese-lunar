@@ -43,7 +43,7 @@ class AdvancedLunar extends BasicLunar {
      * @returns {number} LeapMonth, If return 0 is no LeapMonth 
      */
     getLeapMonth() {
-        return lunarLeap[this.year - 1956][0];
+        return lunarLeap[this.year - 1900][0];
     }
 
     /**
