@@ -893,7 +893,7 @@ it('[29]20171107', () => {
 it('[30]20180120', () => {
     const Lunar = new BasicLunar('2018', '01', '20');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸丑  令月undefined', '巳']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸丑  令月腊月', '巳']);
 });
 
 it('[31]20161107', () => {
