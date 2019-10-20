@@ -1,6 +1,6 @@
 const BasicLunar = require('./BasicLunar');
 const lunarTools = require('./tools');
-const { lunarLeap } = require('./config');
+const { lunarLeap, solarTerms } = require('./config');
 
 class AdvancedLunar extends BasicLunar {
     constructor(year, month, day) {
@@ -24,7 +24,17 @@ class AdvancedLunar extends BasicLunar {
      * 取得登貴
      * @returns {string} 申午
      */
-    getDengGui() {
+    getDengGui(solarTermSplit) {
+        if (solarTermSplit) {
+            const solarTermsNumber = lunarTools.dengGuiSolarTerms(this.solarTerms);
+            const solarTermBefore = solarTerms[solarTermsNumber - 1];
+            const solarTermAfter = solarTerms[solarTermsNumber + 1];
+            return [
+                lunarTools.findDengGui(this.chineseDay.split('')[0], solarTermBefore),
+                lunarTools.findDengGui(this.chineseDay.split('')[0], this.solarTerms),
+                lunarTools.findDengGui(this.chineseDay.split('')[0], solarTermAfter),
+            ];
+        }
         return lunarTools.findDengGui(this.chineseDay.split('')[0], this.solarTerms);
     }
 

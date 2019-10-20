@@ -95,27 +95,27 @@ const tools = {
    * @returns {string} 地支
    */
   hourToDuodecimalCycle: time => {
-    if (time === '01' || time === '02') {
+    if (time === '23' || time === '00') {
       return '子';
-    } else if (time === '03' || time === '04') {
+    } else if (time === '01' || time === '02') {
       return '丑';
-    } else if (time === '05' || time === '06') {
+    } else if (time === '03' || time === '04') {
       return '寅';
-    } else if (time === '07' || time === '08') {
+    } else if (time === '05' || time === '06') {
       return '卯';
-    } else if (time === '09' || time === '10') {
+    } else if (time === '07' || time === '08') {
       return '辰';
-    } else if (time === '11' || time === '12') {
+    } else if (time === '09' || time === '10') {
       return '巳';
-    } else if (time === '13' || time === '14') {
+    } else if (time === '11' || time === '12') {
       return '午';
-    } else if (time === '15' || time === '16') {
+    } else if (time === '13' || time === '14') {
       return '未';
-    } else if (time === '17' || time === '18') {
+    } else if (time === '15' || time === '16') {
       return '申';
-    } else if (time === '19' || time === '20') {
+    } else if (time === '17' || time === '18') {
       return '酉';
-    } else if (time === '21' || time === '22') {
+    } else if (time === '19' || time === '20') {
       return '戌';
     }
     return '亥';
@@ -146,8 +146,8 @@ const tools = {
    * 登貴節氣 deng_gui[X][Y]
    * return Y
    */
-  dengGuiSolarTerms: weather => {
-    const num = solarTerms.indexOf(weather);
+  dengGuiSolarTerms: solarTerm => {
+    const num = solarTerms.indexOf(solarTerm);
     if (num === 0 || num === 1) {
       return 0;
     } else if (num === 2 || num === 3) {

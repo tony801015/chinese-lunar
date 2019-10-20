@@ -99,7 +99,7 @@ it('[2]20190226', () => {
 it('[3]20190306', () => {
     const Lunar = new BasicLunar('2019', '03', '06');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁卯  令月正月', '寅']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁卯  令月正月', '卯']);
     // 西元年轉 年柱格式
     expect(Lunar.getChineseYear()).to.be.deep.equal('己亥');
     // 星期
@@ -412,7 +412,7 @@ it('[12]20190629', () => {
 it('[13]20190707', () => {
     const Lunar = new BasicLunar('2019', '07', '07');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛未  令月六月', '申']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛未  令月六月', '酉']);
     // 西元年轉 年柱格式
     expect(Lunar.getChineseYear()).to.be.deep.equal('己亥');
     // 星期
@@ -723,7 +723,7 @@ it('[22]20191129', () => {
 it('[23]20191207', () => {
     const Lunar = new BasicLunar('2019', '12', '07');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丙子  令月十一月', '申']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丙子  令月十一月', '酉']);
     // 西元年轉 年柱格式
     expect(Lunar.getChineseYear()).to.be.deep.equal('己亥');
     // 星期
@@ -786,7 +786,7 @@ it('[24]20190112', () => {
 it('[25]20200112', () => {
     const Lunar = new BasicLunar('2020', '01', '20');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁丑  令月腊月', '戌']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁丑  令月腊月', '亥']);
     // 西元年轉 年柱格式
     expect(Lunar.getChineseYear()).to.be.deep.equal('庚子');
     // 星期
@@ -817,7 +817,7 @@ it('[25]20200112', () => {
 it('[26]20180908', () => {
     const Lunar = new AdvancedLunar('2018', '09', '08');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛酉  令月七月', '亥']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛酉  令月七月', '子']);
     // 西元年轉 年柱格式
     expect(Lunar.getChineseYear()).to.be.deep.equal('戊戌');
     // 星期
@@ -849,7 +849,7 @@ it('[26]20180908', () => {
 it('[27]20181107', () => {
     const Lunar = new AdvancedLunar('2018', '11', '07');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸亥  令月九月', '酉']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸亥  令月九月', '戌']);
     // 西元年轉 年柱格式
     expect(Lunar.getChineseYear()).to.be.deep.equal('戊戌');
     // 星期
@@ -881,25 +881,25 @@ it('[27]20181107', () => {
 it('[28]20190120', () => {
     const Lunar = new BasicLunar('2019', '01', '20');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管乙丑  令月腊月', '未']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管乙丑  令月腊月', '申']);
 });
 
 it('[29]20171107', () => {
     const Lunar = new BasicLunar('2017', '11', '07');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛亥  令月十月', '午']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛亥  令月十月', '未']);
 });
 
 it('[30]20180120', () => {
     const Lunar = new BasicLunar('2018', '01', '20');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸丑  令月腊月', '巳']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸丑  令月腊月', '午']);
 });
 
 it('[31]20161107', () => {
     const Lunar = new BasicLunar('2016', '11', '07');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管己亥  令月十月', '卯']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管己亥  令月十月', '辰']);
     expect(Lunar.getJson()).to.be.deep.equal(
         {
             animal: '猴',
@@ -921,21 +921,21 @@ it('[31]20161107', () => {
 it('[32]20170521', () => {
     const Lunar = new AdvancedLunar('2017', '05', '21');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管乙巳  令月四月', '丑']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管乙巳  令月四月', '寅']);
     expect(Lunar.dengGui).to.be.deep.equal('午子');
 });
 
 it('[33]20171008', () => {
     const Lunar = new AdvancedLunar('2017', '10', '08');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚戌  令月九月', '辰']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚戌  令月九月', '巳']);
     expect(Lunar.dengGui).to.be.deep.equal('寅申');
 });
 
 it('[34]20180606', () => {
     const Lunar = new AdvancedLunar('2018', '06', '06');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管戊午  令月四月', '子']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管戊午  令月四月', '丑']);
     expect(Lunar.dengGui).to.be.deep.equal('未亥');
 });
 
@@ -948,7 +948,7 @@ it('[35]20150216', () => {
 it('[36]20151122', () => {
     const Lunar = new ApplicationLunar('2015', '11', '22');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁亥  令月十月', '亥']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁亥  令月十月', '子']);
     expect(Lunar.dengGui).to.be.deep.equal('戌申');
     expect(Lunar.chineseTimeTenGod).to.be.deep.equal(
         ['ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印']
@@ -974,4 +974,32 @@ it('[36]20151122', () => {
     );
     expect(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])).to.be.deep.equal('比');
     expect(Lunar.getLeapMonth()).to.be.deep.equal(0);
+    expect(Lunar.getDengGui(true)).to.be.deep.equal(['卯丑', '戌申', '寅子']);
+});
+
+it('[37]No input year', () => {
+    try {
+        const Lunar = new ApplicationLunar('', '11', '22');
+        expect(Lunar.getDengGui(true)).to.be.deep.equal(['卯丑', '戌申', '寅子']);
+    } catch (error) {
+        expect(error.message).to.be.deep.equal('請輸入「年」參數');
+    }
+});
+
+it('[38]No input month', () => {
+    try {
+        const Lunar = new ApplicationLunar('2017', '', '22');
+        expect(Lunar.getDengGui(true)).to.be.deep.equal(['卯丑', '戌申', '寅子']);
+    } catch (error) {
+        expect(error.message).to.be.deep.equal('請輸入「月」參數');
+    }
+});
+
+it('[39]No input day', () => {
+    try {
+        const Lunar = new ApplicationLunar('2017', '11', '');
+        expect(Lunar.getDengGui(true)).to.be.deep.equal(['卯丑', '戌申', '寅子']);
+    } catch (error) {
+        expect(error.message).to.be.deep.equal('請輸入「日」參數');
+    }
 });
