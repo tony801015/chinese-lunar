@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const moment = require('moment');
 const { lunarLeap } = require('./config');
 const path = require('path');
@@ -5,6 +6,9 @@ const fs = require('fs');
 
 class GeneralLunar {
   constructor(year, month, day) {
+    if (year === '' || year === undefined) {
+      throw Error('請輸入參數');
+    }
     this.year = year;
     this.month = month;
     this.day = day;
@@ -35,6 +39,9 @@ class GeneralLunar {
         }
         if (result < 0) {
           if (saveMonth === '') {
+            if (monthIndex === 12) {
+              monthIndex -= 1;
+            }
             saveMonth = monthIndex;
           }
         }
