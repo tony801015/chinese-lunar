@@ -168,9 +168,47 @@ class BasicLunar extends GeneralLunar {
 
   /**
    * 取得生肖
+   * @returns {string} animal 牛
    */
   getAnimal() {
     return animal[this.year % 12];
+  }
+
+  /**
+   * 星座
+   * @returns {string} Constellations 天秤
+   */
+  getConstellations() {
+    switch (this.month) {
+      case '01':
+        break;
+      case '02':
+        break;
+      case '03':
+        break;
+      case '04':
+        break;
+      case '05':
+        break;
+      case '06':
+        break;
+      case '07':
+        break;
+      case '08':
+        break;
+      case '09':
+        break;
+      case '10':
+        break;
+      case '11':
+        break;
+      case '12':
+        break;
+
+      default:
+        break;
+    }
+    return '';
   }
 
   /**
