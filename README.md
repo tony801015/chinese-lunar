@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
 
-只要輸入年月日，就可以轉換成`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`的資訊  
+只要輸入年月日，就可以轉換成`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`的資訊  
 
 近期會頻繁的更新，但整體的架構未來會劃分為三個 `BasicLunar`、`AdvancedLunar`、 `ApplicationLunar` 可以依照你的需求去使用唷。 小提醒：Application包含前面兩者的功能，如果使用Advance就無法使用Application的功能。
 
@@ -14,6 +14,7 @@
 - 2019/10/18 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需new ApplicationLunar()。
 - 2019/10/19 `0.6.4`版本提供了此年的閏月是哪一個月份的查詢，新增在`AdvancedLunar`。
 - 2019/10/21 `0.7.0`版本提供了更長的範圍，從1956到1900補齊囉～接下來應該就會再往2050年之後邁進
+- 2019/10/23 `0.8.0`版本提供了`星座`
 
 # 使用範例
 ```
@@ -27,7 +28,7 @@ const Lunar = new ApplicationLunar('2020', '03', '05');
 
 // Json format
 console.log(Lunar.getJson());
-// { 
+// {
 //   year: '2020',
 //   month: '03',
 //   day: '05',
@@ -37,11 +38,25 @@ console.log(Lunar.getJson());
 //   chineseYear: '庚子',
 //   chineseMonth: '己卯',
 //   chineseDay: '丁未',
-//   chineseTime: [ '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥' ],
+//   chineseTime: [
+//     '庚子', '辛丑',
+//     '壬寅', '癸卯',
+//     '甲辰', '乙巳',
+//     '丙午', '丁未',
+//     '戊申', '己酉',
+//     '庚戌', '辛亥'
+//   ],
 //   week: '4',
-//   chineseTimeTenGod: [ '財', '才', '官', '殺', '印', 'ㄗ', '劫', '比', '傷', '食', '財', '才' ],
+//   animal: '鼠',
+//   constellation: '雙魚座',
+//   chineseTimeTenGod: [
+//     '財', '才', '官',
+//     '殺', '印', 'ㄗ',
+//     '劫', '比', '傷',
+//     '食', '財', '才'
+//   ],
 //   dengGui: '亥丑',
-//   animal: '鼠' 
+//   leapMonth: 4
 // }
 
 // BasicLunar
@@ -72,9 +87,9 @@ console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])); // 財
 # 未來規劃
 
 未來會再增加 
-- 星座 `BasicLunar`
+- 星座 `BasicLunar` 2019/10/23 完成 `0.8.0`
 - 此年的閏月是幾月 `AdvancedLunar` 2019/10/19 完成 `0.6.4`
 - 此年的農曆中每個月有多少天 `AdvancedLunar`
 - 農曆日期的差距有幾天 `AdvancedLunar`
 - 十神的查詢 `ApplicationLunar` 2019/10/17 完成 `0.6.2`
-- 
+- 提供時間的輸入，在八字裡面其實就是把`年`,`月`,`日`,`時`轉成`年柱`,`月柱`,`日柱`,`時柱`，因此要把八字更精準推出命理相關的數據，需要`時`的協助囉。

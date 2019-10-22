@@ -12,6 +12,7 @@ const {
   findTime,
 } = require('./tools');
 
+const moment = require('moment');
 const GeneralLunar = require('./GeneralLunar');
 
 class BasicLunar extends GeneralLunar {
@@ -26,6 +27,7 @@ class BasicLunar extends GeneralLunar {
     this.chineseTime = this.getChineseTime();
     this.week = this.getWeek();
     this.animal = this.getAnimal();
+    this.constellation = this.getConstellation();
   }
 
   /**
@@ -178,37 +180,65 @@ class BasicLunar extends GeneralLunar {
    * 星座
    * @returns {string} Constellations 天秤
    */
-  getConstellations() {
-    switch (this.month) {
-      case '01':
-        break;
-      case '02':
-        break;
-      case '03':
-        break;
-      case '04':
-        break;
-      case '05':
-        break;
-      case '06':
-        break;
-      case '07':
-        break;
-      case '08':
-        break;
-      case '09':
-        break;
-      case '10':
-        break;
-      case '11':
-        break;
-      case '12':
-        break;
-
-      default:
-        break;
+  getConstellation() {
+    const now = `${this.year}-${this.month}-${this.day}`;
+    if (moment(now).isBetween(`${parseInt(this.year, 10) - 1}-12-23`, `${this.year}-01-21`)
+      || moment(now).isSame(`${this.year}-12-23`)
+      || moment(now).isSame(`${this.year}-01-21`)
+    ) {
+      return '魔羯座';
+    } else if (moment(now).isBetween(`${this.year}-01-22`, `${this.year}-02-19`)
+      || moment(now).isSame(`${this.year}-01-22`)
+      || moment(now).isSame(`${this.year}-02-19`)
+    ) {
+      return '水瓶座';
+    } else if (moment(now).isBetween(`${this.year}-02-20`, `${this.year}-03-20`)
+      || moment(now).isSame(`${this.year}-02-20`)
+      || moment(now).isSame(`${this.year}-03-20`)
+    ) {
+      return '雙魚座';
+    } else if (moment(now).isBetween(`${this.year}-03-21`, `${this.year}-04-20`)
+      || moment(now).isSame(`${this.year}-03-21`)
+      || moment(now).isSame(`${this.year}-04-20`)
+    ) {
+      return '牡羊座';
+    } else if (moment(now).isBetween(`${this.year}-04-21`, `${this.year}-05-20`)
+      || moment(now).isSame(`${this.year}-04-21`)
+      || moment(now).isSame(`${this.year}-05-20`)
+    ) {
+      return '金牛座';
+    } else if (moment(now).isBetween(`${this.year}-05-21`, `${this.year}-06-20`)
+      || moment(now).isSame(`${this.year}-05-21`)
+      || moment(now).isSame(`${this.year}-06-20`)
+    ) {
+      return '雙子座';
+    } else if (moment(now).isBetween(`${this.year}-06-21`, `${this.year}-07-22`)
+      || moment(now).isSame(`${this.year}-06-21`)
+      || moment(now).isSame(`${this.year}-07-22`)
+    ) {
+      return '巨蠍座';
+    } else if (moment(now).isBetween(`${this.year}-07-23`, `${this.year}-08-22`)
+      || moment(now).isSame(`${this.year}-07-23`)
+      || moment(now).isSame(`${this.year}-08-22`)
+    ) {
+      return '獅子座';
+    } else if (moment(now).isBetween(`${this.year}-08-23`, `${this.year}-09-22`)
+      || moment(now).isSame(`${this.year}-08-23`)
+      || moment(now).isSame(`${this.year}-09-22`)
+    ) {
+      return '處女座';
+    } else if (moment(now).isBetween(`${this.year}-09-23`, `${this.year}-10-22`)
+      || moment(now).isSame(`${this.year}-09-23`)
+      || moment(now).isSame(`${this.year}-10-22`)
+    ) {
+      return '天秤座';
+    } else if (moment(now).isBetween(`${this.year}-10-23`, `${this.year}-11-22`)
+      || moment(now).isSame(`${this.year}-10-23`)
+      || moment(now).isSame(`${this.year}-11-22`)
+    ) {
+      return '天蠍座';
     }
-    return '';
+    return '射手座';
   }
 
   /**
@@ -228,6 +258,7 @@ class BasicLunar extends GeneralLunar {
       chineseTime: this.getChineseTime(),
       week: this.getWeek(),
       animal: this.getAnimal(),
+      constellation: this.getConstellation(),
     };
   }
 }
