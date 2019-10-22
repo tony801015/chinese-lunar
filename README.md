@@ -1,30 +1,37 @@
 # 命理基本的查詢
+
 ![npm](https://img.shields.io/npm/v/@tony801015/chinese-lunar)
 ![npm](https://img.shields.io/npm/dm/@tony801015/chinese-lunar)
 [![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
 
-只要輸入年月日，就可以轉換成`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`的資訊  
+只要輸入年月日，就可以轉換成`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`的資訊
 
-近期會頻繁的更新，但整體的架構未來會劃分為三個 `BasicLunar`、`AdvancedLunar`、 `ApplicationLunar` 可以依照你的需求去使用唷。 小提醒：Application包含前面兩者的功能，如果使用Advance就無法使用Application的功能。
+近期會頻繁的更新，但整體的架構未來會劃分為三個 `BasicLunar`、`AdvancedLunar`、 `ApplicationLunar` 可以依照你的需求去使用唷。 小提醒：Application 包含前面兩者的功能，如果使用 Advance 就無法使用 Application 的功能。
 
 # ChangeLog
-- 2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所有資訊。  
+
+- 2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所有資訊。
 - 2019/10/17 `0.6.0`版本提供了`生肖`的查詢。
-- 2019/10/18 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需new ApplicationLunar()。
+- 2019/10/18 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需 new ApplicationLunar()。
 - 2019/10/19 `0.6.4`版本提供了此年的閏月是哪一個月份的查詢，新增在`AdvancedLunar`。
-- 2019/10/21 `0.7.0`版本提供了更長的範圍，從1956到1900補齊囉～接下來應該就會再往2050年之後邁進
-- 2019/10/23 `0.8.0`版本提供了`星座`
+- 2019/10/21 `0.7.0`版本提供了更長的範圍，從 1956 到 1900 補齊囉～接下來應該就會再往 2050 年之後邁進
+- 2019/10/23 `0.8.0`版本提供了`星座`，可以從`.getJson()`的`constellation`property 拿到
 
 # 使用範例
+
 ```
 npm i @tony801015/chinese-lunar -S
 ```
 
 ```js
-const { AdvancedLunar, AdvancedLunar, ApplicationLunar } = require('@tony801015/chinese-lunar');
+const {
+  AdvancedLunar,
+  AdvancedLunar,
+  ApplicationLunar
+} = require("@tony801015/chinese-lunar");
 
-const Lunar = new ApplicationLunar('2020', '03', '05');
+const Lunar = new ApplicationLunar("2020", "03", "05");
 
 // Json format
 console.log(Lunar.getJson());
@@ -74,7 +81,7 @@ console.log(`${Lunar.dengGui}`); // 亥丑
 console.log(Lunar.leapMonth); // 4
 
 // ApplicationLunar
-console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])); // 財
+console.log(Lunar.getTenGod("壬", Lunar.chineseDay.split("")[0])); // 財
 ```
 
 # 分享
@@ -82,11 +89,13 @@ console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0])); // 財
 設定檔 `config.js` 裡面有一些整理過的資訊，希望可以幫助到大家對於命理上的研究。歡迎大家找我討論～
 
 # 注意事項
-- 目前計算的時間以1900年開始至2050年，1900以前的都無法計算。
+
+- 目前計算的時間以 1900 年開始至 2050 年，1900 以前的都無法計算。
 
 # 未來規劃
 
-未來會再增加 
+未來會再增加
+
 - 星座 `BasicLunar` 2019/10/23 完成 `0.8.0`
 - 此年的閏月是幾月 `AdvancedLunar` 2019/10/19 完成 `0.6.4`
 - 此年的農曆中每個月有多少天 `AdvancedLunar`
