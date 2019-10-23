@@ -3,6 +3,7 @@ const BasicLunar = require('./BasicLunar');
 const AdvancedLunar = require('./AdvancedLunar');
 const ApplicationLunar = require('./ApplicationLunar');
 const config = require('./config');
+const tools = require('./tools');
 
 module.exports = {
     GeneralLunar,
@@ -10,4 +11,5 @@ module.exports = {
     AdvancedLunar,
     ApplicationLunar,
     config,
+    tools,
 };
