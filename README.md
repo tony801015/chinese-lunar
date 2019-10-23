@@ -9,6 +9,8 @@
 
 近期會頻繁的更新，但整體的架構未來會劃分為三個 `BasicLunar`、`AdvancedLunar`、 `ApplicationLunar` 可以依照你的需求去使用唷。 小提醒：Application 包含前面兩者的功能，如果使用 Advance 就無法使用 Application 的功能。
 
+預計今年底能推出正式的一版`1.0.0`，接下來把每一個功能的說明詳細做個介紹以及範例使用。
+
 # ChangeLog
 
 - 2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所有資訊。
@@ -18,6 +20,7 @@
 - 2019/10/21 `0.7.0`版本提供了更長的範圍，從 1956 到 1900 補齊囉～接下來應該就會再往 2050 年之後邁進
 - 2019/10/23 `0.8.0`版本提供了`星座`，可以從`.getJson()`的`constellation`property 拿到
 - 2019/10/23 `0.8.1`版本修復十神，十神需提供使用者出生的年柱做搭配
+- 2019/10/24 `0.9.0`版本提供了此年的農曆中每個月有多少天`getLunarPerMonthHasDays`，這裡可以搭配`0.6.4`版推出的閏月是哪一天來應用。
 
 # 使用範例
 
@@ -75,6 +78,7 @@ console.log(`${Lunar.animal}`); // 鼠
 console.log(`${Lunar.chineseTimeTenGod}`); // 財,才,官,殺,印,ㄗ,劫,比,傷,食,財,才
 console.log(`${Lunar.dengGui}`); // 亥丑
 console.log(Lunar.leapMonth); // 4
+console.log(Lunar.lunarPerMonthHasDays); // [ '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30' ]
 
 // ApplicationLunar
 console.log(Lunar.getTenGod("壬", Lunar.chineseDay.split("")[0])); // 財
@@ -94,7 +98,7 @@ console.log(Lunar.getTenGod("壬", Lunar.chineseDay.split("")[0])); // 財
 
 - 星座 `BasicLunar` 2019/10/23 完成 `0.8.0`
 - 此年的閏月是幾月 `AdvancedLunar` 2019/10/19 完成 `0.6.4`
-- 此年的農曆中每個月有多少天 `AdvancedLunar`
+- 此年的農曆中每個月有多少天 `AdvancedLunar` 2019/10/24 完成 `0.9.0`
 - 農曆日期的差距有幾天 `AdvancedLunar`
 - 十神的查詢 `ApplicationLunar` 2019/10/17 完成 `0.6.2`
 - 提供時間的輸入，在八字裡面其實就是把`年`,`月`,`日`,`時`轉成`年柱`,`月柱`,`日柱`,`時柱`，因此要把八字更精準推出命理相關的數據，需要`時`的協助囉。

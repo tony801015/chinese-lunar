@@ -968,6 +968,7 @@ it('[36]20151122', () => {
             leapMonth: 0,
             lunarDay: '十一',
             lunarMonth: '十月',
+            lunarPerMonthHasDays: ['29', '30', '29', '29', '30', '29', '30', '30', '30', '29', '30', '29'],
             month: '11',
             solarTerms: '小雪',
             week: '密',

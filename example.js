@@ -18,6 +18,7 @@ console.log(`${Lunar.animal}`);
 console.log(`${Lunar.chineseTimeTenGod}`);
 console.log(`${Lunar.dengGui}`);
 console.log(Lunar.leapMonth);
+console.log(Lunar.lunarPerMonthHasDays);
 
 // ApplicationLunar
 console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0]));
