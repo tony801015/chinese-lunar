@@ -32,6 +32,13 @@ const {
   ApplicationLunar
 } = require("@tony801015/chinese-lunar");
 
+/**
+ * Input
+ * @params {string} 年
+ * @params {string} 月
+ * @params {string} 日
+ * @parasm {string} 使用者出生的年柱(天干地支)
+ */
 const Lunar = new ApplicationLunar("2020", "03", "05", "壬子");
 
 // Json format
