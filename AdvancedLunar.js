@@ -3,8 +3,9 @@ const lunarTools = require('./tools');
 const { lunarLeap, solarTerms } = require('./config');
 
 class AdvancedLunar extends BasicLunar {
-    constructor(year, month, day) {
+    constructor(year, month, day, yearOld) {
         super(year, month, day);
+        this.yearOld = yearOld;
         this.chineseTimeTenGod = this.getChineseTimeTenGod();
         this.dengGui = this.getDengGui();
         this.leapMonth = this.getLeapMonth();
@@ -15,8 +16,11 @@ class AdvancedLunar extends BasicLunar {
      * @returns {array}} [ 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印' ]
      */
     getChineseTimeTenGod() {
+        if (this.yearOld === '' || this.yearOld === undefined) {
+            return '請輸入年齡';
+        }
         return this.chineseTime.map(ele => {
-            return lunarTools.findTenGod(this.chineseDay.split('')[0], ele.split('')[0]);
+            return lunarTools.findTenGod(this.yearOld.split('')[0], ele.split('')[0]);
         });
     }
 

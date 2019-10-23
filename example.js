@@ -1,6 +1,6 @@
 const { ApplicationLunar } = require('./index');
 
-const Lunar = new ApplicationLunar('2020', '03', '05');
+const Lunar = new ApplicationLunar('2020', '03', '05', '壬子');
 
 // Json format
 console.log(Lunar.getJson());

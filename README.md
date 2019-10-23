@@ -17,6 +17,7 @@
 - 2019/10/19 `0.6.4`版本提供了此年的閏月是哪一個月份的查詢，新增在`AdvancedLunar`。
 - 2019/10/21 `0.7.0`版本提供了更長的範圍，從 1956 到 1900 補齊囉～接下來應該就會再往 2050 年之後邁進
 - 2019/10/23 `0.8.0`版本提供了`星座`，可以從`.getJson()`的`constellation`property 拿到
+- 2019/10/23 `0.8.1`版本修復十神，十神需提供使用者出生的年柱做搭配
 
 # 使用範例
 
@@ -31,7 +32,7 @@ const {
   ApplicationLunar
 } = require("@tony801015/chinese-lunar");
 
-const Lunar = new ApplicationLunar("2020", "03", "05");
+const Lunar = new ApplicationLunar("2020", "03", "05", "壬子");
 
 // Json format
 console.log(Lunar.getJson());
@@ -45,23 +46,11 @@ console.log(Lunar.getJson());
 //   chineseYear: '庚子',
 //   chineseMonth: '己卯',
 //   chineseDay: '丁未',
-//   chineseTime: [
-//     '庚子', '辛丑',
-//     '壬寅', '癸卯',
-//     '甲辰', '乙巳',
-//     '丙午', '丁未',
-//     '戊申', '己酉',
-//     '庚戌', '辛亥'
-//   ],
+//   chineseTime: [ '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥' ],
 //   week: '4',
 //   animal: '鼠',
 //   constellation: '雙魚座',
-//   chineseTimeTenGod: [
-//     '財', '才', '官',
-//     '殺', '印', 'ㄗ',
-//     '劫', '比', '傷',
-//     '食', '財', '才'
-//   ],
+//   chineseTimeTenGod: [ 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印' ],
 //   dengGui: '亥丑',
 //   leapMonth: 4
 // }
