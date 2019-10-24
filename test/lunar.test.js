@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { BasicLunar, AdvancedLunar, ApplicationLunar } = require('../index');
+const { BasicLunar, AdvancedLunar, ApplicationLunar, lunar } = require('../index');
 const expect = require('chai').expect;
 
 it('[0]20190205', () => {
@@ -968,7 +968,9 @@ it('[36]20151122', () => {
             leapMonth: 0,
             lunarDay: '十一',
             lunarMonth: '十月',
-            lunarPerMonthHasDays: ['29', '30', '29', '29', '30', '29', '30', '30', '30', '29', '30', '29'],
+            lunarPerMonthHasDays: [
+                '29', '30', '29', '29', '30', '29', '30', '30', '30', '29', '30', '29'
+            ],
             month: '11',
             solarTerms: '小雪',
             week: '密',
@@ -1005,4 +1007,38 @@ it('[39]No input day', () => {
     } catch (error) {
         expect(error.message).to.be.deep.equal('請輸入「日」參數');
     }
+});
+
+it('[40]Don\'t new instance', () => {
+    expect(lunar('2017', '11', '10', '壬子')).to.be.deep.equal(
+        {
+            animal: '雞',
+            chineseAge: '壬子',
+            chineseDay: '辛丑',
+            chineseMonth: '辛亥',
+            chineseTime: ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'],
+            chineseTimeTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
+            chineseYear: '丁酉',
+            constellation: '天蠍座',
+            day: '10',
+            dengGui: '子申',
+            distanceDay: 38665,
+            getLunarMonthAndDayNumber: {
+                day: 22, month: 9
+            },
+            leapMonth: 6,
+            lunarDay: '廿二',
+            lunarMonth: '十月',
+            lunarPerMonthHasDays:
+                ['29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'],
+            month: '11',
+            parserFile: {
+                solarTermsSplit: false,
+                title: '2017年立冬时间是 2017年11月07日 13:37:45 农历： 九月(大)二十'
+            },
+            solarTerms: '立冬',
+            week: '5',
+            year: '2017'
+        }
+    );
 });

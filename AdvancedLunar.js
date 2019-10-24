@@ -54,7 +54,8 @@ class AdvancedLunar extends BasicLunar {
 
     /**
      * 取得每月農曆有幾天
-     * @returns {array} getLunarPerMonthHasDays ['29', '30', '29', '29', '30', '29', '30', '30', '30', '29', '30', '29']
+     * @returns {array} getLunarPerMonthHasDays 
+     * ['29', '30', '29', '29', '30', '29', '30', '30', '30', '29', '30', '29']
      */
     getLunarPerMonthHasDays() {
         return lunarLeap[this.year - 1900][1]

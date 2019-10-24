@@ -12,4 +12,7 @@ module.exports = {
     ApplicationLunar,
     config,
     tools,
+    lunar: (year, month, day, age) => {
+        return new ApplicationLunar(year, month, day, age);
+    }
 };

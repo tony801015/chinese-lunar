@@ -1,4 +1,4 @@
-const { ApplicationLunar } = require('./index');
+const { ApplicationLunar, lunar } = require('./index');
 
 const Lunar = new ApplicationLunar('2020', '03', '05', '壬子');
 
@@ -22,3 +22,6 @@ console.log(Lunar.lunarPerMonthHasDays);
 
 // ApplicationLunar
 console.log(Lunar.getTenGod('壬', Lunar.chineseDay.split('')[0]));
+
+// Don't new object, but it use ApplicationLunar.
+console.log(lunar('2020', '03', '05'));

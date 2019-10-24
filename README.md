@@ -99,6 +99,6 @@ console.log(Lunar.getTenGod("壬", Lunar.chineseDay.split("")[0])); // 財
 - 星座 `BasicLunar` 2019/10/23 完成 `0.8.0`
 - 此年的閏月是幾月 `AdvancedLunar` 2019/10/19 完成 `0.6.4`
 - 此年的農曆中每個月有多少天 `AdvancedLunar` 2019/10/24 完成 `0.9.0`
-- 農曆日期的差距有幾天 `AdvancedLunar`
+- 農曆日期的差距有幾天 `ApplicationLunar`
 - 十神的查詢 `ApplicationLunar` 2019/10/17 完成 `0.6.2`
 - 提供時間的輸入，在八字裡面其實就是把`年`,`月`,`日`,`時`轉成`年柱`,`月柱`,`日柱`,`時柱`，因此要把八字更精準推出命理相關的數據，需要`時`的協助囉。
