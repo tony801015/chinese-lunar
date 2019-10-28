@@ -90,7 +90,7 @@ const tools = {
     return '十二月';
   },
   /**
-   * 節前節後
+   * 節前節後
    * @param {string} hour
    * @returns {string} 地支
    */

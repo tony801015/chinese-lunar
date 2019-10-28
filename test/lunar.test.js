@@ -786,7 +786,7 @@ it('[24]20190112', () => {
 it('[25]20200112', () => {
     const Lunar = new BasicLunar('2020', '01', '20');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁丑  令月腊月', '亥']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
     // 西元年轉 年柱格式
     expect(Lunar.getChineseYear()).to.be.deep.equal('庚子');
     // 星期
@@ -794,7 +794,7 @@ it('[25]20200112', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: true, title: '2020年大寒时间是 2020年01月20日 22:54:33 农历： 十二月(大)廿七' }
+            { solarTermsSplit: false, title: '2020年大寒时间是 2020年01月20日 22:54:33 农历： 十二月(大)廿七' }
         );
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('大寒');
@@ -881,7 +881,7 @@ it('[27]20181107', () => {
 it('[28]20190120', () => {
     const Lunar = new BasicLunar('2019', '01', '20');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管乙丑  令月腊月', '申']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
 });
 
 it('[29]20171107', () => {
@@ -893,7 +893,7 @@ it('[29]20171107', () => {
 it('[30]20180120', () => {
     const Lunar = new BasicLunar('2018', '01', '20');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管癸丑  令月腊月', '午']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
 });
 
 it('[31]20161107', () => {
@@ -922,7 +922,7 @@ it('[31]20161107', () => {
 it('[32]20170521', () => {
     const Lunar = new AdvancedLunar('2017', '05', '21');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管乙巳  令月四月', '寅']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
     expect(Lunar.dengGui).to.be.deep.equal('午子');
 });
 
@@ -942,6 +942,7 @@ it('[34]20180606', () => {
 
 it('[35]20150216', () => {
     const Lunar = new AdvancedLunar('2015', '02', '16');
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
     expect(Lunar.getChineseMonth()).to.be.deep.equal('戊寅');
     expect(Lunar.dengGui).to.be.deep.equal('午申');
 });
@@ -949,7 +950,7 @@ it('[35]20150216', () => {
 it('[36]20151122', () => {
     const Lunar = new ApplicationLunar('2015', '11', '22', '甲子');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丁亥  令月十月', '子']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
     expect(Lunar.dengGui).to.be.deep.equal('戌申');
     expect(Lunar.chineseTimeTenGod).to.be.deep.equal(
         ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官']
@@ -1041,4 +1042,24 @@ it('[40]Don\'t new instance', () => {
             year: '2017'
         }
     );
+});
+
+it('[41]20190506', () => {
+    const Lunar = new AdvancedLunar('2019', '05', '06');
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管己巳  令月四月', '寅']);
+});
+
+it('[42]20190204', () => {
+    const Lunar = new AdvancedLunar('2019', '02', '04');
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管丙寅  令月腊月', '午']);
+});
+
+it('[43]20200404', () => {
+    const Lunar = new AdvancedLunar('2020', '04', '04');
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚辰  令月三月', '申']);
+});
+
+it('[44]20210404', () => {
+    const Lunar = new AdvancedLunar('2021', '04', '04');
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管壬辰  令月二月', '亥']);
 });

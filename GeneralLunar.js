@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 const moment = require('moment');
-const { lunarLeap } = require('./config');
+const { lunarLeap, solarTermGeneral } = require('./config');
 const path = require('path');
 const fs = require('fs');
 
@@ -88,7 +88,9 @@ class GeneralLunar {
       if (dayDistance >= 0 && dayDistance < min) {
         min = Math.min(dayDistance, min);
         result.title = `${val.title}`;
-        if (dayDistance === 0) {
+
+        if (dayDistance === 0
+          && solarTermGeneral.indexOf(val.title.substring(5, 7)) >= 0) {
           result.solarTermsSplit = true; //分節前節後
         }
       }
