@@ -28,6 +28,7 @@ class BasicLunar extends GeneralLunar {
     this.week = this.getWeek();
     this.animal = this.getAnimal();
     this.constellation = this.getConstellation();
+    this.chineseFeb = this.checkChineseFeb();
   }
 
   /**
@@ -177,6 +178,14 @@ class BasicLunar extends GeneralLunar {
   }
 
   /**
+   * 檢查國曆年二月是否
+   * @returns {string} animal 牛
+   */
+  checkChineseFeb() {
+    return this.year % 4 === 0;
+  }
+
+  /**
    * 星座
    * @returns {string} Constellations 天秤
    */
@@ -259,6 +268,7 @@ class BasicLunar extends GeneralLunar {
       week: this.getWeek(),
       animal: this.getAnimal(),
       constellation: this.getConstellation(),
+      chineseFeb: this.checkChineseFeb(),
     };
   }
 }

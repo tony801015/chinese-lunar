@@ -904,6 +904,7 @@ it('[31]20161107', () => {
         {
             animal: '猴',
             chineseDay: '癸巳',
+            chineseFeb: true,
             chineseMonth: '己亥',
             chineseTime: ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥'],
             chineseYear: '丙申',
@@ -959,6 +960,7 @@ it('[36]20151122', () => {
         {
             animal: '羊',
             chineseDay: '壬寅',
+            chineseFeb: false,
             chineseMonth: '丁亥',
             chineseTime: ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
             chineseTimeTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
@@ -1016,6 +1018,7 @@ it('[40]Don\'t new instance', () => {
             animal: '雞',
             chineseAge: '壬子',
             chineseDay: '辛丑',
+            chineseFeb: false,
             chineseMonth: '辛亥',
             chineseTime: ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'],
             chineseTimeTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
@@ -1024,14 +1027,13 @@ it('[40]Don\'t new instance', () => {
             day: '10',
             dengGui: '子申',
             distanceDay: 38665,
-            getLunarMonthAndDayNumber: {
-                day: 22, month: 9
-            },
+            getLunarMonthAndDayNumber: { day: 22, month: 9 },
             leapMonth: 6,
             lunarDay: '廿二',
             lunarMonth: '十月',
-            lunarPerMonthHasDays:
-                ['29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'],
+            lunarPerMonthHasDays: [
+                '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
+            ],
             month: '11',
             parserFile: {
                 solarTermsSplit: false,
