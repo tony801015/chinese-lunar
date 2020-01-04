@@ -1058,7 +1058,7 @@ it('[42]20190204', () => {
 
 it('[43]20200404', () => {
     const Lunar = new AdvancedLunar('2020', '04', '04');
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚辰  令月二月', '申']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚辰  令月三月', '申']);
 });
 
 it('[44]20210404', () => {

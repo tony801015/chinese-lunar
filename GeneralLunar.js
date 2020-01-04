@@ -50,7 +50,7 @@ class GeneralLunar {
               monthIndex -= 1;
             }
             saveMonth = monthIndex;
-            if (val[0] !== 0) {
+            if (val[0] !== 0 && saveMonth > val[0]) {
               saveMonth--;
             }
           }
