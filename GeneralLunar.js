@@ -37,6 +37,7 @@ class GeneralLunar {
     const end = moment(`${this.year}${this.month}${this.day}`);
     let dayDistance = end.diff(start, 'day');
     lunarLeap.forEach((val) => {
+      // console.log(index, val[1], val[0]);
       val[1].split('').forEach((monthVal, monthIndex) => {
         const result = monthVal === '0' ? (dayDistance -= 29) : (dayDistance -= 30);
         if (result >= 0) {
@@ -49,6 +50,9 @@ class GeneralLunar {
               monthIndex -= 1;
             }
             saveMonth = monthIndex;
+            if (val[0] !== 0) {
+              saveMonth--;
+            }
           }
         }
       });

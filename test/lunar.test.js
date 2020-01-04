@@ -887,7 +887,7 @@ it('[28]20190120', () => {
 it('[29]20171107', () => {
     const Lunar = new BasicLunar('2017', '11', '07');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛亥  令月十月', '未']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管辛亥  令月九月', '未']);
 });
 
 it('[30]20180120', () => {
@@ -930,7 +930,7 @@ it('[32]20170521', () => {
 it('[33]20171008', () => {
     const Lunar = new AdvancedLunar('2017', '10', '08');
     // [ '局管丁卯  令月二月', '寅' ]
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚戌  令月九月', '巳']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚戌  令月八月', '巳']);
     expect(Lunar.dengGui).to.be.deep.equal('寅申');
 });
 
@@ -1027,10 +1027,10 @@ it('[40]Don\'t new instance', () => {
             day: '10',
             dengGui: '子申',
             distanceDay: 38665,
-            getLunarMonthAndDayNumber: { day: 22, month: 9 },
+            getLunarMonthAndDayNumber: { day: 22, month: 8 },
             leapMonth: 6,
             lunarDay: '廿二',
-            lunarMonth: '十月',
+            lunarMonth: '九月',
             lunarPerMonthHasDays: [
                 '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
             ],
@@ -1058,7 +1058,7 @@ it('[42]20190204', () => {
 
 it('[43]20200404', () => {
     const Lunar = new AdvancedLunar('2020', '04', '04');
-    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚辰  令月三月', '申']);
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚辰  令月二月', '申']);
 });
 
 it('[44]20210404', () => {
