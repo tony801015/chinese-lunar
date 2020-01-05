@@ -1,6 +1,11 @@
 /* eslint-disable no-param-reassign */
 const moment = require('moment');
-const { lunarLeap, solarTermGeneral } = require('./config');
+const {
+  lunarLeap,
+  solarTermGeneral,
+  lunarMonths,
+  lunarMonthLeap,
+} = require('./config');
 const path = require('path');
 const fs = require('fs');
 
@@ -46,19 +51,23 @@ class GeneralLunar {
         }
         if (result < 0) {
           if (saveMonth === '') {
-            if (monthIndex === 12) {
+            if (monthIndex === 13) {
               monthIndex -= 1;
             }
             saveMonth = monthIndex;
             if (val[0] !== 0 && saveMonth > val[0]) {
               saveMonth--;
             }
+            // console.log(parseInt(val[0], 10) + 1, monthIndex);
+            if (parseInt(val[0], 10) === monthIndex && monthIndex !== 0) {
+              saveMonth = lunarMonthLeap[monthIndex - 1];
+            }
           }
         }
       });
     });
     return {
-      month: saveMonth,
+      month: (typeof saveMonth === 'number') ? lunarMonths[saveMonth] : saveMonth,
       day: min
     };
   }

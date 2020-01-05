@@ -2,7 +2,6 @@ const {
   week,
   sixty,
   lunarMonthGeneral,
-  lunarMonths,
   animal,
 } = require('./config');
 const {
@@ -116,7 +115,7 @@ class BasicLunar extends GeneralLunar {
    */
   getLunarMonth() {
     const { month } = this.getLunarMonthAndDayNumber;
-    return lunarMonths[month];
+    return month;
   }
 
   /**

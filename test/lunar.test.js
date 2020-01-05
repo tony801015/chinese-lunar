@@ -1027,7 +1027,7 @@ it('[40]Don\'t new instance', () => {
             day: '10',
             dengGui: '子申',
             distanceDay: 38665,
-            getLunarMonthAndDayNumber: { day: 22, month: 8 },
+            getLunarMonthAndDayNumber: { day: 22, month: '九月' },
             leapMonth: 6,
             lunarDay: '廿二',
             lunarMonth: '九月',
