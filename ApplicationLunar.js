@@ -4,7 +4,12 @@ const lunarTools = require('./tools');
 
 class ApplicationLunar extends AdvancedLunar {
   constructor(year, month, day, chineseAge) {
-    super(year, month, day, chineseAge);
+    const {
+      year: handlerYear,
+      month: handlerMonth,
+      day: handlerDay,
+    } = lunarTools.setDate(year, month, day);
+    super(handlerYear, handlerMonth, handlerDay, chineseAge);
   }
   /**
    * 取得十神
