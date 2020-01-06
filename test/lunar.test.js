@@ -1061,6 +1061,12 @@ it('[43]20200404', () => {
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管庚辰  令月三月', '申']);
 });
 
+
+it('[45]20200524', () => {
+    const Lunar = new AdvancedLunar('2020', '05', '24');
+    expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
+});
+
 it('[44]20210404', () => {
     const Lunar = new AdvancedLunar('2021', '04', '04');
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管壬辰  令月二月', '亥']);
