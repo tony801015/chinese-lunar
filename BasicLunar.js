@@ -190,59 +190,60 @@ class BasicLunar extends GeneralLunar {
    */
   getConstellation() {
     const now = `${this.year}-${this.month}-${this.day}`;
-    if (moment(now).isBetween(`${parseInt(this.year, 10) - 1}-12-23`, `${this.year}-01-21`)
-      || moment(now).isSame(`${this.year}-12-23`)
-      || moment(now).isSame(`${this.year}-01-21`)
+    const momentNow = moment(now, 'YYYY-MM-DD');
+    if (momentNow.isBetween(`${parseInt(this.year, 10) - 1}1223`, `${this.year}0121`)
+      || momentNow.isSame(`${this.year}-12-23`)
+      || momentNow.isSame(`${this.year}-01-21`)
     ) {
       return '魔羯座';
-    } else if (moment(now).isBetween(`${this.year}-01-22`, `${this.year}-02-19`)
-      || moment(now).isSame(`${this.year}-01-22`)
-      || moment(now).isSame(`${this.year}-02-19`)
+    } else if (momentNow.isBetween(`${this.year}-01-22`, `${this.year}-02-19`)
+      || momentNow.isSame(`${this.year}-01-22`)
+      || momentNow.isSame(`${this.year}-02-19`)
     ) {
       return '水瓶座';
-    } else if (moment(now).isBetween(`${this.year}-02-20`, `${this.year}-03-20`)
-      || moment(now).isSame(`${this.year}-02-20`)
-      || moment(now).isSame(`${this.year}-03-20`)
+    } else if (momentNow.isBetween(`${this.year}-02-20`, `${this.year}-03-20`)
+      || momentNow.isSame(`${this.year}-02-20`)
+      || momentNow.isSame(`${this.year}-03-20`)
     ) {
       return '雙魚座';
-    } else if (moment(now).isBetween(`${this.year}-03-21`, `${this.year}-04-20`)
-      || moment(now).isSame(`${this.year}-03-21`)
-      || moment(now).isSame(`${this.year}-04-20`)
+    } else if (momentNow.isBetween(`${this.year}-03-21`, `${this.year}-04-20`)
+      || momentNow.isSame(`${this.year}-03-21`)
+      || momentNow.isSame(`${this.year}-04-20`)
     ) {
       return '牡羊座';
-    } else if (moment(now).isBetween(`${this.year}-04-21`, `${this.year}-05-20`)
-      || moment(now).isSame(`${this.year}-04-21`)
-      || moment(now).isSame(`${this.year}-05-20`)
+    } else if (momentNow.isBetween(`${this.year}-04-21`, `${this.year}-05-20`)
+      || momentNow.isSame(`${this.year}-04-21`)
+      || momentNow.isSame(`${this.year}-05-20`)
     ) {
       return '金牛座';
-    } else if (moment(now).isBetween(`${this.year}-05-21`, `${this.year}-06-20`)
-      || moment(now).isSame(`${this.year}-05-21`)
-      || moment(now).isSame(`${this.year}-06-20`)
+    } else if (momentNow.isBetween(`${this.year}-05-21`, `${this.year}-06-20`)
+      || momentNow.isSame(`${this.year}-05-21`)
+      || momentNow.isSame(`${this.year}-06-20`)
     ) {
       return '雙子座';
-    } else if (moment(now).isBetween(`${this.year}-06-21`, `${this.year}-07-22`)
-      || moment(now).isSame(`${this.year}-06-21`)
-      || moment(now).isSame(`${this.year}-07-22`)
+    } else if (momentNow.isBetween(`${this.year}-06-21`, `${this.year}-07-22`)
+      || momentNow.isSame(`${this.year}-06-21`)
+      || momentNow.isSame(`${this.year}-07-22`)
     ) {
       return '巨蠍座';
-    } else if (moment(now).isBetween(`${this.year}-07-23`, `${this.year}-08-22`)
-      || moment(now).isSame(`${this.year}-07-23`)
-      || moment(now).isSame(`${this.year}-08-22`)
+    } else if (momentNow.isBetween(`${this.year}-07-23`, `${this.year}-08-22`)
+      || momentNow.isSame(`${this.year}-07-23`)
+      || momentNow.isSame(`${this.year}-08-22`)
     ) {
       return '獅子座';
-    } else if (moment(now).isBetween(`${this.year}-08-23`, `${this.year}-09-22`)
-      || moment(now).isSame(`${this.year}-08-23`)
-      || moment(now).isSame(`${this.year}-09-22`)
+    } else if (momentNow.isBetween(`${this.year}-08-23`, `${this.year}-09-22`)
+      || momentNow.isSame(`${this.year}-08-23`)
+      || momentNow.isSame(`${this.year}-09-22`)
     ) {
       return '處女座';
-    } else if (moment(now).isBetween(`${this.year}-09-23`, `${this.year}-10-22`)
-      || moment(now).isSame(`${this.year}-09-23`)
-      || moment(now).isSame(`${this.year}-10-22`)
+    } else if (momentNow.isBetween(`${this.year}-09-23`, `${this.year}-10-22`)
+      || momentNow.isSame(`${this.year}-09-23`)
+      || momentNow.isSame(`${this.year}-10-22`)
     ) {
       return '天秤座';
-    } else if (moment(now).isBetween(`${this.year}-10-23`, `${this.year}-11-22`)
-      || moment(now).isSame(`${this.year}-10-23`)
-      || moment(now).isSame(`${this.year}-11-22`)
+    } else if (momentNow.isBetween(`${this.year}-10-23`, `${this.year}-11-22`)
+      || momentNow.isSame(`${this.year}-10-23`)
+      || momentNow.isSame(`${this.year}-11-22`)
     ) {
       return '天蠍座';
     }
