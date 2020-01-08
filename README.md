@@ -9,7 +9,7 @@
 
 # ChangeLog
 
-- 2020/01/08 `0.12.0-beta`版本提供更簡單的使用方式。
+- 2020/01/08 `0.12.1-beta`版本提供更簡單的使用方式，預設當前時間，也可以自訂自己使用的時間。
 - 2019/10/24 `0.9.0`版本提供了此年的農曆中每個月有多少天`getLunarPerMonthHasDays`，這裡可以搭配`0.6.4`版推出的閏月是哪一天來應用。
 - 2019/10/23 `0.8.0`版本提供了`星座`，可以從`.getJson()`的`constellation`property 拿到
 - 2019/10/23 `0.8.1`版本修復十神，十神需提供使用者出生的年柱做搭配
@@ -28,21 +28,21 @@ npm i @tony801015/chinese-lunar -S
 ### 預設使用方式
 
 ```js
-const lunar = require("./index");
+const lunar = require("@tony801015/chinese-lunar");
 console.log(lunar().getJson()); // 抓取目前的年,月,日
 ```
 
 ### 自定日期
 
 ```js
-const lunar = require("./index");
+const lunar = require("@tony801015/chinese-lunar");
 console.log(lunar("2020", "01", "09").getJson()); // 抓取目前的年,月,日
 ```
 
 ### 取得參數
 
 ```js
-const lunar = require("./index");
+const lunar = require("@tony801015/chinese-lunar");
 const data = lunar("2020", "01", "09").getJson();
 console.log(data.year); // 2020
 console.log(data.week); // 4
