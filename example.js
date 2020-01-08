@@ -26,6 +26,11 @@
 // // Don't new object, but it use ApplicationLunar.
 // console.log(lunar('2020', '03', '05'));
 
+// const lunar = require('./main');
+
+// console.log(lunar('2020', '01', '09', '甲子').getJson());
+
+
 const lunar = require('./main');
 
-console.log(lunar().setChineseAge('甲子').getJson());
+console.log(lunar().lunar.getJson());
