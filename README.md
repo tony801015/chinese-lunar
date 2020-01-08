@@ -5,22 +5,19 @@
 [![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
 
-只要輸入年月日，就可以轉換成`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`的資訊
-
-近期會頻繁的更新，但整體的架構未來會劃分為三個 `BasicLunar`、`AdvancedLunar`、 `ApplicationLunar` 可以依照你的需求去使用唷。 小提醒：Application 包含前面兩者的功能，如果使用 Advance 就無法使用 Application 的功能。
-
-預計今年底能推出正式的一版`1.0.0`，接下來把每一個功能的說明詳細做個介紹以及範例使用。
+目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`的資訊
 
 # ChangeLog
 
-- 2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所有資訊。
-- 2019/10/17 `0.6.0`版本提供了`生肖`的查詢。
-- 2019/10/18 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需 new ApplicationLunar()。
-- 2019/10/19 `0.6.4`版本提供了此年的閏月是哪一個月份的查詢，新增在`AdvancedLunar`。
-- 2019/10/21 `0.7.0`版本提供了更長的範圍，從 1956 到 1900 補齊囉～接下來應該就會再往 2050 年之後邁進
+- 2020/01/08 `0.12.0-beta`版本提供更簡單的使用方式。
+- 2019/10/24 `0.9.0`版本提供了此年的農曆中每個月有多少天`getLunarPerMonthHasDays`，這裡可以搭配`0.6.4`版推出的閏月是哪一天來應用。
 - 2019/10/23 `0.8.0`版本提供了`星座`，可以從`.getJson()`的`constellation`property 拿到
 - 2019/10/23 `0.8.1`版本修復十神，十神需提供使用者出生的年柱做搭配
-- 2019/10/24 `0.9.0`版本提供了此年的農曆中每個月有多少天`getLunarPerMonthHasDays`，這裡可以搭配`0.6.4`版推出的閏月是哪一天來應用。
+- 2019/10/21 `0.7.0`版本提供了更長的範圍，從 1956 到 1900 補齊囉～接下來應該就會再往 2050 年之後邁進
+- 2019/10/19 `0.6.4`版本提供了此年的閏月是哪一個月份的查詢，新增在`AdvancedLunar`。
+- 2019/10/18 `0.6.2`版本提供了十神的查詢，新增在`ApplicationLunar`，所以要使用此方法需 new ApplicationLunar()。
+- 2019/10/17 `0.6.0`版本提供了`生肖`的查詢。
+- 2019/10/16 `0.5.0`版本提供了`.getJson()`的方法讓大家可以方便取得所有資訊。
 
 # 使用範例
 
@@ -28,61 +25,49 @@
 npm i @tony801015/chinese-lunar -S
 ```
 
+### 預設使用方式
+
 ```js
-const {
-  AdvancedLunar,
-  AdvancedLunar,
-  ApplicationLunar
-} = require("@tony801015/chinese-lunar");
-
-/**
- * Input
- * @params {string} 年
- * @params {string} 月
- * @params {string} 日
- * @parasm {string} 使用者出生的年柱(天干地支)
- */
-const Lunar = new ApplicationLunar("2020", "03", "05", "壬子");
-
-// Json format
-console.log(Lunar.getJson());
-// {
-//   year: '2020',
-//   month: '03',
-//   day: '05',
-//   solarTerms: '驚蟄',
-//   lunarMonth: '二月',
-//   lunarDay: '十二',
-//   chineseYear: '庚子',
-//   chineseMonth: '己卯',
-//   chineseDay: '丁未',
-//   chineseTime: [ '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥' ],
-//   week: '4',
-//   animal: '鼠',
-//   constellation: '雙魚座',
-//   chineseTimeTenGod: [ 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印' ],
-//   dengGui: '亥丑',
-//   leapMonth: 4
-// }
-
-// BasicLunar
-console.log(Lunar.year, Lunar.month, Lunar.day); // 2020 03 05
-console.log(`${Lunar.chineseYear}/${Lunar.chineseMonth}/${Lunar.chineseDay}`); // 庚子/己卯/丁未
-console.log(`${Lunar.lunarMonth}/${Lunar.lunarDay}`); // 二月/十二
-console.log(`${Lunar.solarTerms}`); // 驚蟄
-console.log(`${Lunar.week}`); // 4
-console.log(`${Lunar.chineseTime}`); // 庚子,辛丑,壬寅,癸卯,甲辰,乙巳,丙午,丁未,戊申,己酉,庚戌,辛亥
-console.log(`${Lunar.animal}`); // 鼠
-
-// AdvancedLunar 時間的十神, 登貴
-console.log(`${Lunar.chineseTimeTenGod}`); // 財,才,官,殺,印,ㄗ,劫,比,傷,食,財,才
-console.log(`${Lunar.dengGui}`); // 亥丑
-console.log(Lunar.leapMonth); // 4
-console.log(Lunar.lunarPerMonthHasDays); // [ '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30' ]
-
-// ApplicationLunar
-console.log(Lunar.getTenGod("壬", Lunar.chineseDay.split("")[0])); // 財
+const lunar = require("./index");
+console.log(lunar().getJson()); // 抓取目前的年,月,日
 ```
+
+### 自定日期
+
+```js
+const lunar = require("./index");
+console.log(lunar("2020", "01", "09").getJson()); // 抓取目前的年,月,日
+```
+
+### 取得參數
+
+```js
+const lunar = require("./index");
+const data = lunar("2020", "01", "09").getJson();
+console.log(data.year); // 2020
+console.log(data.week); // 4
+console.log(data.constellation); // 魔羯座
+```
+
+|      中文名稱      |       參數名稱       |  型態   |                                                範例                                                |
+| :----------------: | :------------------: | :-----: | :------------------------------------------------------------------------------------------------: |
+|         年         |         year         | string  |                                                2020                                                |
+|         月         |        month         | string  |                                                 01                                                 |
+|         日         |         day          | string  |                                                 09                                                 |
+|        節氣        |      solarTerms      | string  |                                                小寒                                                |
+|       農曆月       |      lunarMonth      | string  |                                                腊月                                                |
+|       農曆日       |       lunarDay       | string  |                                                十五                                                |
+|     天干地支年     |     chineseYear      | string  |                                                己亥                                                |
+|     天干地支月     |     chineseMonth     | string  |                                                丁丑                                                |
+|     天干地支日     |      chineseDay      | string  |                                                辛亥                                                |
+|     天干地支時     |     chineseTime      |  array  | [ '戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥' ] |
+|        星期        |         week         | string  |                                                 4                                                  |
+|        生肖        |        animal        | string  |                                                 鼠                                                 |
+|        星座        |    constellation     | string  |                                               魔羯座                                               |
+| 國曆二月是否有閏月 |      chineseFeb      | boolean |                                                true                                                |
+|        登貴        |       dengGui        | string  |                                                戌午                                                |
+|     農曆潤幾月     |      leapMonth       | number  |                                                 4                                                  |
+|   農曆每月有幾日   | lunarPerMonthHasDays |  array  |                [ '29','30','30','30','29','30','29','29','30','29','30','29','30' ]                |
 
 # 分享
 

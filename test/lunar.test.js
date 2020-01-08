@@ -1,5 +1,8 @@
 /* eslint-disable no-undef */
-const { BasicLunar, AdvancedLunar, ApplicationLunar, lunar } = require('../index');
+const lunar = require('../index');
+
+process.env.DEV = 'true';
+const { BasicLunar, AdvancedLunar, ApplicationLunar } = lunar();
 const expect = require('chai').expect;
 
 it('[0]20190205', () => {
@@ -988,7 +991,7 @@ it('[36]20151122', () => {
 it('[37]No input year', () => {
     try {
         const Lunar = new ApplicationLunar('', '11', '22');
-        expect(Lunar.getDengGui(true)).to.be.deep.equal(['卯丑', '戌申', '寅子']);
+        expect(Lunar.getDengGui(true)).to.not.equal(null);
     } catch (error) {
         expect(error.message).to.be.deep.equal('請輸入「年」參數');
     }
@@ -997,7 +1000,7 @@ it('[37]No input year', () => {
 it('[38]No input month', () => {
     try {
         const Lunar = new ApplicationLunar('2017', '', '22');
-        expect(Lunar.getDengGui(true)).to.be.deep.equal(['卯丑', '戌申', '寅子']);
+        expect(Lunar.getDengGui(true)).to.not.equal(null);
     } catch (error) {
         expect(error.message).to.be.deep.equal('請輸入「月」參數');
     }
@@ -1006,28 +1009,26 @@ it('[38]No input month', () => {
 it('[39]No input day', () => {
     try {
         const Lunar = new ApplicationLunar('2017', '11', '');
-        expect(Lunar.getDengGui(true)).to.be.deep.equal(['卯丑', '戌申', '寅子']);
+        expect(Lunar.getDengGui(true)).to.not.equal(null);
     } catch (error) {
         expect(error.message).to.be.deep.equal('請輸入「日」參數');
     }
 });
 
 it('[40]Don\'t new instance', () => {
-    expect(lunar('2017', '11', '10', '壬子')).to.be.deep.equal(
+    expect(lunar('2017', '11', '10', '壬子').Lunar.getJson()).to.be.deep.equal(
         {
             animal: '雞',
-            chineseAge: '壬子',
             chineseDay: '辛丑',
             chineseFeb: false,
             chineseMonth: '辛亥',
-            chineseTime: ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'],
+            chineseTime: [
+                '戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'],
             chineseTimeTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
             chineseYear: '丁酉',
             constellation: '天蠍座',
             day: '10',
             dengGui: '子申',
-            distanceDay: 38665,
-            getLunarMonthAndDayNumber: { day: 22, month: '九月' },
             leapMonth: 6,
             lunarDay: '廿二',
             lunarMonth: '九月',
@@ -1035,10 +1036,6 @@ it('[40]Don\'t new instance', () => {
                 '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
             ],
             month: '11',
-            parserFile: {
-                solarTermsSplit: false,
-                title: '2017年立冬时间是 2017年11月07日 13:37:45 农历： 九月(大)二十'
-            },
             solarTerms: '立冬',
             week: '5',
             year: '2017'
@@ -1070,4 +1067,61 @@ it('[45]20200524', () => {
 it('[44]20210404', () => {
     const Lunar = new AdvancedLunar('2021', '04', '04');
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管壬辰  令月二月', '亥']);
+});
+
+it('[45]20200404', () => {
+    expect(lunar('2020', '04', '04').Lunar.setChineseAge('甲子').getJson()).to.be.deep.equal(
+        {
+            animal: '鼠',
+            chineseDay: '丁丑',
+            chineseFeb: true,
+            chineseMonth: '庚辰',
+            chineseTime: [
+                '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
+            chineseTimeTenGod: ['殺',
+                '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
+            chineseYear: '庚子',
+            constellation: '牡羊座',
+            day: '04',
+            dengGui: '戌子',
+            leapMonth: 4,
+            lunarDay: '十二',
+            lunarMonth: '三月',
+            lunarPerMonthHasDays: [
+                '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
+            ],
+            month: '04',
+            solarTerms: '清明',
+            week: '6',
+            year: '2020'
+        });
+});
+
+it('[45]20200404', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2020', '04', '04').setChineseAge('甲子').getJson()).to.be.deep.equal(
+        {
+            animal: '鼠',
+            chineseDay: '丁丑',
+            chineseFeb: true,
+            chineseMonth: '庚辰',
+            chineseTime: [
+                '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
+            chineseTimeTenGod: ['殺',
+                '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
+            chineseYear: '庚子',
+            constellation: '牡羊座',
+            day: '04',
+            dengGui: '戌子',
+            leapMonth: 4,
+            lunarDay: '十二',
+            lunarMonth: '三月',
+            lunarPerMonthHasDays: [
+                '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
+            ],
+            month: '04',
+            solarTerms: '清明',
+            week: '6',
+            year: '2020'
+        });
 });
