@@ -57,10 +57,10 @@ console.log(data.constellation); // 魔羯座
 |        節氣        |      solarTerms      | string  |                                                小寒                                                |
 |       農曆月       |      lunarMonth      | string  |                                                腊月                                                |
 |       農曆日       |       lunarDay       | string  |                                                十五                                                |
-|     天干地支年     |     chineseYear      | string  |                                                己亥                                                |
-|     天干地支月     |     chineseMonth     | string  |                                                丁丑                                                |
-|     天干地支日     |      chineseDay      | string  |                                                辛亥                                                |
-|     天干地支時     |     chineseTime      |  array  | [ '戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥' ] |
+|     年柱     |     chineseYear      | string  |                                                己亥                                                |
+|     月柱     |     chineseMonth     | string  |                                                丁丑                                                |
+|     日柱    |      chineseDay      | string  |                                                辛亥                                                |
+|     時柱     |     chineseTime      |  array  | [ '戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥' ] |
 |        星期        |         week         | string  |                                                 4                                                  |
 |        生肖        |        animal        | string  |                                                 鼠                                                 |
 |        星座        |    constellation     | string  |                                               魔羯座                                               |

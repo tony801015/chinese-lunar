@@ -12,11 +12,6 @@ class AdvancedLunar extends BasicLunar {
         this.lunarPerMonthHasDays = this.getLunarPerMonthHasDays();
     }
 
-    setChineseAge(age) {
-        this.chineseAge = age;
-        this.chineseTimeTenGod = this.getChineseTimeTenGod(age);
-        return this;
-    }
     /**
      * 取得時間的十神
      * @returns {array}} [ 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印' ]

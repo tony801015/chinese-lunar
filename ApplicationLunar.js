@@ -11,6 +11,13 @@ class ApplicationLunar extends AdvancedLunar {
     } = lunarTools.setDate(year, month, day);
     super(handlerYear, handlerMonth, handlerDay, chineseAge);
   }
+
+  setChineseAge(age) {
+    this.chineseAge = age;
+    this.chineseTimeTenGod = this.getChineseTimeTenGod(age);
+    return this;
+  }
+
   /**
    * 取得十神
    * @param {string} chineseAge first word 
