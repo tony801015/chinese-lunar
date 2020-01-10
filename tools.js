@@ -10,6 +10,24 @@ const {
 } = require('./config');
 
 const tools = {
+  setDate: (year, month, day) => {
+    if (year === '' || year === undefined) {
+      year = new Date().getFullYear().toString();
+    }
+    if (month === '' || month === undefined) {
+      month = new Date().getMonth() + 1 < 9
+        ? (`0${(new Date().getMonth() + 1).toString()}`)
+        : (new Date().getMonth() + 1).toString();
+    }
+    if (day === '' || day === undefined) {
+      day = new Date().getDate() < 9
+        ? (`0${(new Date().getDate()).toString()}`)
+        : (new Date().getDate()).toString();
+    }
+    return {
+      year, month, day
+    };
+  },
   /**
    * @param {string} chinese first word 配
    * @param {string} chinese first word 命

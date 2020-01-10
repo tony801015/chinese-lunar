@@ -11,15 +11,6 @@ const fs = require('fs');
 
 class GeneralLunar {
   constructor(year, month, day) {
-    if (year === '' || year === undefined) {
-      throw Error('請輸入「年」參數');
-    }
-    if (month === '' || month === undefined) {
-      throw Error('請輸入「月」參數');
-    }
-    if (day === '' || day === undefined) {
-      throw Error('請輸入「日」參數');
-    }
     this.year = year;
     this.month = month;
     this.day = day;

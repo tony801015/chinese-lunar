@@ -4,8 +4,20 @@ const lunarTools = require('./tools');
 
 class ApplicationLunar extends AdvancedLunar {
   constructor(year, month, day, chineseAge) {
-    super(year, month, day, chineseAge);
+    const {
+      year: handlerYear,
+      month: handlerMonth,
+      day: handlerDay,
+    } = lunarTools.setDate(year, month, day);
+    super(handlerYear, handlerMonth, handlerDay, chineseAge);
   }
+
+  setChineseAge(age) {
+    this.chineseAge = age;
+    this.chineseTimeTenGod = this.getChineseTimeTenGod(age);
+    return this;
+  }
+
   /**
    * 取得十神
    * @param {string} chineseAge first word 
