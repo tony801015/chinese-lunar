@@ -27,7 +27,7 @@ it('[0]20190205', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸酉');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
     );
     // 農曆月
@@ -58,7 +58,7 @@ it('[1]20190223', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛卯');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 農曆月
@@ -90,7 +90,7 @@ it('[2]20190226', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('甲午');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['甲子', '乙丑', '丙寅', '丁卯', '戊辰', '己巳', '庚午', '辛未', '壬申', '癸酉', '甲戌', '乙亥']
     );
     // 農曆月
@@ -121,7 +121,7 @@ it('[3]20190306', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('壬寅');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥']
     );
     // 農曆月
@@ -152,7 +152,7 @@ it('[4]20190406', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸酉');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
     );
     // 農曆月
@@ -184,7 +184,7 @@ it('[5]20190509', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丙午');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 農曆月
@@ -216,7 +216,7 @@ it('[6]20190518', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('乙卯');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
     );
     // 農曆月
@@ -247,7 +247,7 @@ it('[7]20190524', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛酉');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 農曆月
@@ -278,7 +278,7 @@ it('[8]20190530', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丁卯');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥']
     );
     // 農曆月
@@ -309,7 +309,7 @@ it('[9]20190602', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('庚午');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
     );
     // 農曆月
@@ -340,7 +340,7 @@ it('[10]20190605', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸酉');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
     );
     // 農曆月
@@ -371,7 +371,7 @@ it('[11]20190613', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛巳');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 農曆月
@@ -402,7 +402,7 @@ it('[12]20190629', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丁酉');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥']
     );
     // 農曆月
@@ -434,7 +434,7 @@ it('[13]20190707', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('乙巳');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
     );
     // 農曆月
@@ -465,7 +465,7 @@ it('[14]20190810', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('己卯');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['甲子', '乙丑', '丙寅', '丁卯', '戊辰', '己巳', '庚午', '辛未', '壬申', '癸酉', '甲戌', '乙亥']
     );
     // 農曆月
@@ -495,7 +495,7 @@ it('[15]20190812', () => {
     // 月柱
     expect(Lunar.chineseMonth).to.be.deep.equal('壬申');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 日柱
@@ -528,7 +528,7 @@ it('[16]20190822', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛卯');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 農曆月
@@ -559,7 +559,7 @@ it('[17]20190903', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸卯');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
     );
     // 農曆月
@@ -590,7 +590,7 @@ it('[18]20190906', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丙午');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 農曆月
@@ -621,7 +621,7 @@ it('[19]20191015', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('乙酉');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
     );
     // 農曆月
@@ -652,7 +652,7 @@ it('[20]20191120', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('辛酉');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 農曆月
@@ -683,7 +683,7 @@ it('[21]20191125', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('丙寅');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥']
     );
     // 農曆月
@@ -714,7 +714,7 @@ it('[22]20191129', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('庚午');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未', '甲申', '乙酉', '丙戌', '丁亥']
     );
     // 農曆月
@@ -745,7 +745,7 @@ it('[23]20191207', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('戊寅');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
     );
     // 農曆月
@@ -776,7 +776,7 @@ it('[24]20190112', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('己酉');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['甲子', '乙丑', '丙寅', '丁卯', '戊辰', '己巳', '庚午', '辛未', '壬申', '癸酉', '甲戌', '乙亥']
     );
     // 農曆月
@@ -808,7 +808,7 @@ it('[25]20200112', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('壬戌');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥']
     );
     // 農曆月
@@ -839,7 +839,7 @@ it('[26]20180908', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸卯');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
     );
     // 農曆月
@@ -871,7 +871,7 @@ it('[27]20181107', () => {
     // 日柱
     expect(Lunar.chineseDay).to.be.deep.equal('癸卯');
     // 時柱
-    expect(Lunar.chineseTime).to.be.deep.equal(
+    expect(Lunar.chineseTimes).to.be.deep.equal(
         ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥']
     );
     // 農曆月
@@ -909,7 +909,7 @@ it('[31]20161107', () => {
             chineseDay: '癸巳',
             chineseFeb: true,
             chineseMonth: '己亥',
-            chineseTime: ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥'],
+            chineseTimes: ['壬子', '癸丑', '甲寅', '乙卯', '丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥'],
             chineseYear: '丙申',
             constellation: '天蠍座',
             day: '07',
@@ -956,18 +956,23 @@ it('[36]20151122', () => {
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
     expect(Lunar.dengGui).to.be.deep.equal('戌申');
-    expect(Lunar.chineseTimeTenGod).to.be.deep.equal(
+    expect(Lunar.chineseTimesTenGod).to.be.deep.equal(
         ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官']
     );
-    expect(Lunar.getJson()).to.be.deep.equal(
+    expect(Lunar.setTime('00').getJson()).to.be.deep.equal(
         {
             animal: '羊',
             chineseDay: '壬寅',
+            chineseDayTenGod: 'ㄗ',
             chineseFeb: false,
             chineseMonth: '丁亥',
-            chineseTime: ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
-            chineseTimeTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
+            chineseMonthTenGod: '傷',
+            chineseTime: '庚子',
+            chineseTimeTenGod: '殺',
+            chineseTimes: ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
+            chineseTimesTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
             chineseYear: '乙未',
+            chineseYearTenGod: '劫',
             constellation: '天蠍座',
             day: '22',
             dengGui: '戌申',
@@ -1016,16 +1021,20 @@ it('[39]No input day', () => {
 });
 
 it('[40]Don\'t new instance', () => {
-    expect(lunar('2017', '11', '10', '壬子').Lunar.getJson()).to.be.deep.equal(
+    expect(lunar('2017', '11', '10', '壬子').Lunar.setTime('19').getJson()).to.be.deep.equal(
         {
             animal: '雞',
             chineseDay: '辛丑',
+            chineseDayTenGod: '印',
             chineseFeb: false,
             chineseMonth: '辛亥',
-            chineseTime: [
-                '戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'],
-            chineseTimeTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
+            chineseMonthTenGod: '印',
+            chineseTime: '戊戌',
+            chineseTimeTenGod: '殺',
+            chineseTimes: ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'],
+            chineseTimesTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
             chineseYear: '丁酉',
+            chineseYearTenGod: '財',
             constellation: '天蠍座',
             day: '10',
             dengGui: '子申',
@@ -1059,28 +1068,69 @@ it('[43]20200404', () => {
 });
 
 
-it('[45]20200524', () => {
+it('[44]20200524', () => {
     const Lunar = new AdvancedLunar('2020', '05', '24');
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
 });
 
-it('[44]20210404', () => {
+it('[45]20210404', () => {
     const Lunar = new AdvancedLunar('2021', '04', '04');
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['局管壬辰  令月二月', '亥']);
 });
 
-it('[45]20200404', () => {
-    expect(lunar('2020', '04', '04').Lunar.setChineseAge('甲子').getJson()).to.be.deep.equal(
+it('[46]20200404', () => {
+    expect(lunar('2020', '04', '04')
+        .Lunar
+        .setTime('17')
+        .setChineseAge('甲子')
+        .getJson()).to.be.deep.equal(
+            {
+                animal: '鼠',
+                chineseDay: '丁丑',
+                chineseDayTenGod: '傷',
+                chineseFeb: true,
+                chineseMonth: '庚辰',
+                chineseMonthTenGod: '殺',
+                chineseTime: '己酉',
+                chineseTimeTenGod: '財',
+                chineseTimes: [
+                    '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'
+                ],
+                chineseTimesTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
+                chineseYear: '庚子',
+                chineseYearTenGod: '殺',
+                constellation: '牡羊座',
+                day: '04',
+                dengGui: '戌子',
+                leapMonth: 4,
+                lunarDay: '十二',
+                lunarMonth: '三月',
+                lunarPerMonthHasDays: [
+                    '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
+                ],
+                month: '04',
+                solarTerms: '清明',
+                week: '6',
+                year: '2020'
+            });
+});
+
+it('[47]20200404', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2020', '04', '04').setTime('17').setChineseAge('甲子').getJson()).to.be.deep.equal(
         {
             animal: '鼠',
             chineseDay: '丁丑',
+            chineseDayTenGod: '傷',
             chineseFeb: true,
             chineseMonth: '庚辰',
-            chineseTime: [
-                '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
-            chineseTimeTenGod: ['殺',
-                '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
+            chineseMonthTenGod: '殺',
+            chineseTime: '己酉',
+            chineseTimeTenGod: '財',
+            chineseTimes: ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
+            chineseTimesTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
             chineseYear: '庚子',
+            chineseYearTenGod: '殺',
             constellation: '牡羊座',
             day: '04',
             dengGui: '戌子',
@@ -1097,31 +1147,135 @@ it('[45]20200404', () => {
         });
 });
 
-it('[45]20200404', () => {
+
+it('[48]20210203', () => {
     process.env.DEV = 'false';
-    expect(lunar('2020', '04', '04').setChineseAge('甲子').getJson()).to.be.deep.equal(
+    expect(lunar('2021', '02', '03').setTime('21').setChineseAge('甲子').getJson()).to.be.deep.equal(
         {
-            animal: '鼠',
-            chineseDay: '丁丑',
-            chineseFeb: true,
-            chineseMonth: '庚辰',
-            chineseTime: [
-                '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
-            chineseTimeTenGod: ['殺',
-                '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
-            chineseYear: '庚子',
-            constellation: '牡羊座',
-            day: '04',
-            dengGui: '戌子',
-            leapMonth: 4,
-            lunarDay: '十二',
-            lunarMonth: '三月',
+            animal: '牛',
+            chineseDay: '壬午',
+            chineseDayTenGod: 'ㄗ',
+            chineseFeb: false,
+            chineseMonth: '庚寅',
+            chineseMonthTenGod: '殺',
+            chineseTime: '辛亥',
+            chineseTimeTenGod: '官',
+            chineseTimes: ['庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'],
+            chineseTimesTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
+            chineseYear: '辛丑',
+            chineseYearTenGod: '官',
+            constellation: '水瓶座',
+            day: '03',
+            dengGui: '申午',
+            leapMonth: 0,
+            lunarDay: '廿二',
+            lunarMonth: '腊月',
             lunarPerMonthHasDays: [
-                '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
+                '29', '30', '30', '29', '30', '29', '30', '29', '30', '29', '30', '29'
             ],
-            month: '04',
-            solarTerms: '清明',
-            week: '6',
-            year: '2020'
+            month: '02',
+            solarTerms: '立春',
+            week: '3',
+            year: '2021'
         });
+});
+
+it('[49]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('15')
+        .setChineseAge('甲子')
+        .getChineseYear()).to.be.deep.equal('辛丑');
+});
+
+it('[50]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('14')
+        .setChineseAge('甲子')
+        .getChineseYear()).to.be.deep.equal('辛丑');
+});
+
+it('[51]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('11')
+        .setChineseAge('甲子')
+        .getChineseYear()).to.be.deep.equal('辛丑');
+});
+
+it('[52]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('11')
+        .setChineseAge('甲子')
+        .getChineseTime()).to.be.deep.equal('丙午');
+});
+
+it('[53]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('09')
+        .setChineseAge('甲子')
+        .getChineseTime()).to.be.deep.equal('乙巳');
+});
+
+it('[54]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('07')
+        .setChineseAge('甲子')
+        .getChineseTime()).to.be.deep.equal('甲辰');
+});
+
+it('[55]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('05')
+        .setChineseAge('甲子')
+        .getChineseTime()).to.be.deep.equal('癸卯');
+});
+
+it('[56]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('03')
+        .setChineseAge('甲子')
+        .getChineseTime()).to.be.deep.equal('壬寅');
+});
+
+it('[57]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('01')
+        .setChineseAge('甲子')
+        .getChineseTime()).to.be.deep.equal('辛丑');
+});
+
+it('[58]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('01')
+        .getChineseDayTenGod()).to.be.deep.equal('請輸入年齡');
+});
+
+it('[59]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('01')
+        .getChineseMonthTenGod()).to.be.deep.equal('請輸入年齡');
+});
+
+it('[60]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('01')
+        .getChineseYearTenGod()).to.be.deep.equal('請輸入年齡');
+});
+
+it('[61]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .setTime('01')
+        .getChineseTimeTenGod()).to.be.deep.equal('請輸入年齡');
 });

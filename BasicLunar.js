@@ -23,7 +23,7 @@ class BasicLunar extends GeneralLunar {
     this.chineseYear = this.getChineseYearControllerYear();
     this.chineseMonth = this.getChineseMonth();
     this.chineseDay = this.getChineseDay();
-    this.chineseTime = this.getChineseTime();
+    this.chineseTimes = this.getChineseTimes();
     this.week = this.getWeek();
     this.animal = this.getAnimal();
     this.constellation = this.getConstellation();
@@ -143,7 +143,7 @@ class BasicLunar extends GeneralLunar {
    * 取得時柱
    * @returns {array} 甲子,乙丑,丙寅,丁卯,戊辰,己巳,庚午,辛未,壬申,癸酉,甲戌,乙亥
    */
-  getChineseTime() {
+  getChineseTimes() {
     return findTime(this.chineseDay.split('')[0]);
   }
 
@@ -264,7 +264,7 @@ class BasicLunar extends GeneralLunar {
       chineseYear: this.getChineseYearControllerYear(),
       chineseMonth: this.getChineseMonth(),
       chineseDay: this.getChineseDay(),
-      chineseTime: this.getChineseTime(),
+      chineseTimes: this.getChineseTimes(),
       week: this.getWeek(),
       animal: this.getAnimal(),
       constellation: this.getConstellation(),

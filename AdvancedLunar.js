@@ -6,7 +6,7 @@ class AdvancedLunar extends BasicLunar {
     constructor(year, month, day, chineseAge) {
         super(year, month, day);
         this.chineseAge = chineseAge || '請輸入年齡';
-        this.chineseTimeTenGod = this.getChineseTimeTenGod();
+        this.chineseTimesTenGod = this.getChineseTimesTenGod();
         this.dengGui = this.getDengGui();
         this.leapMonth = this.getLeapMonth();
         this.lunarPerMonthHasDays = this.getLunarPerMonthHasDays();
@@ -16,11 +16,11 @@ class AdvancedLunar extends BasicLunar {
      * 取得時間的十神
      * @returns {array}} [ 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印' ]
      */
-    getChineseTimeTenGod(chineseAge = this.chineseAge) {
+    getChineseTimesTenGod(chineseAge = this.chineseAge) {
         if (chineseAge === '請輸入年齡' || chineseAge === undefined) {
             return '請輸入年齡';
         }
-        return this.chineseTime.map(ele => {
+        return this.chineseTimes.map(ele => {
             return lunarTools.findTenGod(chineseAge.split('')[0], ele.split('')[0]);
         });
     }
@@ -69,7 +69,7 @@ class AdvancedLunar extends BasicLunar {
     getJson() {
         return {
             ...super.getJson(),
-            chineseTimeTenGod: this.getChineseTimeTenGod(),
+            chineseTimesTenGod: this.getChineseTimesTenGod(),
             dengGui: this.getDengGui(),
             leapMonth: this.getLeapMonth(),
             lunarPerMonthHasDays: this.getLunarPerMonthHasDays(),

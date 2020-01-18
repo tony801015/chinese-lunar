@@ -10,6 +10,9 @@ const {
 } = require('./config');
 
 const tools = {
+  setTime: () => {
+    return new Date().getHours().toString();
+  },
   setDate: (year, month, day) => {
     if (year === '' || year === undefined) {
       year = new Date().getFullYear().toString();
