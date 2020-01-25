@@ -6,8 +6,7 @@ const {
   lunarMonths,
   lunarMonthLeap,
 } = require('./config');
-const path = require('path');
-const fs = require('fs');
+const data = require('./source/solarTermsData.json');
 
 class GeneralLunar {
   constructor(year, month, day) {
@@ -65,16 +64,12 @@ class GeneralLunar {
 * @returns {Object} { title, solarTermsSplit }
 */
   parserFileAndSplitSolarTerm() {
-    const txt = fs.readFileSync(
-      path.join(__dirname, `./source/${this.year}.json`),
-      'utf8'
-    );
+    const solarTerms = data[this.year - 1900];
     const result = {
       title: '',
       solarTermsSplit: false
     };
     let min = 1000;
-    const solarTerms = JSON.parse(txt);
     solarTerms.forEach(val => {
       const dateCh = val.title.split(' ')[1]; // ex:2017年01月24日
       const date = dateCh
