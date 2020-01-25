@@ -79,6 +79,24 @@ console.log(`月=> ${data.chineseMonth}, 十神=> ${data.chineseMonthTenGod}`); 
 console.log(`日=> ${data.chineseDay}, 十神=> ${data.chineseDayTenGod}`); // 日=> 壬辰, 十神=> 比
 console.log(`時=> ${data.chineseTime}, 十神=> ${data.chineseTimeTenGod}`); // 時=> 庚子, 十神=> ㄗ
 ```
+#### lunarToSolar() 農曆轉公(國)曆
+```js
+const lunar = require("@tony801015/chinese-lunar");
+const data = lunar(
+  '2020', '04', '16'
+)
+  .lunarToSolar() 
+  // 如果有遇到閏月,要轉國曆請記得加true, 不然預設都會是false 非閏月的月份
+  // lunarToSolar({{true|false}})
+  .setTime('00')
+  .setChineseAge('壬子')
+  .getJson();
+console.log(`農曆月=> ${data.lunarMonth}, 農曆日=> ${data.lunarDay}`); 
+// 農曆月=> 四月, 農曆日=> 十六
+console.log(`國曆月=> ${data.month}, 國曆日=> ${data.day}`);
+// 國曆月=> 05, 國曆日=> 08
+```
+
 
 |      中文名稱      |       參數名稱       |  型態   |                                                範例                                                | 備註 | 
 | :----------------: | :------------------: | :-----: | :------------------------------------------------------------------------------------------------: | :--: | 

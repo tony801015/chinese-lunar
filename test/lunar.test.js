@@ -1279,3 +1279,78 @@ it('[61]20210203', () => {
         .setTime('01')
         .getChineseTimeTenGod()).to.be.deep.equal('請輸入年齡');
 });
+
+it('[62]20210203', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2021', '02', '03')
+        .lunarToSolar()
+        .setTime('01')
+        .getJson()).to.be.deep.equal(
+            {
+                animal: '牛',
+                chineseDay: '壬戌',
+                chineseDayTenGod: '請輸入年齡',
+                chineseFeb: false,
+                chineseMonth: '辛卯',
+                chineseMonthTenGod: '請輸入年齡',
+                chineseTime: '辛丑',
+                chineseTimeTenGod: '請輸入年齡',
+                chineseTimes: [
+                    '庚子', '辛丑', '壬寅', '癸卯', '甲辰', '乙巳', '丙午', '丁未', '戊申', '己酉', '庚戌', '辛亥'
+                ],
+                chineseTimesTenGod: '請輸入年齡',
+                chineseYear: '辛丑',
+                chineseYearTenGod: '請輸入年齡',
+                constellation: '雙魚座',
+                day: '15',
+                dengGui: '未巳',
+                leapMonth: 0,
+                lunarDay: '初三',
+                lunarMonth: '二月',
+                lunarPerMonthHasDays: [
+                    '29', '30', '30', '29', '30', '29', '30', '29', '30', '29', '30', '29'
+                ],
+                month: '03',
+                solarTerms: '驚蟄',
+                week: '1',
+                year: '2021'
+            });
+});
+
+it('[63]20200416', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2020', '04', '16')
+        .lunarToSolar(true)
+        .setTime('01')
+        .getJson()).to.be.deep.equal(
+            {
+                animal: '鼠',
+                chineseDay: '辛巳',
+                chineseDayTenGod: '請輸入年齡',
+                chineseFeb: true,
+                chineseMonth: '壬午',
+                chineseMonthTenGod: '請輸入年齡',
+                chineseTime: '己丑',
+                chineseTimeTenGod: '請輸入年齡',
+                chineseTimes: [
+                    '戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'
+                ],
+                chineseTimesTenGod: '請輸入年齡',
+                chineseYear: '庚子',
+                chineseYearTenGod: '請輸入年齡',
+                constellation: '雙子座',
+                day: '07',
+                dengGui: '巳丑',
+                leapMonth: 4,
+                lunarDay: '十六',
+                lunarMonth: '閏四月',
+                lunarPerMonthHasDays: [
+                    '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
+                ],
+                month: '06',
+                solarTerms: '芒種',
+                week: '密',
+                year: '2020'
+            }
+        );
+});

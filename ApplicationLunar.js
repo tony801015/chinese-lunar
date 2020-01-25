@@ -1,6 +1,8 @@
 /* eslint-disable no-useless-constructor */
 const AdvancedLunar = require('./AdvancedLunar');
 const lunarTools = require('./tools');
+const config = require('./config');
+const moment = require('moment');
 
 class ApplicationLunar extends AdvancedLunar {
   /**
@@ -21,6 +23,29 @@ class ApplicationLunar extends AdvancedLunar {
     super(handlerYear, handlerMonth, handlerDay, chineseAge);
     this.time = lunarTools.setTime();
     this.chineseTime = this.getChineseTime(lunarTools.setTime());
+  }
+
+  /**
+   * 設定農曆轉公曆
+   * @param {boolean} leap is true or false, the default is false
+   * @returns {Object} this
+   */
+  lunarToSolar(leap = false) {
+    const lunarPerMonthHasDays = this.getLunarPerMonthHasDays();
+    const monthDay = config.lunarLeap[this.year - 1900][2];
+    let day = 0;
+    let month = parseInt(this.month, 10);
+    if (leap) {
+      month++;
+    }
+    for (let index = 0; index < month - 1; index++) {
+      day += parseInt(lunarPerMonthHasDays[index], 10);
+    }
+    day += parseInt(this.day, 10) - 1;
+    const yearMonthDay = moment(this.year + monthDay)
+      .add(day, 'days')
+      .format('YYYY-MM-DD').split('-');
+    return new ApplicationLunar(yearMonthDay[0], yearMonthDay[1], yearMonthDay[2]);
   }
 
   /**
