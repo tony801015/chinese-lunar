@@ -23,6 +23,7 @@ class ApplicationLunar extends AdvancedLunar {
     super(handlerYear, handlerMonth, handlerDay, chineseAge);
     this.time = lunarTools.setTime();
     this.chineseTime = this.getChineseTime(lunarTools.setTime());
+    this.solarTermDistance = this.getSolarTermDistance();
   }
 
   /**
@@ -159,6 +160,70 @@ class ApplicationLunar extends AdvancedLunar {
   }
 
   /**
+   * 取得節氣前後資訊
+   * @return {object}
+   * { 
+   *   previous: { 
+   *     solarTerm: '春分',
+   *     diffDistanceDay: 27,
+   *     diffDistanceDetail: 26.50730324074074 
+   *   },
+   *   next: { 
+   *     solarTerm: '穀雨',
+   *     diffDistanceDay: 3,
+   *     diffDistanceDetail: 3.948159722222222 
+   *   } 
+   * }
+   */
+  getSolarTermDistance() {
+    const { previous, next } = this.parserFile;
+    const previousArray = previous.split(' ');
+    const nextArray = next.split(' ');
+
+    const previousSolarTerm = previousArray[0].substring(5, 7);
+    const nextSolarTerm = nextArray[0].substring(5, 7);
+
+    const start = moment(this.year + this.month + this.day);
+    const previousYYYYMMDD = previousArray[1].replace('日', '').split(/年|月/g);
+    const previousHHMMSS = previousArray[2].split(/:/);
+    const nextYYYYMMDD = nextArray[1].replace('日', '').split(/年|月/g);
+    const nextHHMMSS = nextArray[2].split(/:/);
+
+    const previousDay = moment(new Date(
+      parseInt(previousYYYYMMDD[0], 10),
+      parseInt(previousYYYYMMDD[1], 10) - 1,
+      parseInt(previousYYYYMMDD[2], 10),
+      parseInt(previousHHMMSS[0], 10),
+      parseInt(previousHHMMSS[1], 10),
+      parseInt(previousHHMMSS[2], 10),
+    ));
+    const preDistanceDay = previousDay.diff(start, 'hours', true);
+
+    const nextDay = moment(new Date(
+      parseInt(nextYYYYMMDD[0], 10),
+      parseInt(nextYYYYMMDD[1], 10) - 1,
+      parseInt(nextYYYYMMDD[2], 10),
+      parseInt(nextHHMMSS[0], 10),
+      parseInt(nextHHMMSS[1], 10),
+      parseInt(nextHHMMSS[2], 10),
+    ));
+    const nextDistanceDay = nextDay.diff(start, 'hours', true);
+
+    return {
+      previous: {
+        solarTerm: previousSolarTerm,
+        diffDistanceDay: Math.abs(Math.floor(preDistanceDay / 24)),
+        diffDistanceDetail: Math.abs(preDistanceDay / 24),
+      },
+      next: {
+        solarTerm: nextSolarTerm,
+        diffDistanceDay: Math.abs(Math.floor(nextDistanceDay / 24)),
+        diffDistanceDetail: Math.abs(nextDistanceDay / 24),
+      },
+    };
+  }
+
+  /**
   * 取得Json格式
   */
   getJson() {
@@ -169,6 +234,7 @@ class ApplicationLunar extends AdvancedLunar {
       chineseYearTenGod: this.getChineseYearTenGod(),
       chineseMonthTenGod: this.getChineseMonthTenGod(),
       chineseDayTenGod: this.getChineseDayTenGod(),
+      solarTermDistance: this.getSolarTermDistance(),
     };
   }
 }

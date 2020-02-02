@@ -13,10 +13,14 @@ it('[0]20190205', () => {
     expect(Lunar.getChineseYear()).to.be.deep.equal('己亥');
     // 星期
     expect(Lunar.getWeek()).to.be.deep.equal('2');
-    // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年立春时间是 2019年02月04日 11:14:14 农历： 十二月(大)三十' }
+            {
+                current: '2019年立春时间是 2019年02月04日 11:14:14 农历： 十二月(大)三十',
+                next: '2019年雨水时间是 2019年02月19日 07:03:51 农历： 正月(大)十五',
+                previous: '2019年大寒时间是 2019年01月20日 16:59:27 农历： 十二月(大)十五',
+                solarTermsSplit: false
+            }
         );
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('立春');
@@ -47,7 +51,12 @@ it('[1]20190223', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { title: '2019年雨水时间是 2019年02月19日 07:03:51 农历： 正月(大)十五', solarTermsSplit: false }
+            {
+                current: '2019年雨水时间是 2019年02月19日 07:03:51 农历： 正月(大)十五',
+                next: '2019年驚蟄时间是 2019年03月06日 05:09:39 农历： 正月(大)三十',
+                previous: '2019年立春时间是 2019年02月04日 11:14:14 农历： 十二月(大)三十',
+                solarTermsSplit: false
+            }
         );
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('雨水');
@@ -79,7 +88,12 @@ it('[2]20190226', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { title: '2019年雨水时间是 2019年02月19日 07:03:51 农历： 正月(大)十五', solarTermsSplit: false }
+            {
+                current: '2019年雨水时间是 2019年02月19日 07:03:51 农历： 正月(大)十五',
+                next: '2019年驚蟄时间是 2019年03月06日 05:09:39 农历： 正月(大)三十',
+                previous: '2019年立春时间是 2019年02月04日 11:14:14 农历： 十二月(大)三十',
+                solarTermsSplit: false
+            }
         );
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('雨水');
@@ -110,8 +124,12 @@ it('[3]20190306', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: true, title: '2019年驚蟄时间是 2019年03月06日 05:09:39 农历： 正月(大)三十' }
-        );
+            {
+                current: '2019年驚蟄时间是 2019年03月06日 05:09:39 农历： 正月(大)三十',
+                next: '2019年春分时间是 2019年03月21日 05:58:20 农历： 二月(小)十五',
+                previous: '2019年雨水时间是 2019年02月19日 07:03:51 农历： 正月(大)十五',
+                solarTermsSplit: true
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('驚蟄');
     // 年柱
@@ -141,8 +159,12 @@ it('[4]20190406', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年清明时间是 2019年04月05日 09:51:21 农历： 三月(大)初一' }
-        );
+            {
+                current: '2019年清明时间是 2019年04月05日 09:51:21 农历： 三月(大)初一',
+                next: '2019年穀雨时间是 2019年04月20日 16:55:10 农历： 三月(大)十六',
+                previous: '2019年春分时间是 2019年03月21日 05:58:20 农历： 二月(小)十五',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('清明');
     // 年柱
@@ -173,8 +195,12 @@ it('[5]20190509', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年立夏时间是 2019年05月06日 03:02:40 农历： 四月(小)初二' }
-        );
+            {
+                current: '2019年立夏时间是 2019年05月06日 03:02:40 农历： 四月(小)初二',
+                next: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七',
+                previous: '2019年穀雨时间是 2019年04月20日 16:55:10 农历： 三月(大)十六',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('立夏');
     // 年柱
@@ -205,8 +231,12 @@ it('[6]20190518', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年立夏时间是 2019年05月06日 03:02:40 农历： 四月(小)初二' }
-        );
+            {
+                current: '2019年立夏时间是 2019年05月06日 03:02:40 农历： 四月(小)初二',
+                next: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七',
+                previous: '2019年穀雨时间是 2019年04月20日 16:55:10 农历： 三月(大)十六',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('立夏');
     // 年柱
@@ -236,8 +266,12 @@ it('[7]20190524', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七' }
-        );
+            {
+                current: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七',
+                next: '2019年芒種时间是 2019年06月06日 07:06:18 农历： 五月(大)初四',
+                previous: '2019年立夏时间是 2019年05月06日 03:02:40 农历： 四月(小)初二',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('小滿');
     // 年柱
@@ -267,8 +301,12 @@ it('[8]20190530', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七' }
-        );
+            {
+                current: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七',
+                next: '2019年芒種时间是 2019年06月06日 07:06:18 农历： 五月(大)初四',
+                previous: '2019年立夏时间是 2019年05月06日 03:02:40 农历： 四月(小)初二',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('小滿');
     // 年柱
@@ -298,8 +336,12 @@ it('[9]20190602', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七' }
-        );
+            {
+                current: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七',
+                next: '2019年芒種时间是 2019年06月06日 07:06:18 农历： 五月(大)初四',
+                previous: '2019年立夏时间是 2019年05月06日 03:02:40 农历： 四月(小)初二',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('小滿');
     // 年柱
@@ -329,8 +371,12 @@ it('[10]20190605', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七' }
-        );
+            {
+                current: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七',
+                next: '2019年芒種时间是 2019年06月06日 07:06:18 农历： 五月(大)初四',
+                previous: '2019年立夏时间是 2019年05月06日 03:02:40 农历： 四月(小)初二',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('小滿');
     // 年柱
@@ -360,8 +406,12 @@ it('[11]20190613', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年芒種时间是 2019年06月06日 07:06:18 农历： 五月(大)初四' }
-        );
+            {
+                current: '2019年芒種时间是 2019年06月06日 07:06:18 农历： 五月(大)初四',
+                next: '2019年夏至时间是 2019年06月21日 23:54:09 农历： 五月(大)十九',
+                previous: '2019年小滿时间是 2019年05月21日 15:59:01 农历： 四月(小)十七',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('芒種');
     // 年柱
@@ -391,8 +441,12 @@ it('[12]20190629', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年夏至时间是 2019年06月21日 23:54:09 农历： 五月(大)十九' }
-        );
+            {
+                current: '2019年夏至时间是 2019年06月21日 23:54:09 农历： 五月(大)十九',
+                next: '2019年小暑时间是 2019年07月07日 17:20:25 农历： 六月(小)初五',
+                previous: '2019年芒種时间是 2019年06月06日 07:06:18 农历： 五月(大)初四',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('夏至');
     // 年柱
@@ -423,8 +477,12 @@ it('[13]20190707', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: true, title: '2019年小暑时间是 2019年07月07日 17:20:25 农历： 六月(小)初五' }
-        );
+            {
+                current: '2019年小暑时间是 2019年07月07日 17:20:25 农历： 六月(小)初五',
+                next: '2019年大暑时间是 2019年07月23日 10:50:16 农历： 六月(小)廿一',
+                previous: '2019年夏至时间是 2019年06月21日 23:54:09 农历： 五月(大)十九',
+                solarTermsSplit: true
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('小暑');
     // 年柱
@@ -454,8 +512,12 @@ it('[14]20190810', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年立秋时间是 2019年08月08日 03:12:57 农历： 七月(小)初八' }
-        );
+            {
+                current: '2019年立秋时间是 2019年08月08日 03:12:57 农历： 七月(小)初八',
+                next: '2019年處暑时间是 2019年08月23日 18:01:53 农历： 七月(小)廿三',
+                previous: '2019年大暑时间是 2019年07月23日 10:50:16 农历： 六月(小)廿一',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('立秋');
     // 年柱
@@ -486,8 +548,12 @@ it('[15]20190812', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年立秋时间是 2019年08月08日 03:12:57 农历： 七月(小)初八' }
-        );
+            {
+                current: '2019年立秋时间是 2019年08月08日 03:12:57 农历： 七月(小)初八',
+                next: '2019年處暑时间是 2019年08月23日 18:01:53 农历： 七月(小)廿三',
+                previous: '2019年大暑时间是 2019年07月23日 10:50:16 农历： 六月(小)廿一',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('立秋');
     // 年柱
@@ -517,8 +583,12 @@ it('[16]20190822', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年立秋时间是 2019年08月08日 03:12:57 农历： 七月(小)初八' }
-        );
+            {
+                current: '2019年立秋时间是 2019年08月08日 03:12:57 农历： 七月(小)初八',
+                next: '2019年處暑时间是 2019年08月23日 18:01:53 农历： 七月(小)廿三',
+                previous: '2019年大暑时间是 2019年07月23日 10:50:16 农历： 六月(小)廿一',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('立秋');
     // 年柱
@@ -548,8 +618,12 @@ it('[17]20190903', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年處暑时间是 2019年08月23日 18:01:53 农历： 七月(小)廿三' }
-        );
+            {
+                current: '2019年處暑时间是 2019年08月23日 18:01:53 农历： 七月(小)廿三',
+                next: '2019年白露时间是 2019年09月08日 06:16:46 农历： 八月(大)初十',
+                previous: '2019年立秋时间是 2019年08月08日 03:12:57 农历： 七月(小)初八',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('處暑');
     // 年柱
@@ -579,7 +653,12 @@ it('[18]20190906', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年處暑时间是 2019年08月23日 18:01:53 农历： 七月(小)廿三' }
+            {
+                current: '2019年處暑时间是 2019年08月23日 18:01:53 农历： 七月(小)廿三',
+                next: '2019年白露时间是 2019年09月08日 06:16:46 农历： 八月(大)初十',
+                previous: '2019年立秋时间是 2019年08月08日 03:12:57 农历： 七月(小)初八',
+                solarTermsSplit: false
+            }
         );
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('處暑');
@@ -610,8 +689,12 @@ it('[19]20191015', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年寒露时间是 2019年10月08日 22:05:32 农历： 九月(小)初十' }
-        );
+            {
+                current: '2019年寒露时间是 2019年10月08日 22:05:32 农历： 九月(小)初十',
+                next: '2019年霜降时间是 2019年10月24日 01:19:37 农历： 九月(小)廿六',
+                previous: '2019年秋分时间是 2019年09月23日 15:50:02 农历： 八月(大)廿五',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('寒露');
     // 年柱
@@ -641,8 +724,12 @@ it('[20]20191120', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年立冬时间是 2019年11月08日 01:24:15 农历： 十月(小)十二' }
-        );
+            {
+                current: '2019年立冬时间是 2019年11月08日 01:24:15 农历： 十月(小)十二',
+                next: '2019年小雪时间是 2019年11月22日 22:58:48 农历： 十月(小)廿六',
+                previous: '2019年霜降时间是 2019年10月24日 01:19:37 农历： 九月(小)廿六',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('立冬');
     // 年柱
@@ -672,8 +759,12 @@ it('[21]20191125', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年小雪时间是 2019年11月22日 22:58:48 农历： 十月(小)廿六' }
-        );
+            {
+                current: '2019年小雪时间是 2019年11月22日 22:58:48 农历： 十月(小)廿六',
+                next: '2019年大雪时间是 2019年12月07日 18:18:21 农历： 十一月(小)十二',
+                previous: '2019年立冬时间是 2019年11月08日 01:24:15 农历： 十月(小)十二',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('小雪');
     // 年柱
@@ -703,8 +794,12 @@ it('[22]20191129', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年小雪时间是 2019年11月22日 22:58:48 农历： 十月(小)廿六' }
-        );
+            {
+                current: '2019年小雪时间是 2019年11月22日 22:58:48 农历： 十月(小)廿六',
+                next: '2019年大雪时间是 2019年12月07日 18:18:21 农历： 十一月(小)十二',
+                previous: '2019年立冬时间是 2019年11月08日 01:24:15 农历： 十月(小)十二',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('小雪');
     // 年柱
@@ -734,8 +829,12 @@ it('[23]20191207', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: true, title: '2019年大雪时间是 2019年12月07日 18:18:21 农历： 十一月(小)十二' }
-        );
+            {
+                current: '2019年大雪时间是 2019年12月07日 18:18:21 农历： 十一月(小)十二',
+                next: '2019年冬至时间是 2019年12月22日 12:19:18 农历： 十一月(小)廿七',
+                previous: '2019年小雪时间是 2019年11月22日 22:58:48 农历： 十月(小)廿六',
+                solarTermsSplit: true
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('大雪');
     // 年柱
@@ -765,8 +864,12 @@ it('[24]20190112', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2019年小寒时间是 2019年01月05日 23:38:52 农历： 十一月(大)三十' }
-        );
+            {
+                current: '2019年小寒时间是 2019年01月05日 23:38:52 农历： 十一月(大)三十',
+                next: '2019年大寒时间是 2019年01月20日 16:59:27 农历： 十二月(大)十五',
+                previous: '2019年冬至时间是 2019年12月22日 12:19:18 农历： 十一月(小)廿七',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('小寒');
     // 年柱
@@ -797,8 +900,12 @@ it('[25]20200112', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: false, title: '2020年大寒时间是 2020年01月20日 22:54:33 农历： 十二月(大)廿七' }
-        );
+            {
+                current: '2020年大寒时间是 2020年01月20日 22:54:33 农历： 十二月(大)廿七',
+                next: '2019年冬至时间是 2019年12月22日 12:19:18 农历： 十一月(小)廿七',
+                previous: '2020年小寒时间是 2020年01月06日 05:29:59 农历： 十二月(大)十三',
+                solarTermsSplit: false
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('大寒');
     // 年柱
@@ -828,8 +935,12 @@ it('[26]20180908', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: true, title: '2018年白露时间是 2018年09月08日 00:29:37 农历： 七月(大)廿九' }
-        );
+            {
+                current: '2018年白露时间是 2018年09月08日 00:29:37 农历： 七月(大)廿九',
+                next: '2018年秋分时间是 2018年09月23日 09:54:01 农历： 八月(小)十四',
+                previous: '2018年處暑时间是 2018年08月23日 12:08:30 农历： 七月(大)十三',
+                solarTermsSplit: true
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('白露');
     // 年柱
@@ -860,8 +971,12 @@ it('[27]20181107', () => {
     // {title,solarTermsSplit}
     expect(Lunar.parserFileAndSplitSolarTerm())
         .to.be.deep.equal(
-            { solarTermsSplit: true, title: '2018年立冬时间是 2018年11月07日 19:31:39 农历： 九月(大)三十' }
-        );
+            {
+                current: '2018年立冬时间是 2018年11月07日 19:31:39 农历： 九月(大)三十',
+                next: '2018年小雪时间是 2018年11月22日 17:01:24 农历： 十月(小)十五',
+                previous: '2018年霜降时间是 2018年10月23日 19:22:18 农历： 九月(大)十五',
+                solarTermsSplit: true
+            });
     // 節氣
     expect(Lunar.getSolarTerms()).to.be.deep.equal('立冬');
     // 年柱
@@ -983,6 +1098,18 @@ it('[36]20151122', () => {
                 '29', '30', '29', '29', '30', '29', '30', '30', '30', '29', '30', '29'
             ],
             month: '11',
+            solarTermDistance: {
+                next: {
+                    diffDistanceDay: 15,
+                    diffDistanceDetail: 15.787025462962964,
+                    solarTerm: '大雪',
+                },
+                previous: {
+                    diffDistanceDay: 14,
+                    diffDistanceDetail: 13.917638888888888,
+                    solarTerm: '立冬',
+                },
+            },
             solarTerms: '小雪',
             week: '密',
             year: '2015'
@@ -1045,6 +1172,18 @@ it('[40]Don\'t new instance', () => {
                 '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
             ],
             month: '11',
+            solarTermDistance: {
+                next: {
+                    diffDistanceDay: 12,
+                    diffDistanceDetail: 12.46150462962963,
+                    solarTerm: '小雪',
+                },
+                previous: {
+                    diffDistanceDay: 18,
+                    diffDistanceDetail: 17.43986111111111,
+                    solarTerm: '霜降',
+                },
+            },
             solarTerms: '立冬',
             week: '5',
             year: '2017'
@@ -1101,6 +1240,18 @@ it('[46]20200404', () => {
                 chineseYearTenGod: '殺',
                 constellation: '牡羊座',
                 day: '04',
+                solarTermDistance: {
+                    next: {
+                        diffDistanceDay: 15,
+                        diffDistanceDetail: 15.948159722222222,
+                        solarTerm: '穀雨',
+                    },
+                    previous: {
+                        diffDistanceDay: 15,
+                        diffDistanceDetail: 14.50730324074074,
+                        solarTerm: '春分',
+                    },
+                },
                 dengGui: '戌子',
                 leapMonth: 4,
                 lunarDay: '十二',
@@ -1141,6 +1292,18 @@ it('[47]20200404', () => {
                 '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
             ],
             month: '04',
+            solarTermDistance: {
+                next: {
+                    diffDistanceDay: 15,
+                    diffDistanceDetail: 15.948159722222222,
+                    solarTerm: '穀雨',
+                },
+                previous: {
+                    diffDistanceDay: 15,
+                    diffDistanceDetail: 14.50730324074074,
+                    solarTerm: '春分',
+                },
+            },
             solarTerms: '清明',
             week: '6',
             year: '2020'
@@ -1174,6 +1337,18 @@ it('[48]20210203', () => {
                 '29', '30', '30', '29', '30', '29', '30', '29', '30', '29', '30', '29'
             ],
             month: '02',
+            solarTermDistance: {
+                next: {
+                    diffDistanceDay: 15,
+                    diffDistanceDetail: 15.78042824074074,
+                    solarTerm: '雨水',
+                },
+                previous: {
+                    diffDistanceDay: 14,
+                    diffDistanceDetail: 13.805763888888889,
+                    solarTerm: '大寒',
+                },
+            },
             solarTerms: '立春',
             week: '3',
             year: '2021'
@@ -1311,6 +1486,18 @@ it('[62]20210203', () => {
                     '29', '30', '30', '29', '30', '29', '30', '29', '30', '29', '30', '29'
                 ],
                 month: '03',
+                solarTermDistance: {
+                    next: {
+                        diffDistanceDay: 5,
+                        diffDistanceDetail: 5.734247685185185,
+                        solarTerm: '春分',
+                    },
+                    previous: {
+                        diffDistanceDay: 25,
+                        diffDistanceDetail: 24.219571759259257,
+                        solarTerm: '雨水',
+                    },
+                },
                 solarTerms: '驚蟄',
                 week: '1',
                 year: '2021'
@@ -1348,6 +1535,18 @@ it('[63]20200416', () => {
                     '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
                 ],
                 month: '06',
+                solarTermDistance: {
+                    next: {
+                        diffDistanceDay: 14,
+                        diffDistanceDetail: 14.23857638888889,
+                        solarTerm: '夏至',
+                    },
+                    previous: {
+                        diffDistanceDay: 18,
+                        diffDistanceDetail: 17.090868055555557,
+                        solarTerm: '小滿',
+                    },
+                },
                 solarTerms: '芒種',
                 week: '密',
                 year: '2020'

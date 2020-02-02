@@ -66,11 +66,13 @@ class GeneralLunar {
   parserFileAndSplitSolarTerm() {
     const solarTerms = data[this.year - 1900];
     const result = {
-      title: '',
+      previous: '',
+      current: '',
+      next: '',
       solarTermsSplit: false
     };
     let min = 1000;
-    solarTerms.forEach(val => {
+    solarTerms.forEach((val, index) => {
       const dateCh = val.title.split(' ')[1]; // ex:2017年01月24日
       const date = dateCh
         .replace('年', '')
@@ -83,7 +85,13 @@ class GeneralLunar {
       // 2048戊辰年沒有2/3
       if (dayDistance >= 0 && dayDistance < min) {
         min = Math.min(dayDistance, min);
-        result.title = `${val.title}`;
+        if (solarTerms[index - 1]) result.previous = solarTerms[index - 1].title;
+        result.next = solarTerms[index + 1].title;
+        if (result.previous === '') {
+          const dataLength = data[this.year - 1899].length;
+          result.previous = data[this.year - 1899][dataLength - 1].title;
+        }
+        result.current = val.title;
 
         if (dayDistance === 0
           && solarTermGeneral.indexOf(val.title.substring(5, 7)) >= 0) {

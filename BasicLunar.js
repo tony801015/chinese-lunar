@@ -95,8 +95,8 @@ class BasicLunar extends GeneralLunar {
    * @returns {string} 雨水
    */
   getSolarTerms() {
-    const { title } = this.parserFile;
-    const resultArray = title.split(' ');
+    const { current } = this.parserFile;
+    const resultArray = current.split(' ');
     return resultArray[0].substring(5, 7);
   }
 
@@ -152,10 +152,10 @@ class BasicLunar extends GeneralLunar {
    * @returns {array} 
    */
   getSolarTermsSplitWord() {
-    const { title, solarTermsSplit: solarSplit } = this.parserFile;
+    const { current, solarTermsSplit: solarSplit } = this.parserFile;
     let beforeLunarResult = '';
     let splitWord = '';
-    const solarTermsWord = title.split(' ');
+    const solarTermsWord = current.split(' ');
     const getTime = solarTermsWord[2].substring(0, 2);
     const lunarMonthCh = this.lunarMonth;
     if (solarSplit === true) {
