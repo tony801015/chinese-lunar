@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 let lunar;
-process.env.DEV === 'true' ? lunar = require('./index') : lunar = require('./index');
+process.env.DEV === 'true' ? lunar = require('./index') : lunar = require('./main');
 
 const data = lunar(
   '2019', '07', '07'
