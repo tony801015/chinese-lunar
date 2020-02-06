@@ -151,9 +151,9 @@ class ApplicationLunar extends AdvancedLunar {
 
   /**
    * 取得十神
-   * @param {string} chineseAge first word 
-   * @param {string} decimalCycle chineseYear,chineseMonth,chineseDay,chineseTime
-   * @returns {string} tenGod 傷, 食, 財, 才, 官, 殺, 印, ㄗ
+   * @param {String} chineseAge first word 
+   * @param {String} decimalCycle chineseYear,chineseMonth,chineseDay,chineseTime
+   * @returns {String} tenGod 傷, 食, 財, 才, 官, 殺, 印, ㄗ
    */
   getTenGod(_with, _life) {
     return lunarTools.findTenGod(_with, _life);
@@ -161,7 +161,7 @@ class ApplicationLunar extends AdvancedLunar {
 
   /**
    * 取得節氣前後資訊
-   * @return {object}
+   * @return {Object}
    * { 
    *   previous: { 
    *     solarTerm: '春分',
@@ -221,6 +221,26 @@ class ApplicationLunar extends AdvancedLunar {
         diffDistanceDetail: Math.abs(nextDistanceDay / 24),
       },
     };
+  }
+
+  /**
+   * 
+   * @param {Integer} number 
+   * @param {String} unit 
+   * @returns {Object} Lunar
+   */
+  subtract(number,unit) {
+    
+  }
+
+  /**
+   * 
+   * @param {Integer} number 
+   * @param {String} unit 
+   * @returns {Object} Lunar
+   */
+  add(number,unit) {
+
   }
 
   /**
