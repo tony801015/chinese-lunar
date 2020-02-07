@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-expressions */
 let lunar;
-process.env.DEV === 'true' ? lunar = require('./index') : lunar = require('./main');
+process.env.DEV === 'true' ? lunar = require('./index') : lunar = require('./index');
 
 const data = lunar(
   '2019', '07', '07'
-)
-  // .setChineseAge('壬子')
+).add(1, 'd')
+  .setChineseAge('壬子')
   .getSolarTermDistance();
 // // console.log(`年=> ${data.chineseYear}, 十神=> ${data.chineseYearTenGod}`); // 年=> 辛丑, 十神=> 印
 // // console.log(`月=> ${data.chineseMonth}, 十神=> ${data.chineseMonthTenGod}`); // 月=> 庚寅, 十神=> ㄗ
