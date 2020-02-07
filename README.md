@@ -116,6 +116,19 @@ const data = lunar(
 //      diffDistanceDetail: 16.451574074074074 } }
 ```
 
+#### subtract()、add() 計算加減
+```js
+const lunar = require("@tony801015/chinese-lunar");
+const demoAdd = lunar('2019', '07', '07').add(1,'d').day // 08
+const demoSubtract = lunar('2019', '07', '07').subtract(1,'d').day // 06
+// add()與subtract()這背後是使用moment.js這個好用的套件所完成的，因此有用過moment.js的朋友一定不陌生
+```
+ref: 感謝神作[moment.js](https://momentjs.com/docs/#/manipulating/subtract/)  
+兩個method的文件如下:  
+[subtract()](https://momentjs.com/docs/#/manipulating/subtract/) 減的使用方式  
+[add()](https://momentjs.com/docs/#/manipulating/add/) 加的使用方式  
+
+
 
 |      中文名稱      |       參數名稱       |  型態   |                                                範例                                                | 備註 | 
 | :----------------: | :------------------: | :-----: | :------------------------------------------------------------------------------------------------: | :--: | 
@@ -164,7 +177,7 @@ const data = lunar(
 - 輸入農曆轉換成國曆 2020/1/25 完成 `0.14.0`
 - 製作前端使用js 2020/1/25 完成 `0.14.3`
 - 加強節氣資訊，距離前(後)節氣天數 2020/2/2 完成 `0.15.0`
-- 加減 subtract(), add()
+- 加減 subtract(), add() 2020/02/08 完成 `0.16.0`
 - 製作萬年曆
 - 查詢農曆年的API
 - 建立Document文件方便查詢

@@ -1553,3 +1553,21 @@ it('[63]20200416', () => {
             }
         );
 });
+
+it('[64]20200208', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2020', '02', '08')
+        .add(1, 'd').day
+    ).to.be.equal(
+        '09'
+    );
+});
+
+it('[65]20200208', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2020', '02', '08')
+        .subtract(1, 'd').day
+    ).to.be.equal(
+        '07'
+    );
+});

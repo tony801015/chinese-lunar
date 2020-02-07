@@ -224,23 +224,31 @@ class ApplicationLunar extends AdvancedLunar {
   }
 
   /**
-   * 
+   * 減
    * @param {Integer} number 
    * @param {String} unit 
    * @returns {Object} Lunar
    */
-  subtract(number,unit) {
-    
+  subtract(number, unit) {
+    const date = moment(this.year + this.month + this.day)
+      .subtract(number, unit)
+      .format('YYYY-MM-DD')
+      .split('-');
+    return new ApplicationLunar(date[0], date[1], date[2]);
   }
 
   /**
-   * 
+   * 加
    * @param {Integer} number 
    * @param {String} unit 
    * @returns {Object} Lunar
    */
-  add(number,unit) {
-
+  add(number, unit) {
+    const date = moment(this.year + this.month + this.day)
+      .add(number, unit)
+      .format('YYYY-MM-DD')
+      .split('-');
+    return new ApplicationLunar(date[0], date[1], date[2]);
   }
 
   /**
