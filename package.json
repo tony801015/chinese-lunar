@@ -8,7 +8,8 @@
     "dev": "dev=true node example.js",
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test-dev": "jest --coverage --watchAll",
-    "build": "webpack"
+    "build": "webpack",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "chinese-lunar",
