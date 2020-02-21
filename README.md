@@ -5,9 +5,10 @@
 [![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
 
-目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`的資訊
+目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`,`紫白`,`納音`的資訊
 
 # ChangeLog
+- 2020/02/21 `0.17.0` 版本提供取得紫白九星的方法和取得納音屬性 `.getNayin()` `.getPurpleＷhites()`
 - 2020/02/08 `0.16.0` 版本提供日期加減的計算 `.add()` `.subtract()`
 - 2020/02/02 `0.15.0` 版本提供上(下)一個節氣的距離天數 `.getSolarTermDistance()`
 - 2020/01/25 `0.14.0` 版本農曆轉公(國)曆的功能囉 `.lunarToSolar()`
@@ -128,6 +129,14 @@ ref: 感謝神作[moment.js](https://momentjs.com/docs/#/manipulating/subtract/)
 [subtract()](https://momentjs.com/docs/#/manipulating/subtract/) 減的使用方式  
 [add()](https://momentjs.com/docs/#/manipulating/add/) 加的使用方式  
 
+#### 紫白與納音
+```js
+const lunar = require("@tony801015/chinese-lunar");
+lunar('2020', '02', '21').getNayin(); // 土
+
+lunar('2020', '02', '21').getPurpleＷhites(); 
+// [ '八白', '七赤', '六白', '五黃', '四綠', '三碧', '二黑', '一白', '九紫', '八白', '七赤', '六白' ]
+```
 
 
 |      中文名稱      |       參數名稱       |  型態   |                                                範例                                                | 備註 | 
@@ -178,8 +187,9 @@ ref: 感謝神作[moment.js](https://momentjs.com/docs/#/manipulating/subtract/)
 - 製作前端使用js 2020/1/25 完成 `0.14.3`
 - 加強節氣資訊，距離前(後)節氣天數 2020/2/2 完成 `0.15.0`
 - 加減 subtract(), add() 2020/02/08 完成 `0.16.0`
+- 取得紫白九星的方法 2020/02/21 完成 `0.17.0`
+- 取得納音屬性 2020/02/21 完成 `0.17.0`
 - 製作萬年曆
 - 查詢農曆年的API
 - 建立Document文件方便查詢
-- 取得紫白九星的方法
-- 取得納音屬性
+- 查詢流年大運

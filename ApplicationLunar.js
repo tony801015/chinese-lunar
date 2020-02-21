@@ -252,6 +252,61 @@ class ApplicationLunar extends AdvancedLunar {
   }
 
   /**
+   * 取得當年的紫白
+   * @param {String} chineseYear 
+   * @returns {Array} Lunar
+   * 參考算法：https://kknews.cc/zh-tw/geomantic/r8llgb4.html
+   * 子午卯酉年 八白
+   * 辰戍丑未年 五黃
+   * 寅申巳亥年 二黑
+   */
+  getPurpleＷhites(chineseYear = this.chineseYear) {
+    if ('子午卯酉'.indexOf(chineseYear[1]) >= 0) {
+      return config.purpleＷhites[0];
+    }
+
+    if ('辰戌丑未'.indexOf(chineseYear[1]) >= 0) {
+      return config.purpleＷhites[1];
+    }
+
+    if ('寅申巳亥'.indexOf(chineseYear[1]) >= 0) {
+      return config.purpleＷhites[2];
+    }
+  }
+
+  /**
+   * 取得當年的納音
+   * @param {String} chineseYear 
+   * @returns {String} 
+   * 金 甲子乙丑壬寅癸卯庚辰辛巳甲午乙未壬申癸酉庚戌辛丑
+   * 木 壬子癸丑庚寅辛卯戊辰己巳壬午癸未庚申辛酉戊戌己亥
+   * 水 丙子丁丑甲寅乙卯壬辰癸巳丙午丁未甲申乙酉壬戌癸亥
+   * 火 戊子己丑丙寅丁卯甲辰乙巳戊午己未丙申丁酉甲戌乙亥
+   * 土 庚子辛丑戊寅己卯丙辰丁巳庚午辛未戊申己酉丙戌丁亥
+   */
+  getNayin(chineseYear = this.chineseYear) {
+    if ('甲子乙丑壬寅癸卯庚辰辛巳甲午乙未壬申癸酉庚戌辛丑'.indexOf(chineseYear) >= 0) {
+      return '金';
+    }
+
+    if ('壬子癸丑庚寅辛卯戊辰己巳壬午癸未庚申辛酉戊戌己亥'.indexOf(chineseYear) >= 0) {
+      return '木';
+    }
+
+    if ('丙子丁丑甲寅乙卯壬辰癸巳丙午丁未甲申乙酉壬戌癸亥'.indexOf(chineseYear) >= 0) {
+      return '水';
+    }
+
+    if ('戊子己丑丙寅丁卯甲辰乙巳戊午己未丙申丁酉甲戌乙亥'.indexOf(chineseYear) >= 0) {
+      return '火';
+    }
+
+    if ('庚子辛丑戊寅己卯丙辰丁巳庚午辛未戊申己酉丙戌丁亥'.indexOf(chineseYear) >= 0) {
+      return '土';
+    }
+  }
+
+  /**
   * 取得Json格式
   */
   getJson() {
@@ -263,6 +318,8 @@ class ApplicationLunar extends AdvancedLunar {
       chineseMonthTenGod: this.getChineseMonthTenGod(),
       chineseDayTenGod: this.getChineseDayTenGod(),
       solarTermDistance: this.getSolarTermDistance(),
+      nayin: this.getNayin(),
+      purpleＷhites: this.getPurpleＷhites(),
     };
   }
 }
