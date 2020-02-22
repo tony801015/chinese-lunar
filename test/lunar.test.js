@@ -1700,3 +1700,19 @@ it('[68]20270208', () => {
         '水'
     );
 });
+
+it('[69]20270208', () => {
+    process.env.DEV = 'false';
+    expect(lunar().getNayin('無')
+    ).to.be.equal(
+        '請檢查輸入年份'
+    );
+});
+
+it('[70]20270208', () => {
+    process.env.DEV = 'false';
+    expect(lunar().getPurpleＷhites('無')
+    ).to.be.equal(
+        '請檢查輸入年份'
+    );
+});

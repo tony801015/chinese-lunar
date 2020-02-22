@@ -272,6 +272,7 @@ class ApplicationLunar extends AdvancedLunar {
     if ('寅申巳亥'.indexOf(chineseYear[1]) >= 0) {
       return config.purpleＷhites[2];
     }
+    return '請檢查輸入年份';
   }
 
   /**
@@ -304,6 +305,7 @@ class ApplicationLunar extends AdvancedLunar {
     if ('庚子辛丑戊寅己卯丙辰丁巳庚午辛未戊申己酉丙戌丁亥'.indexOf(chineseYear) >= 0) {
       return '土';
     }
+    return '請檢查輸入年份';
   }
 
   /**

@@ -14,18 +14,22 @@ const tools = {
     return new Date().getHours().toString();
   },
   setDate: (year, month, day) => {
+    const yearDate = new Date().getFullYear();
+    const monthDate = new Date().getMonth();
+    const date = new Date().getDate();
+
     if (year === '' || year === undefined) {
-      year = new Date().getFullYear().toString();
+      year = yearDate.toString();
     }
     if (month === '' || month === undefined) {
-      month = new Date().getMonth() + 1 < 9
-        ? (`0${(new Date().getMonth() + 1).toString()}`)
-        : (new Date().getMonth() + 1).toString();
+      month = monthDate + 1 < 9
+        ? (`0${(monthDate + 1).toString()}`)
+        : (monthDate + 1).toString();
     }
     if (day === '' || day === undefined) {
-      day = new Date().getDate() < 9
-        ? (`0${(new Date().getDate()).toString()}`)
-        : (new Date().getDate()).toString();
+      day = date < 9
+        ? (`0${(date).toString()}`)
+        : (date).toString();
     }
     return {
       year, month, day
