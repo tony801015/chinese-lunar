@@ -193,3 +193,4 @@ lunar('2020', '02', '21').getPurpleＷhites();
 - 查詢農曆年的API
 - 建立使用手冊
 - 查詢流年,流月,大運,藏幹,副星
+- 提供「農曆的日期」數字的形式呈現 [#7](https://github.com/tony801015/chinese-lunar/issues/7) 感謝 @creatxrgithub 大大提供建議
