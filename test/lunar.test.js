@@ -1099,7 +1099,7 @@ it('[36]20151122', () => {
             ],
             month: '11',
             nayin: '金',
-            purpleＷhites: [
+            purpleWhites: [
                 '五黃',
                 '四綠',
                 '三碧',
@@ -1188,7 +1188,7 @@ it('[40]Don\'t new instance', () => {
             ],
             month: '11',
             nayin: '火',
-            purpleＷhites: [
+            purpleWhites: [
                 '八白',
                 '七赤',
                 '六白',
@@ -1291,7 +1291,7 @@ it('[46]20200404', () => {
                 ],
                 month: '04',
                 nayin: '土',
-                purpleＷhites: [
+                purpleWhites: [
                     '八白',
                     '七赤',
                     '六白',
@@ -1338,7 +1338,7 @@ it('[47]20200404', () => {
             ],
             month: '04',
             nayin: '土',
-            purpleＷhites: [
+            purpleWhites: [
                 '八白',
                 '七赤',
                 '六白',
@@ -1398,7 +1398,7 @@ it('[48]20210203', () => {
             ],
             month: '02',
             nayin: '金',
-            purpleＷhites: [
+            purpleWhites: [
                 '五黃',
                 '四綠',
                 '三碧',
@@ -1562,7 +1562,7 @@ it('[62]20210203', () => {
                 ],
                 month: '03',
                 nayin: '金',
-                purpleＷhites: [
+                purpleWhites: [
                     '五黃',
                     '四綠',
                     '三碧',
@@ -1626,7 +1626,7 @@ it('[63]20200416', () => {
                 ],
                 month: '06',
                 nayin: '土',
-                purpleＷhites: [
+                purpleWhites: [
                     '八白',
                     '七赤',
                     '六白',
@@ -1679,7 +1679,7 @@ it('[65]20200208', () => {
 
 it('[66]20190208', () => {
     process.env.DEV = 'false';
-    expect(lunar('2019', '02', '08').getPurpleＷhites()
+    expect(lunar('2019', '02', '08').getPurpleWhites()
     ).to.be.deep.equal(
         ['二黑', '一白', '九紫', '八白', '七赤', '六白', '五黃', '四綠', '三碧', '二黑', '一白', '九紫']
     );
@@ -1711,7 +1711,7 @@ it('[69]20270208', () => {
 
 it('[70]20270208', () => {
     process.env.DEV = 'false';
-    expect(lunar().getPurpleＷhites('無')
+    expect(lunar().getPurpleWhites('無')
     ).to.be.equal(
         '請檢查輸入年份'
     );

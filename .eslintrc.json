@@ -11,7 +11,7 @@
         ],
         "eol-last": [
             "error",
-            "never"
+            "always"
         ],
         "guard-for-in": 0,
         "no-restricted-syntax": 0,

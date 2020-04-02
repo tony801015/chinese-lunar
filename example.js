@@ -2,7 +2,9 @@
 let lunar;
 process.env.DEV === 'true' ? lunar = require('./index') : lunar = require('./index');
 
-const data = lunar('2020', '02', '21').getPurpleＷhites();
+const data = lunar('2020', '05', '23').getJson();
+//.lunarPerMonthHasDays;
+// .getPurpleＷhites();
 // .getSolarTermDistance();
 // // console.log(`年=> ${data.chineseYear}, 十神=> ${data.chineseYearTenGod}`); // 年=> 辛丑, 十神=> 印
 // // console.log(`月=> ${data.chineseMonth}, 十神=> ${data.chineseMonthTenGod}`); // 月=> 庚寅, 十神=> ㄗ

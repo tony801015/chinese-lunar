@@ -260,7 +260,7 @@ class ApplicationLunar extends AdvancedLunar {
    * 辰戍丑未年 五黃
    * 寅申巳亥年 二黑
    */
-  getPurpleＷhites(chineseYear = this.chineseYear) {
+  getPurpleWhites(chineseYear = this.chineseYear) {
     if ('子午卯酉'.indexOf(chineseYear[1]) >= 0) {
       return config.purpleＷhites[0];
     }
@@ -321,7 +321,7 @@ class ApplicationLunar extends AdvancedLunar {
       chineseDayTenGod: this.getChineseDayTenGod(),
       solarTermDistance: this.getSolarTermDistance(),
       nayin: this.getNayin(),
-      purpleＷhites: this.getPurpleＷhites(),
+      purpleWhites: this.getPurpleWhites(),
     };
   }
 }
