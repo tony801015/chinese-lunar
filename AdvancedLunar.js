@@ -43,15 +43,6 @@ class AdvancedLunar extends BasicLunar {
         return lunarTools.findDengGui(this.chineseDay.split('')[0], this.solarTerms);
     }
 
-
-    /**
-      * 取得當年潤幾月
-      * @returns {number} LeapMonth, If return 0 is no LeapMonth 
-      */
-    getLeapMonth() {
-        return lunarLeap[this.year - 1900][0];
-    }
-
     /**
      * 取得每月農曆有幾天
      * @returns {array} getLunarPerMonthHasDays 
@@ -71,7 +62,6 @@ class AdvancedLunar extends BasicLunar {
             ...super.getJson(),
             chineseTimesTenGod: this.getChineseTimesTenGod(),
             dengGui: this.getDengGui(),
-            leapMonth: this.getLeapMonth(),
             lunarPerMonthHasDays: this.getLunarPerMonthHasDays(),
         };
     }

@@ -3,6 +3,9 @@ const {
   sixty,
   lunarMonthGeneral,
   animal,
+  lunarMonths,
+  lunarMonthLeap,
+  lunarLeap
 } = require('./config');
 const {
   solarTermToLunarMonth,
@@ -113,8 +116,13 @@ class BasicLunar extends GeneralLunar {
    * 取得農曆月
    * @returns {string} 正月
    */
-  getLunarMonth() {
+  getLunarMonth(digit = false) {
     const { month } = this.getLunarMonthAndDayNumber;
+    if (digit) {
+      return (lunarMonths.indexOf(month) !== -1)
+        ? lunarMonths.indexOf(month) + 1
+        : lunarMonthLeap.indexOf(month) + 1;
+    }
     return month;
   }
 
@@ -122,8 +130,11 @@ class BasicLunar extends GeneralLunar {
    * 取得農曆日
    * @returns {string} 十九 初十
    */
-  getLunarDay() {
+  getLunarDay(digit = false) {
     const { day } = this.getLunarMonthAndDayNumber;
+    if (digit) {
+      return day;
+    }
     switch (day) {
       case 10:
         return '初十';
@@ -251,6 +262,21 @@ class BasicLunar extends GeneralLunar {
   }
 
   /**
+      * 取得當年潤幾月
+      * @returns {number} LeapMonth, If return 0 is no LeapMonth 
+      */
+  getLeapMonth() {
+    return lunarLeap[this.year - 1900][0];
+  }
+
+  /**
+ * 判斷此月使否有閏月
+ */
+  checkLeapMonth() {
+    return (this.getLeapMonth() === this.getLunarMonth(true));
+  }
+
+  /**
    * 取得Json格式
    */
   getJson() {
@@ -261,6 +287,10 @@ class BasicLunar extends GeneralLunar {
       solarTerms: this.getSolarTerms(),
       lunarMonth: this.getLunarMonth(),
       lunarDay: this.getLunarDay(),
+      lunarMonthDigit: this.getLunarMonth(true),
+      lunarDayDigit: this.getLunarDay(true),
+      isLunarLeapMonth: this.checkLeapMonth(),
+      leapMonth: this.getLeapMonth(),
       chineseYear: this.getChineseYearControllerYear(),
       chineseMonth: this.getChineseMonth(),
       chineseDay: this.getChineseDay(),

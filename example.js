@@ -2,7 +2,7 @@
 let lunar;
 process.env.DEV === 'true' ? lunar = require('./index') : lunar = require('./index');
 
-const data = lunar('2020', '05', '23').getJson();
+const data = lunar().setChineseAge('甲子').getJson();
 //.lunarPerMonthHasDays;
 // .getPurpleＷhites();
 // .getSolarTermDistance();

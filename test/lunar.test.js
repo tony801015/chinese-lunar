@@ -1028,8 +1028,12 @@ it('[31]20161107', () => {
             chineseYear: '丙申',
             constellation: '天蠍座',
             day: '07',
+            isLunarLeapMonth: false,
+            leapMonth: 0,
             lunarDay: '初八',
+            lunarDayDigit: 8,
             lunarMonth: '十月',
+            lunarMonthDigit: 10,
             month: '11',
             solarTerms: '立冬',
             week: '1',
@@ -1091,9 +1095,12 @@ it('[36]20151122', () => {
             constellation: '天蠍座',
             day: '22',
             dengGui: '戌申',
+            isLunarLeapMonth: false,
             leapMonth: 0,
             lunarDay: '十一',
+            lunarDayDigit: 11,
             lunarMonth: '十月',
+            lunarMonthDigit: 10,
             lunarPerMonthHasDays: [
                 '29', '30', '29', '29', '30', '29', '30', '30', '30', '29', '30', '29'
             ],
@@ -1180,9 +1187,12 @@ it('[40]Don\'t new instance', () => {
             constellation: '天蠍座',
             day: '10',
             dengGui: '子申',
+            isLunarLeapMonth: false,
             leapMonth: 6,
             lunarDay: '廿二',
+            lunarDayDigit: 22,
             lunarMonth: '九月',
+            lunarMonthDigit: 9,
             lunarPerMonthHasDays: [
                 '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
             ],
@@ -1283,9 +1293,12 @@ it('[46]20200404', () => {
                     },
                 },
                 dengGui: '戌子',
+                isLunarLeapMonth: false,
                 leapMonth: 4,
                 lunarDay: '十二',
+                lunarDayDigit: 12,
                 lunarMonth: '三月',
+                lunarMonthDigit: 3,
                 lunarPerMonthHasDays: [
                     '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
                 ],
@@ -1330,9 +1343,12 @@ it('[47]20200404', () => {
             constellation: '牡羊座',
             day: '04',
             dengGui: '戌子',
+            isLunarLeapMonth: false,
             leapMonth: 4,
             lunarDay: '十二',
+            lunarDayDigit: 12,
             lunarMonth: '三月',
+            lunarMonthDigit: 3,
             lunarPerMonthHasDays: [
                 '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
             ],
@@ -1390,9 +1406,12 @@ it('[48]20210203', () => {
             constellation: '水瓶座',
             day: '03',
             dengGui: '申午',
+            isLunarLeapMonth: false,
             leapMonth: 0,
             lunarDay: '廿二',
+            lunarDayDigit: 22,
             lunarMonth: '腊月',
+            lunarMonthDigit: 12,
             lunarPerMonthHasDays: [
                 '29', '30', '30', '29', '30', '29', '30', '29', '30', '29', '30', '29'
             ],
@@ -1554,9 +1573,12 @@ it('[62]20210203', () => {
                 constellation: '雙魚座',
                 day: '15',
                 dengGui: '未巳',
+                isLunarLeapMonth: false,
                 leapMonth: 0,
                 lunarDay: '初三',
+                lunarDayDigit: 3,
                 lunarMonth: '二月',
+                lunarMonthDigit: 2,
                 lunarPerMonthHasDays: [
                     '29', '30', '30', '29', '30', '29', '30', '29', '30', '29', '30', '29'
                 ],
@@ -1618,9 +1640,12 @@ it('[63]20200416', () => {
                 constellation: '雙子座',
                 day: '07',
                 dengGui: '巳丑',
+                isLunarLeapMonth: true,
                 leapMonth: 4,
                 lunarDay: '十六',
+                lunarDayDigit: 16,
                 lunarMonth: '閏四月',
+                lunarMonthDigit: 4,
                 lunarPerMonthHasDays: [
                     '29', '30', '30', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30'
                 ],

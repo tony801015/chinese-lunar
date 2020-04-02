@@ -189,8 +189,8 @@ lunar('2020', '02', '21').getPurpleＷhites();
 - 加減 subtract(), add() 2020/02/08 完成 `0.16.0`
 - 取得紫白九星的方法 2020/02/21 完成 `0.17.0`
 - 取得納音屬性 2020/02/21 完成 `0.17.0`
+- 提供「農曆的日期」數字的形式呈現 [#7](https://github.com/tony801015/chinese-lunar/issues/7) 感謝 @creatxrgithub 大大提供建議 `0.17.3`
 - 製作萬年曆
 - 查詢農曆年的API
 - 建立使用手冊
 - 查詢流年,流月,大運,藏幹,副星
-- 提供「農曆的日期」數字的形式呈現 [#7](https://github.com/tony801015/chinese-lunar/issues/7) 感謝 @creatxrgithub 大大提供建議
