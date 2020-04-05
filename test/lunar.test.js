@@ -1104,6 +1104,7 @@ it('[36]20151122', () => {
             lunarPerMonthHasDays: [
                 '29', '30', '29', '29', '30', '29', '30', '30', '30', '29', '30', '29'
             ],
+            mingGong: '壬午',
             month: '11',
             nayin: '金',
             purpleWhites: [
@@ -1120,6 +1121,7 @@ it('[36]20151122', () => {
                 '四綠',
                 '三碧',
             ],
+            shenGong: '戊子',
             solarTermDistance: {
                 next: {
                     diffDistanceDay: 15,
@@ -1133,6 +1135,7 @@ it('[36]20151122', () => {
                 },
             },
             solarTerms: '小雪',
+            taiYuan: '戊寅',
             week: '密',
             year: '2015'
         }
@@ -1196,6 +1199,7 @@ it('[40]Don\'t new instance', () => {
             lunarPerMonthHasDays: [
                 '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
             ],
+            mingGong: '癸申',
             month: '11',
             nayin: '火',
             purpleWhites: [
@@ -1212,6 +1216,7 @@ it('[40]Don\'t new instance', () => {
                 '七赤',
                 '六白',
             ],
+            shenGong: '癸戌',
             solarTermDistance: {
                 next: {
                     diffDistanceDay: 12,
@@ -1225,6 +1230,7 @@ it('[40]Don\'t new instance', () => {
                 },
             },
             solarTerms: '立冬',
+            taiYuan: '壬寅',
             week: '5',
             year: '2017'
         }
@@ -1320,6 +1326,9 @@ it('[46]20200404', () => {
                 ],
                 solarTerms: '清明',
                 week: '6',
+                mingGong: '庚辰',
+                shenGong: '戊寅',
+                taiYuan: '辛未',
                 year: '2020'
             });
 });
@@ -1382,6 +1391,9 @@ it('[47]20200404', () => {
             },
             solarTerms: '清明',
             week: '6',
+            mingGong: '庚辰',
+            shenGong: '戊寅',
+            taiYuan: '辛未',
             year: '2020'
         });
 });
@@ -1445,6 +1457,9 @@ it('[48]20210203', () => {
             },
             solarTerms: '立春',
             week: '3',
+            mingGong: '壬辰',
+            shenGong: '庚寅',
+            taiYuan: '辛巳',
             year: '2021'
         });
 });
@@ -1612,6 +1627,9 @@ it('[62]20210203', () => {
                 },
                 solarTerms: '驚蟄',
                 week: '1',
+                mingGong: '辛丑',
+                shenGong: '癸巳',
+                taiYuan: '壬午',
                 year: '2021'
             });
 });
@@ -1679,6 +1697,9 @@ it('[63]20200416', () => {
                 },
                 solarTerms: '芒種',
                 week: '密',
+                mingGong: '丙戌',
+                shenGong: '甲申',
+                taiYuan: '癸酉',
                 year: '2020'
             }
         );
@@ -1739,5 +1760,41 @@ it('[70]20270208', () => {
     expect(lunar().getPurpleWhites('無')
     ).to.be.equal(
         '請檢查輸入年份'
+    );
+});
+
+it('[71]20080801', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2008', '08', '01')
+        .getDuodecimalCycleToDecimalCycle('子')
+    ).to.be.equal(
+        '甲'
+    );
+});
+
+it('[72]20090801', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2009', '08', '01')
+        .getDuodecimalCycleToDecimalCycle('子')
+    ).to.be.equal(
+        '丙'
+    );
+});
+
+it('[73]20090801', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2009', '08', '01')
+        .getKongWang('子', '甲')
+    ).to.be.equal(
+        '戌亥'
+    );
+});
+
+it('[74]20090801', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2009', '08', '01')
+        .getCangGan('子')
+    ).to.be.equal(
+        '癸'
     );
 });

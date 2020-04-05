@@ -309,6 +309,86 @@ class ApplicationLunar extends AdvancedLunar {
   }
 
   /**
+   * 取得胎元
+   * @param {String} chineseMonth 月柱
+   * @returns {String} TaiYuan
+   */
+  getTaiYuan(chineseMonth = this.chineseMonth) {
+    const top = config.decimalCycle.indexOf(chineseMonth.split('')[0]);
+    const down = config.duodecimalCycleMonth.indexOf(chineseMonth.split('')[1]);
+    return config.taiYuan[top][down];
+  }
+
+  /**
+   * 取得藏幹
+   * @param {String} duodecimalCycle 地支
+   * @returns {String} CangGan
+   */
+  getCangGan(duodecimalCycle) {
+    return config.cangGan[config.duodecimalCycle.indexOf(duodecimalCycle)];
+  }
+
+  /**
+   * 取得空亡
+   * @param {String} duodecimalCycle 地支
+   * @param {String} decimalCycle 天干
+   * @returns {String} kongWang
+   */
+  getKongWang(duodecimalCycle, decimalCycle) {
+    const down = config.duodecimalCycle.indexOf(duodecimalCycle);
+    const top = config.decimalCycle.indexOf(decimalCycle);
+    return config.kongWang[down][top];
+  }
+
+  /**
+   * 取得命宮的地支
+   * @param {String} chineseMonth 
+   * @param {String} chineseTime 
+   */
+  getMingGong(chineseMonth = this.chineseMonth, chineseTime = this.chineseTime) {
+    const down = config.duodecimalCycleMonth.indexOf(chineseMonth.split('')[1]);
+    const top = config.duodecimalCycle.indexOf(chineseTime.split('')[1]);
+    const decimalCycle = this.getDuodecimalCycleToDecimalCycle(
+      config.mingGongDuoDecimalCycle[top][down]
+    );
+    return `${decimalCycle}${config.mingGongDuoDecimalCycle[top][down]}`;
+  }
+
+  /**
+   * 取得身宮
+   * @param {String} chineseMonth 
+   * @param {String} chineseTime 
+   */
+  getShenGong(chineseMonth = this.chineseMonth, chineseTime = this.chineseTime) {
+    const down = config.duodecimalCycleMonth.indexOf(chineseMonth.split('')[1]);
+    const top = config.duodecimalCycle.indexOf(chineseTime.split('')[1]);
+    const decimalCycle = this.getDuodecimalCycleToDecimalCycle(config.shenGong[top][down]);
+    return `${decimalCycle}${config.shenGong[top][down]}`;
+  }
+
+  /**
+   * 地支查天干  使用於身宮和命宮
+   * @param {String} decimalCycle 地支
+   * @param {String} chineseYear 
+   */
+  getDuodecimalCycleToDecimalCycle(decimalCycle, chineseYear = this.chineseYear) {
+    const down = config.duodecimalCycleMonth.indexOf(decimalCycle);
+    const word = chineseYear.split('')[0];
+    switch (true) {
+      case '甲己'.indexOf(word) >= 0:
+        return config.duodecimalCycleToDecimalCycle[0][down];
+      case '乙庚'.indexOf(word) >= 0:
+        return config.duodecimalCycleToDecimalCycle[1][down];
+      case '丙辛'.indexOf(word) >= 0:
+        return config.duodecimalCycleToDecimalCycle[2][down];
+      case '丁壬'.indexOf(word) >= 0:
+        return config.duodecimalCycleToDecimalCycle[3][1];
+      default:
+        return config.duodecimalCycleToDecimalCycle[4][down];
+    }
+  }
+
+  /**
   * 取得Json格式
   */
   getJson() {
@@ -322,6 +402,9 @@ class ApplicationLunar extends AdvancedLunar {
       solarTermDistance: this.getSolarTermDistance(),
       nayin: this.getNayin(),
       purpleWhites: this.getPurpleWhites(),
+      taiYuan: this.getTaiYuan(),
+      mingGong: this.getMingGong(),
+      shenGong: this.getShenGong(),
     };
   }
 }

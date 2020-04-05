@@ -5,9 +5,10 @@
 [![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
 
-目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`,`紫白`,`納音`的資訊
+目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`,`紫白`,`納音`, `胎元`, `命宮`, `身宮`, `藏幹`, `副星`的資訊
 
 # ChangeLog
+- 2020/02/21 `0.18.0` 版本提供胎元, 命宮, 身宮 `.getTaiYuan()` `.getMingGong()` `.getShenGong()`
 - 2020/02/21 `0.17.0` 版本提供取得紫白九星的方法和取得納音屬性 `.getNayin()` `.getPurpleＷhites()`
 - 2020/02/08 `0.16.0` 版本提供日期加減的計算 `.add()` `.subtract()`
 - 2020/02/02 `0.15.0` 版本提供上(下)一個節氣的距離天數 `.getSolarTermDistance()`
@@ -190,7 +191,8 @@ lunar('2020', '02', '21').getPurpleＷhites();
 - 取得紫白九星的方法 2020/02/21 完成 `0.17.0`
 - 取得納音屬性 2020/02/21 完成 `0.17.0`
 - 提供「農曆的日期」數字的形式呈現 [#7](https://github.com/tony801015/chinese-lunar/issues/7) 感謝 @creatxrgithub 大大提供建議 `0.17.3`
+- 提供胎元,命宮,身宮,藏幹,副星 `0.18.0`
 - 製作萬年曆
 - 查詢農曆年的API
 - 建立使用手冊
-- 查詢流年,流月,大運,藏幹,副星
+- 查詢流年,流月,大運,
