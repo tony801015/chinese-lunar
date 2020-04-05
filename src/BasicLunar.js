@@ -1,12 +1,5 @@
-const {
-  week,
-  sixty,
-  lunarMonthGeneral,
-  animal,
-  lunarMonths,
-  lunarMonthLeap,
-  lunarLeap
-} = require('./config');
+const { week, sixty, lunarMonthGeneral, animal, lunarMonths, lunarMonthLeap, lunarLeap }
+  = require('./config');
 const {
   solarTermToLunarMonth,
   lunarMonthByYear,
@@ -14,10 +7,16 @@ const {
   findTime,
 } = require('./tools');
 
-const moment = require('moment');
 const GeneralLunar = require('./GeneralLunar');
+const moment = require('moment');
 
 class BasicLunar extends GeneralLunar {
+  /**
+   * 
+   * @param {String} year 西元年 YYYY (ex: 2020, 1992)
+   * @param {String} month 月 MM (ex: 01, 08, 12)
+   * @param {String} day  日 DD (ex: 01, 08, 23, 28) 
+   */
   constructor(year, month, day) {
     super(year, month, day);
     this.solarTerms = this.getSolarTerms();

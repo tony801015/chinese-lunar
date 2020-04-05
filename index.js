@@ -1,9 +1,9 @@
-const GeneralLunar = require('./GeneralLunar');
-const BasicLunar = require('./BasicLunar');
-const AdvancedLunar = require('./AdvancedLunar');
-const ApplicationLunar = require('./ApplicationLunar');
-const config = require('./config');
-const tools = require('./tools');
+const GeneralLunar = require('./src/GeneralLunar');
+const BasicLunar = require('./src/BasicLunar');
+const AdvancedLunar = require('./src/AdvancedLunar');
+const ApplicationLunar = require('./src/ApplicationLunar');
+const config = require('./src/config');
+const tools = require('./src/tools');
 
 /**
  * @param {String} year 西元年 YYYY (ex: 2020, 1992)

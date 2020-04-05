@@ -1,17 +1,24 @@
 /* eslint-disable no-unused-expressions */
 let lunar;
-process.env.DEV === 'true' ? lunar = require('./index') : lunar = require('./index');
-const lunarTools = require('./tools');
-const { cangGan, duodecimalCycle } = require('./config');
+process.env.DEV === 'true' ? lunar = require('./index') : lunar = require('./main');
+const lunarTools = require('./src/tools');
+const { cangGan, duodecimalCycle } = require('./src/config');
 
 // console.log(process.memoryUsage());
 // console.log(lunarTools.findTenGod('癸', '己')); // 副星
 // console.log(cangGan[duodecimalCycle.indexOf('未')]); // 藏幹
 const data = lunar('2008', '08', '01')
-  .setTime('00')
-  .setChineseAge('戊子')
+  // .setTime('00')
+  // .setChineseAge('戊子')
   .getJson(); // '2008', '08', '01'
+console.log(data);
 
+// const lunar = require('@tony801015/chinese-lunar');
+// console.log(lunar('2020', '04', '05').getShenGong()); // 身宮
+// console.log(lunar('2020', '04', '05').getMingGong()); // 命宮
+// console.log(lunar('2020', '04', '05').getKongWang('子', '甲')); // 空亡
+// console.log(lunar('2020', '04', '05').getCangGan('子')); // 藏幹
+// console.log(lunar('2020', '04', '05').getTaiYuan()); // 胎元  
 // 八字
 // console.log(`年=> ${data.chineseYear}, 十神=> ${data.chineseYearTenGod}`);
 // console.log(`月=> ${data.chineseMonth}, 十神=> ${data.chineseMonthTenGod}`);
@@ -25,7 +32,7 @@ const TaiYuan = lunar('2008', '08', '01')
   .getJson();
 // .getDuodecimalCycleToDecimalCycle('子');
 
-console.log(TaiYuan);
+// console.log(TaiYuan);
 // 命宮  壬戌
 // 身宮  庚申
 // 陽(甲、丙、戊、庚、壬) 陰(乙、丁、己、辛、癸)

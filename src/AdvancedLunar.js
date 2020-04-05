@@ -3,6 +3,13 @@ const lunarTools = require('./tools');
 const { lunarLeap, solarTerms } = require('./config');
 
 class AdvancedLunar extends BasicLunar {
+    /**
+     * 
+     * @param {String} year 西元年 YYYY (ex: 2020, 1992)
+     * @param {String} month 月 MM (ex: 01, 08, 12)
+     * @param {String} day  日 DD (ex: 01, 08, 23, 28) 
+     * @param {String} chineseAge 天干 (ex: 甲子, 丙戌, 癸亥)
+     */
     constructor(year, month, day, chineseAge) {
         super(year, month, day);
         this.chineseAge = chineseAge || '請輸入年齡';

@@ -5,10 +5,10 @@
 [![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
 
-目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`,`紫白`,`納音`, `胎元`, `命宮`, `身宮`, `藏幹`, `副星`的資訊
+目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`,`紫白`,`納音`,`胎元`,`命宮`,`身宮`,`藏幹`,`副星`的資訊
 
 # ChangeLog
-- 2020/02/21 `0.18.0` 版本提供胎元, 命宮, 身宮 `.getTaiYuan()` `.getMingGong()` `.getShenGong()`
+- 2020/04/05 `0.18.0` 版本提供胎元, 命宮, 身宮 `.getTaiYuan()` `.getMingGong()` `.getShenGong()`
 - 2020/02/21 `0.17.0` 版本提供取得紫白九星的方法和取得納音屬性 `.getNayin()` `.getPurpleＷhites()`
 - 2020/02/08 `0.16.0` 版本提供日期加減的計算 `.add()` `.subtract()`
 - 2020/02/02 `0.15.0` 版本提供上(下)一個節氣的距離天數 `.getSolarTermDistance()`
@@ -41,7 +41,7 @@ console.log(lunar().getJson()); // 抓取目前的年,月,日
 
 ```js
 const lunar = require("@tony801015/chinese-lunar");
-console.log(lunar("2020", "01", "09").getJson()); // 抓取目前的年,月,日
+console.log(lunar("2020", "01", "09").getJson()); 
 ```
 
 ### 取得參數
@@ -139,6 +139,24 @@ lunar('2020', '02', '21').getPurpleＷhites();
 // [ '八白', '七赤', '六白', '五黃', '四綠', '三碧', '二黑', '一白', '九紫', '八白', '七赤', '六白' ]
 ```
 
+#### 胎元,命宮,身宮,藏幹,副星
+```js
+const lunar = require("@tony801015/chinese-lunar");
+// 身宮
+lunar('2020', '04', '05').getShenGong(); // 戊子
+// 命宮
+lunar('2020', '04', '05').getMingGong(); // 壬午
+// 空亡
+lunar('2020', '04', '05').getKongWang('子', '甲');  // 戌亥
+// 藏幹
+lunar('2020', '04', '05').getCangGan('子'); // 癸
+// 胎元
+lunar('2020', '04', '05').getTaiYuan(); // 辛未
+```
+
+
+#### 使用`getJson()`會得到以下參數
+
 
 |      中文名稱      |       參數名稱       |  型態   |                                                範例                                                | 備註 | 
 | :----------------: | :------------------: | :-----: | :------------------------------------------------------------------------------------------------: | :--: | 
@@ -148,6 +166,10 @@ lunar('2020', '02', '21').getPurpleＷhites();
 |        節氣        |      solarTerms      | string  |                                                小寒                                                ||
 |       農曆月       |      lunarMonth      | string  |                                                腊月                                                ||
 |       農曆日       |       lunarDay       | string  |                                                十五                                                ||
+|       農曆月數值       |       lunarMonthDigit       | number  |                                              12                                                  ||
+|       農曆日數值       |       lunarDayDigit       | number  |                                                15                                                ||
+|       當前農曆月份是否閏月       |       isLunarLeapMonth       | boolean  |                                                false                                                ||
+|     當年閏幾月     |     leapMonth      | number  |                                                0                                                ||
 |     年柱     |     chineseYear      | string  |                                                己亥                                                ||
 |     月柱     |     chineseMonth     | string  |                                                丁丑                                                ||
 |     日柱    |      chineseDay      | string  |                                                辛亥                                                ||
@@ -194,5 +216,5 @@ lunar('2020', '02', '21').getPurpleＷhites();
 - 提供胎元,命宮,身宮,藏幹,副星 `0.18.0`
 - 製作萬年曆
 - 查詢農曆年的API
+- 查詢流年,流月,大運
 - 建立使用手冊
-- 查詢流年,流月,大運,

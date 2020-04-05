@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const lunar = require('../index');
+const lunar = require('..');
 
 process.env.DEV = 'true';
 const { BasicLunar, AdvancedLunar, ApplicationLunar } = lunar();

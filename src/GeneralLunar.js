@@ -6,9 +6,15 @@ const {
   lunarMonths,
   lunarMonthLeap,
 } = require('./config');
-const data = require('./source/solarTermsData.json');
+const data = require('../data/solarTermsData.json');
 
 class GeneralLunar {
+  /**
+   * 
+   * @param {String} year 西元年 YYYY (ex: 2020, 1992)
+   * @param {String} month 月 MM (ex: 01, 08, 12)
+   * @param {String} day  日 DD (ex: 01, 08, 23, 28) 
+   */
   constructor(year, month, day) {
     this.year = year;
     this.month = month;
