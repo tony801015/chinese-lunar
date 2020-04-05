@@ -4,6 +4,7 @@
 ![npm](https://img.shields.io/npm/dm/@tony801015/chinese-lunar)
 [![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
+[![codebeat badge](https://codebeat.co/badges/9ee77feb-968f-476b-9563-b2af9f03c0f3)](https://codebeat.co/projects/github-com-tony801015-chinese-lunar-master)
 
 目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`,`紫白`,`納音`,`胎元`,`命宮`,`身宮`,`藏幹`,`副星`的資訊
 
