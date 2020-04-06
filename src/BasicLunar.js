@@ -8,7 +8,6 @@ const {
 } = require('./tools');
 
 const GeneralLunar = require('./GeneralLunar');
-const moment = require('moment');
 
 class BasicLunar extends GeneralLunar {
   /**
@@ -200,10 +199,12 @@ class BasicLunar extends GeneralLunar {
    * 精簡寫法來源:https://www.itread01.com/article/1479977694.html
    */
   getConstellation() {
-    const words = "魔羯水瓶雙魚牡羊金牛雙子巨蟹獅子處女天秤天蠍射手魔羯";
+    const words = '魔羯水瓶雙魚牡羊金牛雙子巨蟹獅子處女天秤天蠍射手魔羯';
     const compute = words
-      .substr(parseInt(this.month)*2-(parseInt(this.day)<"102223444433"
-      .charAt(parseInt(this.month)-1)- -19)*2,2);
+      .substr(
+        (parseInt(this.month, 10) * 2) -
+        ((parseInt(this.day, 10) < '102223444433'.charAt(parseInt(this.month, 10) - 1) - -19) * 2)
+        , 2);
     return `${compute}座`;
   }
 

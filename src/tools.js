@@ -7,6 +7,10 @@ const {
   sixty,
   dengGui,
   tenGod,
+  duodecimalCycle,
+  mingGongDuoDecimalCycle,
+  shenGong,
+  duodecimalCycleToDecimalCycle
 } = require('./config');
 
 const tools = {
@@ -198,5 +202,40 @@ const tools = {
     }
     return 11;
   },
+  mingAndShen: (chineseYear, chineseMonth, chineseTime, item) => {
+    const down = duodecimalCycleMonth.indexOf(chineseMonth.split('')[1]);
+    const top = duodecimalCycle.indexOf(chineseTime.split('')[1]);
+    let decimalCycleResult;
+    if (item === 'Ming') {
+      decimalCycleResult = tools.getDuodecimalCycleToDecimalCycle(
+        mingGongDuoDecimalCycle[top][down], chineseYear
+      );
+      return `${decimalCycleResult}${mingGongDuoDecimalCycle[top][down]}`;
+    }
+    decimalCycleResult = tools.getDuodecimalCycleToDecimalCycle(shenGong[top][down], chineseYear);
+    return `${decimalCycleResult}${shenGong[top][down]}`;
+  },
+  /**
+   * 地支查天干  使用於身宮和命宮
+   * @param {String} decimalCycle 地支
+   * @param {String} chineseYear 
+   */
+  getDuodecimalCycleToDecimalCycle: (decimalCycleInput, chineseYear) => {
+    const down = duodecimalCycleMonth.indexOf(decimalCycleInput);
+    const word = chineseYear.split('')[0];
+    switch (true) {
+      case '甲己'.indexOf(word) >= 0:
+        return duodecimalCycleToDecimalCycle[0][down];
+      case '乙庚'.indexOf(word) >= 0:
+        return duodecimalCycleToDecimalCycle[1][down];
+      case '丙辛'.indexOf(word) >= 0:
+        return duodecimalCycleToDecimalCycle[2][down];
+      case '丁壬'.indexOf(word) >= 0:
+        return duodecimalCycleToDecimalCycle[3][down];
+      default:
+        return duodecimalCycleToDecimalCycle[4][down];
+    }
+  }
 };
+
 module.exports = tools;

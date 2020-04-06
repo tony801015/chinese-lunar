@@ -1199,7 +1199,7 @@ it('[40]Don\'t new instance', () => {
             lunarPerMonthHasDays: [
                 '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
             ],
-            mingGong: '癸申',
+            mingGong: '戊申',
             month: '11',
             nayin: '火',
             purpleWhites: [
@@ -1216,7 +1216,7 @@ it('[40]Don\'t new instance', () => {
                 '七赤',
                 '六白',
             ],
-            shenGong: '癸戌',
+            shenGong: '庚戌',
             solarTermDistance: {
                 next: {
                     diffDistanceDay: 12,
@@ -1763,25 +1763,7 @@ it('[70]20270208', () => {
     );
 });
 
-it('[71]20080801', () => {
-    process.env.DEV = 'false';
-    expect(lunar('2008', '08', '01')
-        .getDuodecimalCycleToDecimalCycle('子')
-    ).to.be.equal(
-        '甲'
-    );
-});
-
-it('[72]20090801', () => {
-    process.env.DEV = 'false';
-    expect(lunar('2009', '08', '01')
-        .getDuodecimalCycleToDecimalCycle('子')
-    ).to.be.equal(
-        '丙'
-    );
-});
-
-it('[73]20090801', () => {
+it('[71]20090801', () => {
     process.env.DEV = 'false';
     expect(lunar('2009', '08', '01')
         .getKongWang('子', '甲')
@@ -1790,11 +1772,29 @@ it('[73]20090801', () => {
     );
 });
 
-it('[74]20090801', () => {
+it('[72]20090801', () => {
     process.env.DEV = 'false';
     expect(lunar('2009', '08', '01')
         .getCangGan('子')
     ).to.be.equal(
         '癸'
+    );
+});
+
+it('[73]20090801', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2009', '08', '01')
+        .getShenGong()
+    ).to.be.equal(
+        '丁丑'
+    );
+});
+
+it('[74]20080801', () => {
+    process.env.DEV = 'false';
+    expect(lunar('2008', '08', '01')
+        .getShenGong()
+    ).to.be.equal(
+        '乙丑'
     );
 });
