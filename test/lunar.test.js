@@ -1092,7 +1092,7 @@ it('[36]20151122', () => {
             chineseTimesTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
             chineseYear: '乙未',
             chineseYearTenGod: '劫',
-            constellation: '天蠍座',
+            constellation: '射手座',
             day: '22',
             dengGui: '戌申',
             isLunarLeapMonth: false,

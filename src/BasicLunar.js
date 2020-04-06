@@ -197,67 +197,14 @@ class BasicLunar extends GeneralLunar {
   /**
    * 星座
    * @returns {string} Constellations 天秤
+   * 精簡寫法來源:https://www.itread01.com/article/1479977694.html
    */
   getConstellation() {
-    const now = `${this.year}-${this.month}-${this.day}`;
-    const momentNow = moment(now, 'YYYY-MM-DD');
-    if (momentNow.isBetween(`${parseInt(this.year, 10) - 1}1223`, `${this.year}0121`)
-      || momentNow.isSame(`${this.year}-12-23`)
-      || momentNow.isSame(`${this.year}-01-21`)
-    ) {
-      return '魔羯座';
-    } else if (momentNow.isBetween(`${this.year}-01-22`, `${this.year}-02-19`)
-      || momentNow.isSame(`${this.year}-01-22`)
-      || momentNow.isSame(`${this.year}-02-19`)
-    ) {
-      return '水瓶座';
-    } else if (momentNow.isBetween(`${this.year}-02-20`, `${this.year}-03-20`)
-      || momentNow.isSame(`${this.year}-02-20`)
-      || momentNow.isSame(`${this.year}-03-20`)
-    ) {
-      return '雙魚座';
-    } else if (momentNow.isBetween(`${this.year}-03-21`, `${this.year}-04-20`)
-      || momentNow.isSame(`${this.year}-03-21`)
-      || momentNow.isSame(`${this.year}-04-20`)
-    ) {
-      return '牡羊座';
-    } else if (momentNow.isBetween(`${this.year}-04-21`, `${this.year}-05-20`)
-      || momentNow.isSame(`${this.year}-04-21`)
-      || momentNow.isSame(`${this.year}-05-20`)
-    ) {
-      return '金牛座';
-    } else if (momentNow.isBetween(`${this.year}-05-21`, `${this.year}-06-20`)
-      || momentNow.isSame(`${this.year}-05-21`)
-      || momentNow.isSame(`${this.year}-06-20`)
-    ) {
-      return '雙子座';
-    } else if (momentNow.isBetween(`${this.year}-06-21`, `${this.year}-07-22`)
-      || momentNow.isSame(`${this.year}-06-21`)
-      || momentNow.isSame(`${this.year}-07-22`)
-    ) {
-      return '巨蠍座';
-    } else if (momentNow.isBetween(`${this.year}-07-23`, `${this.year}-08-22`)
-      || momentNow.isSame(`${this.year}-07-23`)
-      || momentNow.isSame(`${this.year}-08-22`)
-    ) {
-      return '獅子座';
-    } else if (momentNow.isBetween(`${this.year}-08-23`, `${this.year}-09-22`)
-      || momentNow.isSame(`${this.year}-08-23`)
-      || momentNow.isSame(`${this.year}-09-22`)
-    ) {
-      return '處女座';
-    } else if (momentNow.isBetween(`${this.year}-09-23`, `${this.year}-10-22`)
-      || momentNow.isSame(`${this.year}-09-23`)
-      || momentNow.isSame(`${this.year}-10-22`)
-    ) {
-      return '天秤座';
-    } else if (momentNow.isBetween(`${this.year}-10-23`, `${this.year}-11-22`)
-      || momentNow.isSame(`${this.year}-10-23`)
-      || momentNow.isSame(`${this.year}-11-22`)
-    ) {
-      return '天蠍座';
-    }
-    return '射手座';
+    const words = "魔羯水瓶雙魚牡羊金牛雙子巨蟹獅子處女天秤天蠍射手魔羯";
+    const compute = words
+      .substr(parseInt(this.month)*2-(parseInt(this.day)<"102223444433"
+      .charAt(parseInt(this.month)-1)- -19)*2,2);
+    return `${compute}座`;
   }
 
   /**

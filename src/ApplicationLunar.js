@@ -351,9 +351,7 @@ class ApplicationLunar extends AdvancedLunar {
     getMingGong(chineseMonth = this.chineseMonth, chineseTime = this.chineseTime) {
         const down = config.duodecimalCycleMonth.indexOf(chineseMonth.split('')[1]);
         const top = config.duodecimalCycle.indexOf(chineseTime.split('')[1]);
-        const decimalCycle = this.getDuodecimalCycleToDecimalCycle(
-            config.mingGongDuoDecimalCycle[top][down]
-        );
+        const decimalCycle = this.getDuodecimalCycleToDecimalCycle(config.mingGongDuoDecimalCycle[top][down]);
         return `${decimalCycle}${config.mingGongDuoDecimalCycle[top][down]}`;
     }
 
