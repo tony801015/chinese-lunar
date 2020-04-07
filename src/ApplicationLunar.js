@@ -12,16 +12,15 @@ class ApplicationLunar extends AdvancedLunar {
    * @param {String} month 月 MM (ex: 01, 08, 12)
    * @param {String} day  日 DD (ex: 01, 08, 23, 28) 
    * @param {String} time 24小時制 TT (ex: 01, 03, 08, 23, 24)
-   * @param {String} chineseAge 天干 (ex: 甲子, 丙戌, 癸亥)
    */
-  constructor(year, month, day, chineseAge) {
+  constructor(year, month, day) {
     const {
       year: handlerYear,
       month: handlerMonth,
       day: handlerDay,
     } = lunarTools.setDate(year, month, day);
 
-    super(handlerYear, handlerMonth, handlerDay, chineseAge);
+    super(handlerYear, handlerMonth, handlerDay);
     this.time = lunarTools.setTime();
     this.chineseTime = this.getChineseTime(lunarTools.setTime());
     this.solarTermDistance = this.getSolarTermDistance();
@@ -123,39 +122,6 @@ class ApplicationLunar extends AdvancedLunar {
   }
 
   /**
-   * 取得當年的納音
-   * @param {String} chineseYear 
-   * @returns {String} 
-   * 金 甲子乙丑壬寅癸卯庚辰辛巳甲午乙未壬申癸酉庚戌辛丑
-   * 木 壬子癸丑庚寅辛卯戊辰己巳壬午癸未庚申辛酉戊戌己亥
-   * 水 丙子丁丑甲寅乙卯壬辰癸巳丙午丁未甲申乙酉壬戌癸亥
-   * 火 戊子己丑丙寅丁卯甲辰乙巳戊午己未丙申丁酉甲戌乙亥
-   * 土 庚子辛丑戊寅己卯丙辰丁巳庚午辛未戊申己酉丙戌丁亥
-   */
-  getNayin(chineseYear = this.chineseYear) {
-    if ('甲子乙丑壬寅癸卯庚辰辛巳甲午乙未壬申癸酉庚戌辛丑'.indexOf(chineseYear) >= 0) {
-      return '金';
-    }
-
-    if ('壬子癸丑庚寅辛卯戊辰己巳壬午癸未庚申辛酉戊戌己亥'.indexOf(chineseYear) >= 0) {
-      return '木';
-    }
-
-    if ('丙子丁丑甲寅乙卯壬辰癸巳丙午丁未甲申乙酉壬戌癸亥'.indexOf(chineseYear) >= 0) {
-      return '水';
-    }
-
-    if ('戊子己丑丙寅丁卯甲辰乙巳戊午己未丙申丁酉甲戌乙亥'.indexOf(chineseYear) >= 0) {
-      return '火';
-    }
-
-    if ('庚子辛丑戊寅己卯丙辰丁巳庚午辛未戊申己酉丙戌丁亥'.indexOf(chineseYear) >= 0) {
-      return '土';
-    }
-    return '請檢查輸入年份';
-  }
-
-  /**
    * 取得胎元
    * @param {String} chineseMonth 月柱
    * @returns {String} TaiYuan
@@ -212,30 +178,12 @@ class ApplicationLunar extends AdvancedLunar {
     return mingAndShen(chineseYear, chineseMonth, chineseTime, 'Shen');
   }
 
-  // getDuodecimalCycleToDecimalCycle(decimalCycle, chineseYear = this.chineseYear) {
-  //     const down = config.duodecimalCycleMonth.indexOf(decimalCycle);
-  //     const word = chineseYear.split('')[0];
-  //     switch (true) {
-  //         case '甲己'.indexOf(word) >= 0:
-  //             return config.duodecimalCycleToDecimalCycle[0][down];
-  //         case '乙庚'.indexOf(word) >= 0:
-  //             return config.duodecimalCycleToDecimalCycle[1][down];
-  //         case '丙辛'.indexOf(word) >= 0:
-  //             return config.duodecimalCycleToDecimalCycle[2][down];
-  //         case '丁壬'.indexOf(word) >= 0:
-  //             return config.duodecimalCycleToDecimalCycle[3][1];
-  //         default:
-  //             return config.duodecimalCycleToDecimalCycle[4][down];
-  //     }
-  // }
-
   /**
   * 取得Json格式
   */
   getJson() {
     return {
       ...super.getJson(),
-      nayin: this.getNayin(),
       purpleWhites: this.getPurpleWhites(),
       taiYuan: this.getTaiYuan(),
       mingGong: this.getMingGong(),

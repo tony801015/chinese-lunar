@@ -1071,7 +1071,7 @@ it('[35]20150216', () => {
 });
 
 it('[36]20151122', () => {
-    const Lunar = new ApplicationLunar('2015', '11', '22', '甲子');
+    const Lunar = new ApplicationLunar('2015', '11', '22').setChineseAge('甲子');
     // [ '局管丁卯  令月二月', '寅' ]
     expect(Lunar.getSolarTermsSplitWord()).to.be.deep.equal(['', '']);
     expect(Lunar.dengGui).to.be.deep.equal('戌申');
@@ -1173,7 +1173,7 @@ it('[39]No input day', () => {
 });
 
 it('[40]Don\'t new instance', () => {
-    expect(lunar('2017', '11', '10', '壬子').Lunar.setTime('19').getJson()).to.be.deep.equal(
+    expect(lunar('2017', '11', '10').Lunar.setTime('19').setChineseAge('壬子').getJson()).to.be.deep.equal(
         {
             animal: '雞',
             chineseDay: '辛丑',

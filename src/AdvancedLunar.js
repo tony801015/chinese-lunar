@@ -10,11 +10,9 @@ class AdvancedLunar extends BasicLunar {
      * @param {String} year 西元年 YYYY (ex: 2020, 1992)
      * @param {String} month 月 MM (ex: 01, 08, 12)
      * @param {String} day  日 DD (ex: 01, 08, 23, 28) 
-     * @param {String} chineseAge 天干 (ex: 甲子, 丙戌, 癸亥)
      */
-    constructor(year, month, day, chineseAge) {
+    constructor(year, month, day) {
         super(year, month, day);
-        this.chineseAge = chineseAge || INPUT_AGE;
         this.chineseTimesTenGod = this.getChineseTimesTenGod();
         this.dengGui = this.getDengGui();
         this.leapMonth = this.getLeapMonth();
@@ -22,9 +20,42 @@ class AdvancedLunar extends BasicLunar {
     }
 
     /**
- * 取得時柱
- * @param {String} time 01, 03, 22, 23 
- */
+   * 取得當年的納音
+   * @param {String} chineseYear 
+   * @returns {String} 
+   * 金 甲子乙丑壬寅癸卯庚辰辛巳甲午乙未壬申癸酉庚戌辛丑
+   * 木 壬子癸丑庚寅辛卯戊辰己巳壬午癸未庚申辛酉戊戌己亥
+   * 水 丙子丁丑甲寅乙卯壬辰癸巳丙午丁未甲申乙酉壬戌癸亥
+   * 火 戊子己丑丙寅丁卯甲辰乙巳戊午己未丙申丁酉甲戌乙亥
+   * 土 庚子辛丑戊寅己卯丙辰丁巳庚午辛未戊申己酉丙戌丁亥
+   */
+    getNayin(chineseYear = this.chineseYear) {
+        if ('甲子乙丑壬寅癸卯庚辰辛巳甲午乙未壬申癸酉庚戌辛丑'.indexOf(chineseYear) >= 0) {
+            return '金';
+        }
+
+        if ('壬子癸丑庚寅辛卯戊辰己巳壬午癸未庚申辛酉戊戌己亥'.indexOf(chineseYear) >= 0) {
+            return '木';
+        }
+
+        if ('丙子丁丑甲寅乙卯壬辰癸巳丙午丁未甲申乙酉壬戌癸亥'.indexOf(chineseYear) >= 0) {
+            return '水';
+        }
+
+        if ('戊子己丑丙寅丁卯甲辰乙巳戊午己未丙申丁酉甲戌乙亥'.indexOf(chineseYear) >= 0) {
+            return '火';
+        }
+
+        if ('庚子辛丑戊寅己卯丙辰丁巳庚午辛未戊申己酉丙戌丁亥'.indexOf(chineseYear) >= 0) {
+            return '土';
+        }
+        return '請檢查輸入年份';
+    }
+
+    /**
+     * 取得時柱
+     * @param {String} time 01, 03, 22, 23 
+     */
     getChineseTime(time = this.time) {
         if (time === '00' || time === '23') {
             return this.chineseTimes[0];
@@ -195,6 +226,7 @@ class AdvancedLunar extends BasicLunar {
     getJson() {
         return {
             ...super.getJson(),
+            nayin: this.getNayin(),
             chineseTime: this.getChineseTime(),
             chineseTimesTenGod: this.getChineseTimesTenGod(),
             chineseTimeTenGod: this.getChineseTimeTenGod(),
