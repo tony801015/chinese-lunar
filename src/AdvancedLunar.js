@@ -168,16 +168,19 @@ class AdvancedLunar extends BasicLunar {
         const { previous, next } = this.parserFile;
         const previousArray = previous.split(' ');
         const nextArray = next.split(' ');
+        const previousResult = this.dateDiffHandler(previousArray);
+        const nextResult = this.dateDiffHandler(nextArray);
+        return {
+            previous: previousResult,
+            next: nextResult,
+        };
+    }
 
+    dateDiffHandler(previousArray) {
         const previousSolarTerm = previousArray[0].substring(5, 7);
-        const nextSolarTerm = nextArray[0].substring(5, 7);
-
         const start = moment(this.year + this.month + this.day);
         const previousYYYYMMDD = previousArray[1].replace('日', '').split(/年|月/g);
         const previousHHMMSS = previousArray[2].split(/:/);
-        const nextYYYYMMDD = nextArray[1].replace('日', '').split(/年|月/g);
-        const nextHHMMSS = nextArray[2].split(/:/);
-
         const previousDay = moment(new Date(
             parseInt(previousYYYYMMDD[0], 10),
             parseInt(previousYYYYMMDD[1], 10) - 1,
@@ -187,28 +190,10 @@ class AdvancedLunar extends BasicLunar {
             parseInt(previousHHMMSS[2], 10),
         ));
         const preDistanceDay = previousDay.diff(start, 'hours', true);
-
-        const nextDay = moment(new Date(
-            parseInt(nextYYYYMMDD[0], 10),
-            parseInt(nextYYYYMMDD[1], 10) - 1,
-            parseInt(nextYYYYMMDD[2], 10),
-            parseInt(nextHHMMSS[0], 10),
-            parseInt(nextHHMMSS[1], 10),
-            parseInt(nextHHMMSS[2], 10),
-        ));
-        const nextDistanceDay = nextDay.diff(start, 'hours', true);
-
         return {
-            previous: {
-                solarTerm: previousSolarTerm,
-                diffDistanceDay: Math.abs(Math.floor(preDistanceDay / 24)),
-                diffDistanceDetail: Math.abs(preDistanceDay / 24),
-            },
-            next: {
-                solarTerm: nextSolarTerm,
-                diffDistanceDay: Math.abs(Math.floor(nextDistanceDay / 24)),
-                diffDistanceDetail: Math.abs(nextDistanceDay / 24),
-            },
+            solarTerm: previousSolarTerm,
+            diffDistanceDay: Math.abs(Math.floor(preDistanceDay / 24)),
+            diffDistanceDetail: Math.abs(preDistanceDay / 24),
         };
     }
 
