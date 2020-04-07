@@ -80,11 +80,7 @@ class ApplicationLunar extends AdvancedLunar {
    * @returns {Object} Lunar
    */
   subtract(number, unit) {
-    const date = moment(this.year + this.month + this.day)
-      .subtract(number, unit)
-      .format('YYYY-MM-DD')
-      .split('-');
-    return new ApplicationLunar(date[0], date[1], date[2]);
+    return this.formatCompute(moment(this.year + this.month + this.day).subtract(number, unit));
   }
 
   /**
@@ -94,11 +90,12 @@ class ApplicationLunar extends AdvancedLunar {
    * @returns {Object} Lunar
    */
   add(number, unit) {
-    const date = moment(this.year + this.month + this.day)
-      .add(number, unit)
-      .format('YYYY-MM-DD')
-      .split('-');
-    return new ApplicationLunar(date[0], date[1], date[2]);
+    return this.formatCompute(moment(this.year + this.month + this.day).add(number, unit));
+  }
+
+  formatCompute(data) {
+    const result = data.format('YYYY-MM-DD').split('-');
+    return new ApplicationLunar(result[0], result[1], result[2]);
   }
 
   /**
