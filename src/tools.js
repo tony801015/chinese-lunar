@@ -235,6 +235,12 @@ const tools = {
       default:
         return duodecimalCycleToDecimalCycle[4][down];
     }
+  },
+  verifyAge(chineseAge) {
+    if (chineseAge === '請輸入年齡' || chineseAge === undefined) {
+      return false;
+    }
+    return true;
   }
 };
 

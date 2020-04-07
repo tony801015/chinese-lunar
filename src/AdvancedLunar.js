@@ -3,6 +3,7 @@ const lunarTools = require('./tools');
 const { lunarLeap, solarTerms } = require('./config');
 const moment = require('moment');
 
+const INPUT_AGE = '請輸入年齡';
 class AdvancedLunar extends BasicLunar {
     /**
      * 
@@ -13,7 +14,7 @@ class AdvancedLunar extends BasicLunar {
      */
     constructor(year, month, day, chineseAge) {
         super(year, month, day);
-        this.chineseAge = chineseAge || '請輸入年齡';
+        this.chineseAge = chineseAge || INPUT_AGE;
         this.chineseTimesTenGod = this.getChineseTimesTenGod();
         this.dengGui = this.getDengGui();
         this.leapMonth = this.getLeapMonth();
@@ -56,12 +57,11 @@ class AdvancedLunar extends BasicLunar {
      * @returns {array}} [ 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官', 'ㄗ', '印' ]
      */
     getChineseTimesTenGod(chineseAge = this.chineseAge) {
-        if (chineseAge === '請輸入年齡' || chineseAge === undefined) {
-            return '請輸入年齡';
-        }
-        return this.chineseTimes.map(ele => {
-            return lunarTools.findTenGod(chineseAge.split('')[0], ele.split('')[0]);
-        });
+        return lunarTools.verifyAge(chineseAge)
+            ? this.chineseTimes.map(ele => {
+                return lunarTools.findTenGod(chineseAge.split('')[0], ele.split('')[0]);
+            })
+            : INPUT_AGE;
     }
 
     /**
@@ -71,10 +71,9 @@ class AdvancedLunar extends BasicLunar {
      * @returns {String} chineseTimeTenGod
      */
     getChineseTimeTenGod(chineseAge = this.chineseAge) {
-        if (chineseAge === '請輸入年齡' || chineseAge === undefined) {
-            return '請輸入年齡';
-        }
-        return lunarTools.findTenGod(chineseAge.split('')[0], this.chineseTime.split('')[0]);
+        return lunarTools.verifyAge(chineseAge)
+            ? lunarTools.findTenGod(chineseAge.split('')[0], this.chineseTime.split('')[0])
+            : INPUT_AGE;
     }
 
     /**
@@ -83,10 +82,9 @@ class AdvancedLunar extends BasicLunar {
     * @returns {String} chineseYearTenGod
     */
     getChineseYearTenGod(chineseAge = this.chineseAge) {
-        if (chineseAge === '請輸入年齡' || chineseAge === undefined) {
-            return '請輸入年齡';
-        }
-        return lunarTools.findTenGod(chineseAge.split('')[0], this.chineseYear.split('')[0]);
+        return lunarTools.verifyAge(chineseAge)
+            ? lunarTools.findTenGod(chineseAge.split('')[0], this.chineseYear.split('')[0])
+            : INPUT_AGE;
     }
 
     /**
@@ -95,10 +93,9 @@ class AdvancedLunar extends BasicLunar {
     * @returns {String} chineseMonthTenGod
     */
     getChineseMonthTenGod(chineseAge = this.chineseAge) {
-        if (chineseAge === '請輸入年齡' || chineseAge === undefined) {
-            return '請輸入年齡';
-        }
-        return lunarTools.findTenGod(chineseAge.split('')[0], this.chineseMonth.split('')[0]);
+        return lunarTools.verifyAge(chineseAge)
+            ? lunarTools.findTenGod(chineseAge.split('')[0], this.chineseMonth.split('')[0])
+            : INPUT_AGE;
     }
 
     /**
@@ -107,10 +104,9 @@ class AdvancedLunar extends BasicLunar {
      * @returns {String} chineseDayTenGod
      */
     getChineseDayTenGod(chineseAge = this.chineseAge) {
-        if (chineseAge === '請輸入年齡' || chineseAge === undefined) {
-            return '請輸入年齡';
-        }
-        return lunarTools.findTenGod(chineseAge.split('')[0], this.chineseDay.split('')[0]);
+        return lunarTools.verifyAge(chineseAge)
+            ? lunarTools.findTenGod(chineseAge.split('')[0], this.chineseDay.split('')[0])
+            : INPUT_AGE;
     }
 
     /**

@@ -1784,17 +1784,19 @@ it('[72]20090801', () => {
 it('[73]20090801', () => {
     process.env.DEV = 'false';
     expect(lunar('2009', '08', '01')
+        .setTime('00')
         .getShenGong()
     ).to.be.equal(
-        '丁丑'
+        '壬申'
     );
 });
 
 it('[74]20080801', () => {
     process.env.DEV = 'false';
     expect(lunar('2008', '08', '01')
+        .setTime('00')
         .getShenGong()
     ).to.be.equal(
-        '乙丑'
+        '庚申'
     );
 });
