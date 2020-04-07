@@ -11,7 +11,7 @@ const tools = require('./src/tools');
  * @param {String} day  日 DD (ex: 01, 08, 23, 28) 
  * @param {String} age 天干 (ex: 甲子, 丙戌, 癸亥)
  */
-function lunar(year, month, day, age) {
+function lunar(year, month, day) {
     return process.env.DEV === 'true' ? {
         GeneralLunar,
         BasicLunar,
@@ -19,8 +19,8 @@ function lunar(year, month, day, age) {
         ApplicationLunar,
         config,
         tools,
-        Lunar: new ApplicationLunar(year, month, day, age)
-    } : new ApplicationLunar(year, month, day, age);
+        Lunar: new ApplicationLunar(year, month, day)
+    } : new ApplicationLunar(year, month, day);
 }
 
 module.exports = lunar;

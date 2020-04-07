@@ -1173,68 +1173,76 @@ it('[39]No input day', () => {
 });
 
 it('[40]Don\'t new instance', () => {
-    expect(lunar('2017', '11', '10').Lunar.setTime('19').setChineseAge('壬子').getJson()).to.be.deep.equal(
-        {
-            animal: '雞',
-            chineseDay: '辛丑',
-            chineseDayTenGod: '印',
-            chineseFeb: false,
-            chineseMonth: '辛亥',
-            chineseMonthTenGod: '印',
-            chineseTime: '戊戌',
-            chineseTimeTenGod: '殺',
-            chineseTimes: ['戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'],
-            chineseTimesTenGod: ['殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'],
-            chineseYear: '丁酉',
-            chineseYearTenGod: '財',
-            constellation: '天蠍座',
-            day: '10',
-            dengGui: '子申',
-            isLunarLeapMonth: false,
-            leapMonth: 6,
-            lunarDay: '廿二',
-            lunarDayDigit: 22,
-            lunarMonth: '九月',
-            lunarMonthDigit: 9,
-            lunarPerMonthHasDays: [
-                '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
-            ],
-            mingGong: '戊申',
-            month: '11',
-            nayin: '火',
-            purpleWhites: [
-                '八白',
-                '七赤',
-                '六白',
-                '五黃',
-                '四綠',
-                '三碧',
-                '二黑',
-                '一白',
-                '九紫',
-                '八白',
-                '七赤',
-                '六白',
-            ],
-            shenGong: '庚戌',
-            solarTermDistance: {
-                next: {
-                    diffDistanceDay: 12,
-                    diffDistanceDetail: 12.46150462962963,
-                    solarTerm: '小雪',
+    expect(lunar('2017', '11', '10')
+        .Lunar
+        .setTime('19')
+        .setChineseAge('壬子')
+        .getJson()).to.be.deep.equal(
+            {
+                animal: '雞',
+                chineseDay: '辛丑',
+                chineseDayTenGod: '印',
+                chineseFeb: false,
+                chineseMonth: '辛亥',
+                chineseMonthTenGod: '印',
+                chineseTime: '戊戌',
+                chineseTimeTenGod: '殺',
+                chineseTimes: [
+                    '戊子', '己丑', '庚寅', '辛卯', '壬辰', '癸巳', '甲午', '乙未', '丙申', '丁酉', '戊戌', '己亥'
+                ],
+                chineseTimesTenGod: [
+                    '殺', '官', 'ㄗ', '印', '比', '劫', '食', '傷', '才', '財', '殺', '官'
+                ],
+                chineseYear: '丁酉',
+                chineseYearTenGod: '財',
+                constellation: '天蠍座',
+                day: '10',
+                dengGui: '子申',
+                isLunarLeapMonth: false,
+                leapMonth: 6,
+                lunarDay: '廿二',
+                lunarDayDigit: 22,
+                lunarMonth: '九月',
+                lunarMonthDigit: 9,
+                lunarPerMonthHasDays: [
+                    '29', '30', '29', '30', '29', '29', '30', '29', '30', '29', '30', '30', '30'
+                ],
+                mingGong: '戊申',
+                month: '11',
+                nayin: '火',
+                purpleWhites: [
+                    '八白',
+                    '七赤',
+                    '六白',
+                    '五黃',
+                    '四綠',
+                    '三碧',
+                    '二黑',
+                    '一白',
+                    '九紫',
+                    '八白',
+                    '七赤',
+                    '六白',
+                ],
+                shenGong: '庚戌',
+                solarTermDistance: {
+                    next: {
+                        diffDistanceDay: 12,
+                        diffDistanceDetail: 12.46150462962963,
+                        solarTerm: '小雪',
+                    },
+                    previous: {
+                        diffDistanceDay: 18,
+                        diffDistanceDetail: 17.43986111111111,
+                        solarTerm: '霜降',
+                    },
                 },
-                previous: {
-                    diffDistanceDay: 18,
-                    diffDistanceDetail: 17.43986111111111,
-                    solarTerm: '霜降',
-                },
-            },
-            solarTerms: '立冬',
-            taiYuan: '壬寅',
-            week: '5',
-            year: '2017'
-        }
-    );
+                solarTerms: '立冬',
+                taiYuan: '壬寅',
+                week: '5',
+                year: '2017'
+            }
+        );
 });
 
 it('[41]20190506', () => {
