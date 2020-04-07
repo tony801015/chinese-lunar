@@ -71,9 +71,7 @@ class AdvancedLunar extends BasicLunar {
      * @returns {String} chineseTimeTenGod
      */
     getChineseTimeTenGod(chineseAge = this.chineseAge) {
-        return lunarTools.verifyAge(chineseAge)
-            ? lunarTools.findTenGod(chineseAge.split('')[0], this.chineseTime.split('')[0])
-            : INPUT_AGE;
+        return this.getTenGod(chineseAge, this.chineseTime);
     }
 
     /**
@@ -82,9 +80,7 @@ class AdvancedLunar extends BasicLunar {
     * @returns {String} chineseYearTenGod
     */
     getChineseYearTenGod(chineseAge = this.chineseAge) {
-        return lunarTools.verifyAge(chineseAge)
-            ? lunarTools.findTenGod(chineseAge.split('')[0], this.chineseYear.split('')[0])
-            : INPUT_AGE;
+        return this.getTenGod(chineseAge, this.chineseYear);
     }
 
     /**
@@ -93,9 +89,7 @@ class AdvancedLunar extends BasicLunar {
     * @returns {String} chineseMonthTenGod
     */
     getChineseMonthTenGod(chineseAge = this.chineseAge) {
-        return lunarTools.verifyAge(chineseAge)
-            ? lunarTools.findTenGod(chineseAge.split('')[0], this.chineseMonth.split('')[0])
-            : INPUT_AGE;
+        return this.getTenGod(chineseAge, this.chineseMonth);
     }
 
     /**
@@ -104,8 +98,16 @@ class AdvancedLunar extends BasicLunar {
      * @returns {String} chineseDayTenGod
      */
     getChineseDayTenGod(chineseAge = this.chineseAge) {
+        return this.getTenGod(chineseAge, this.chineseDay);
+    }
+
+    /** 取得十神
+    * @param {String} chineseAge first word 
+    * @param {String} decimalCycle chineseYear,chineseMonth,chineseDay,chineseTime
+    */
+    getTenGod(chineseAge, chineseAnything) {
         return lunarTools.verifyAge(chineseAge)
-            ? lunarTools.findTenGod(chineseAge.split('')[0], this.chineseDay.split('')[0])
+            ? lunarTools.findTenGod(chineseAge.split('')[0], chineseAnything.split('')[0])
             : INPUT_AGE;
     }
 
@@ -136,16 +138,6 @@ class AdvancedLunar extends BasicLunar {
         return lunarLeap[this.year - 1900][1]
             .split('')
             .map(ele => { return (ele === '0' ? '29' : '30'); });
-    }
-
-    /**
- * 取得十神
- * @param {String} chineseAge first word 
- * @param {String} decimalCycle chineseYear,chineseMonth,chineseDay,chineseTime
- * @returns {String} tenGod 傷, 食, 財, 才, 官, 殺, 印, ㄗ
- */
-    getTenGod(_with, _life) {
-        return lunarTools.findTenGod(_with, _life);
     }
 
     /**
