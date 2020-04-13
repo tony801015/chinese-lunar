@@ -1,6 +1,6 @@
 # 命理基本的查詢
 
-![npm](https://img.shields.io/npm/v/@tony801015/chinese-lunar)
+[![npm version](https://badge.fury.io/js/%40tony801015%2Fchinese-lunar.svg)](https://badge.fury.io/js/%40tony801015%2Fchinese-lunar)
 ![npm](https://img.shields.io/npm/dm/@tony801015/chinese-lunar)
 [![Build Status](https://travis-ci.org/tony801015/chinese-lunar.svg?branch=master)](https://travis-ci.org/tony801015/chinese-lunar)
 [![Coverage Status](https://coveralls.io/repos/github/tony801015/chinese-lunar/badge.svg?branch=master)](https://coveralls.io/github/tony801015/chinese-lunar?branch=master)
