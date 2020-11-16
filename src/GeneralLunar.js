@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-const moment = require('moment');
+const dayjs = require('dayjs');
 const {
   lunarLeap,
   solarTermGeneral,
@@ -20,8 +20,8 @@ class GeneralLunar {
     this.month = month;
     this.day = day;
 
-    const start = moment('19120101');
-    const end = moment(year + month + day);
+    const start = dayjs('19120101');
+    const end = dayjs(year + month + day);
     this.distanceDay = end.diff(start, 'day');
     this.getLunarMonthAndDayNumber = this.getLunarMonthAndDayNumber();
     this.parserFile = this.parserFileAndSplitSolarTerm();
@@ -34,8 +34,8 @@ class GeneralLunar {
   getLunarMonthAndDayNumber() {
     let min = 100000000;
     let saveMonth = '';
-    const start = moment('19000131');
-    const end = moment(`${this.year}${this.month}${this.day}`);
+    const start = dayjs('19000131');
+    const end = dayjs(`${this.year}${this.month}${this.day}`);
     let dayDistance = end.diff(start, 'day');
     lunarLeap.forEach((val) => {
       // console.log(val[1].length);
@@ -84,8 +84,8 @@ class GeneralLunar {
         .replace('年', '')
         .replace('月', '')
         .replace('日', ''); // ex:20170124
-      const start = moment(date);
-      const end = moment(this.year + this.month + this.day);
+      const start = dayjs(date);
+      const end = dayjs(this.year + this.month + this.day);
       const dayDistance = end.diff(start, 'day');
 
       // 2048戊辰年沒有2/3
