@@ -2,7 +2,7 @@
 const AdvancedLunar = require('./AdvancedLunar');
 const lunarTools = require('./tools');
 const config = require('./config');
-const moment = require('moment');
+const dayjs = require('dayjs');
 const { mingAndShen } = require('./tools');
 
 class ApplicationLunar extends AdvancedLunar {
@@ -46,7 +46,7 @@ class ApplicationLunar extends AdvancedLunar {
       day += parseInt(lunarPerMonthHasDays[index], 10);
     }
     day += parseInt(this.day, 10) - 1;
-    const yearMonthDay = moment(this.year + monthDay)
+    const yearMonthDay = dayjs(this.year + monthDay)
       .add(day, 'days')
       .format('YYYY-MM-DD').split('-');
     return new ApplicationLunar(yearMonthDay[0], yearMonthDay[1], yearMonthDay[2]);
@@ -79,7 +79,7 @@ class ApplicationLunar extends AdvancedLunar {
    * @returns {Object} Lunar
    */
   subtract(number, unit) {
-    return this.formatCompute(moment(this.year + this.month + this.day).subtract(number, unit));
+    return this.formatCompute(dayjs(this.year + this.month + this.day).subtract(number, unit));
   }
 
   /**
@@ -89,7 +89,7 @@ class ApplicationLunar extends AdvancedLunar {
    * @returns {Object} Lunar
    */
   add(number, unit) {
-    return this.formatCompute(moment(this.year + this.month + this.day).add(number, unit));
+    return this.formatCompute(dayjs(this.year + this.month + this.day).add(number, unit));
   }
 
   formatCompute(data) {

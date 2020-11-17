@@ -1,7 +1,7 @@
 const BasicLunar = require('./BasicLunar');
 const lunarTools = require('./tools');
 const { lunarLeap, solarTerms } = require('./config');
-const moment = require('moment');
+const dayjs = require('dayjs');
 
 const INPUT_AGE = '請輸入年齡';
 class AdvancedLunar extends BasicLunar {
@@ -201,10 +201,10 @@ class AdvancedLunar extends BasicLunar {
 
     dateDiffHandler(previousArray) {
         const previousSolarTerm = previousArray[0].substring(5, 7);
-        const start = moment(this.year + this.month + this.day);
+        const start = dayjs(this.year + this.month + this.day);
         const previousYYYYMMDD = previousArray[1].replace('日', '').split(/年|月/g);
         const previousHHMMSS = previousArray[2].split(/:/);
-        const previousDay = moment(new Date(
+        const previousDay = dayjs(new Date(
             parseInt(previousYYYYMMDD[0], 10),
             parseInt(previousYYYYMMDD[1], 10) - 1,
             parseInt(previousYYYYMMDD[2], 10),
