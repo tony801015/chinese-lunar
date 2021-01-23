@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          // 大於相關瀏覽器版本無需用到 preset-env
+          "browsers": ["Android >= 4.0", "ios >= 6"]
+        }
+      }
+    ]
+  ]
+}

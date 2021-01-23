@@ -1,6 +1,6 @@
 {
   "name": "@tony801015/chinese-lunar",
-  "version": "0.19.0",
+  "version": "0.19.0-beta",
   "description": "只要輸入年月日，就可以轉換成年柱,月柱,日柱,時柱,農曆月,農曆日,節氣,星期,生肖,星座等資訊，目前年份已經支援從1900年開始至2050年",
   "main": "main.js",
   "scripts": {
@@ -37,6 +37,7 @@
   "author": "Tony",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.12.11",
     "dayjs": "^1.9.6"
   },
   "devDependencies": {
