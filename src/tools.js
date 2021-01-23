@@ -31,10 +31,11 @@ const tools = {
         : (monthDate + 1).toString();
     }
     if (day === '' || day === undefined) {
-      day = date < 9
+      day = date <= 9
         ? (`0${(date).toString()}`)
         : (date).toString();
     }
+
     return {
       year, month, day
     };
