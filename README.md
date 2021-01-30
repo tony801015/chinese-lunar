@@ -9,6 +9,8 @@
 目前已提供`年柱`,`月柱`,`日柱`,`時柱`,`農曆月`,`農曆日`,`節氣`,`星期`,`生肖`,`星座`,`紫白`,`納音`,`胎元`,`命宮`,`身宮`,`藏幹`,`副星`的資訊
 
 # ChangeLog
+- 2021/01/30 `0.20.0` 版本修復[#16](https://github.com/tony801015/chinese-lunar/issues/16)
+- 2020/11/16 `0.19.0` 版本移除`moment.js`改用`day.js`
 - 2020/04/05 `0.18.0` 版本提供胎元, 命宮, 身宮 `.getTaiYuan()` `.getMingGong()` `.getShenGong()`
 - 2020/02/21 `0.17.0` 版本提供取得紫白九星的方法和取得納音屬性 `.getNayin()` `.getPurpleＷhites()`
 - 2020/02/08 `0.16.0` 版本提供日期加減的計算 `.add()` `.subtract()`
@@ -125,11 +127,10 @@ const lunar = require("@tony801015/chinese-lunar");
 const demoAdd = lunar('2019', '07', '07').add(1,'d').day // 08
 const demoSubtract = lunar('2019', '07', '07').subtract(1,'d').day // 06
 // add()與subtract()這背後是使用moment.js這個好用的套件所完成的，因此有用過moment.js的朋友一定不陌生
-```
-ref: 感謝神作[moment.js](https://momentjs.com/docs/#/manipulating/subtract/)  
+``` 
 兩個method的文件如下:  
-[subtract()](https://momentjs.com/docs/#/manipulating/subtract/) 減的使用方式  
-[add()](https://momentjs.com/docs/#/manipulating/add/) 加的使用方式  
+[subtract()](https://day.js.org/docs/en/manipulate/subtract#docsNav) 減的使用方式  
+[add()](https://day.js.org/docs/en/manipulate/add#docsNav) 加的使用方式  
 
 #### 紫白與納音
 ```js
@@ -215,6 +216,7 @@ lunar('2020', '04', '05').getTaiYuan(); // 辛未
 - 取得納音屬性 2020/02/21 完成 `0.17.0`
 - 提供「農曆的日期」數字的形式呈現 [#7](https://github.com/tony801015/chinese-lunar/issues/7) 感謝 @creatxrgithub 大大提供建議 `0.17.3`
 - 提供胎元,命宮,身宮,藏幹,副星 `0.18.0`
+- 支援較舊的版本 IOS6 感謝 @921010wxm 大大提供建議 `0.20.0` [#16](https://github.com/tony801015/chinese-lunar/issues/16)
 - 製作萬年曆
 - 查詢農曆年的API
 - 查詢流年,流月,大運
