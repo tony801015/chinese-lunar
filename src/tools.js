@@ -26,14 +26,16 @@ const tools = {
       year = yearDate.toString();
     }
     if (month === '' || month === undefined) {
-      month = monthDate + 1 < 9
-        ? (`0${(monthDate + 1).toString()}`)
-        : (monthDate + 1).toString();
+      // month = monthDate + 1 < 9
+      //   ? (`0${(monthDate + 1).toString()}`)
+      //   : (monthDate + 1).toString();
+      month = (monthDate + 1).toString();
     }
     if (day === '' || day === undefined) {
-      day = date < 9
-        ? (`0${(date).toString()}`)
-        : (date).toString();
+      // day = date < 9
+      //   ? (`0${(date).toString()}`)
+      //   : (date).toString();
+      day = (date).toString();
     }
     return {
       year, month, day
