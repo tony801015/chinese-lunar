@@ -1,6 +1,6 @@
 {
   "name": "@tony801015/chinese-lunar",
-  "version": "0.20.1",
+  "version": "0.20.2",
   "description": "只要輸入年月日，就可以轉換成年柱,月柱,日柱,時柱,農曆月,農曆日,節氣,星期,生肖,星座等資訊，目前年份已經支援從1900年開始至2050年",
   "main": "main.js",
   "scripts": {
@@ -37,25 +37,25 @@
   "author": "Tony",
   "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.9.6"
+    "dayjs": "^1.10.7"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-env": "^7.16.0",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.2.1",
+    "babel-loader": "^8.2.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "chai": "^4.2.0",
-    "coveralls": "^3.1.0",
-    "esdoc": "^1.0.4",
-    "eslint": "^7.13.0",
+    "chai": "^4.3.4",
+    "coveralls": "^3.1.1",
+    "esdoc": "^1.1.0",
+    "eslint": "^8.2.0",
     "eslint-config-rallycoding": "^3.2.0",
-    "jest": "^26.6.3",
-    "jsdoc": "^3.6.6",
+    "jest": "^27.3.1",
+    "jsdoc": "^3.6.7",
     "jsdoc-template": "^1.2.0",
     "minami": "^1.2.3",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
   },
   "repository": {
     "type": "git",
