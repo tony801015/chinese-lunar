@@ -3,6 +3,7 @@ os:
   - osx
   - windows
 node_js:
+  - 16 
   - 14
   - 12
   - 10
